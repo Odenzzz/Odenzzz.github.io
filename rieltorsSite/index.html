@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Риелтор</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="libs/slick/slick.css">
+	<link rel="stylesheet" href="libs/slick/slick-theme.css">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+</head>
+
+<body>
+	<div class="modal-window">
+		<div class="modal-bg"></div>
+		<div class="modal-close"></div>
+		<div class="modal-container">
+			<div class="modal-slider">
+				<div class="slider-for">
+						<div class="slide" style="background-image: url('img/ostap-senyuk-189425.jpg');"></div>
+						<div class="slide" style="background-image: url('img/luis-llerena-14778.jpg');"></div>
+						<div class="slide" style="background-image: url('img/oliver-thomas-klein-207908.jpg');"></div>
+						<div class="slide" style="background-image: url('img/alexander-pemberton-95212.jpg');"></div>
+						<div class="slide" style="background-image: url('img/jolene-hardy-18952.jpg');"></div>
+						<div class="slide" style="background-image: url('img/face.png');"></div>
+				</div>
+				<div class="slider-nav">
+					<div class="slide-nav" style="background-image: url('img/ostap-senyuk-189425.jpg');"></div>
+					<div class="slide-nav" style="background-image: url('img/luis-llerena-14778.jpg');"></div>
+					<div class="slide-nav" style="background-image: url('img/oliver-thomas-klein-207908.jpg');"></div>
+					<div class="slide-nav" style="background-image: url('img/alexander-pemberton-95212.jpg');"></div>
+					<div class="slide-nav" style="background-image: url('img/jolene-hardy-18952.jpg');"></div>
+					<div class="slide-nav" style="background-image: url('img/face.png');"></div>
+				</div>
+			</div>
+			<div class="modal-text">
+				<h2>Заголовок</h2>
+				<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</span>
+			</div>
+		</div>
+	</div>
+	<div class="pre-loader">
+		<div class="dots">
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+			<div class="dot"></div>
+		</div>
+		<span>идет загрузка</span>
+	</div>
+	<div class="arrow-up-wrapper hidden-sm hidden-xs">
+		<a href="#top-arrow">
+			<div class="arrow-up"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+		</a>
+	</div>
+	<div class="head">
+		<div class="wrapper-parallax"><div class="parallax"></div></div>
+		<header >
+				<div class="top-line hidden-sm hidden-xs" id="top-arrow">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-4 col-lg-3 col-sm-8 col-xs-8 ">
+								<div class="mobile">
+									<span><i class="fa fa-mobile" aria-hidden="true"></i> +7 (800) 88-88-88</span>
+								</div>
+							</div>
+							<div class="col-md-8 col-lg-9 hidden-sm hidden-xs">
+								<nav class="top-menu">
+									<ul>
+										<li><a href="#about">Обо мне</a></li>
+										<li><a href="#service">Услуги</a></li>
+										<li><a href="#objects">Объекты</a></li>
+										<li><a href="#comments">Отзывы</a></li>
+										<li><a href="#contacts">Контакты</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="top-line-mobile">
+					<div class="col-sm-8 col-xs-8 hidden-md hidden-lg">
+						<div class="m-mobile">
+							<span><i class="fa fa-mobile" aria-hidden="true"></i> +7 (800) 88-88-88</span>
+						</div>
+					</div>
+					<div class="col-sm-4 col-xs-4 hidden-md hidden-lg">
+						<div class="tgl-mnu-wr"><a class="toggle-menu"><span></span></a></div>
+						<nav class="top-mobile">
+							<ul>
+								<li><a href="#about">Обо мне</a></li>
+								<li><a href="#service">Услуги</a></li>
+								<li><a href="#objects">Объекты</a></li>
+								<li class="hidden-xs hidden-sm"><a href="#comments">Отзывы</a></li>
+								<li><a href="#contacts">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="text-bg">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="logo-wrapper ">
+									<div class="logo">
+										<h1>РИЕЛТОР</h1>
+										<span>Николаева Анна Геннадьевна</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 clearfix">
+							<div class="rieltor-service-wrapper">
+								<div class="rieltor-service">
+									<h1>УСЛУГИ РИЕЛТОРА В <span class="text-sochi">СОЧИ</span></h1>
+									<ul>
+										<li>Интересные и выгодные варианты недвижимости</li>
+										<li>Ипотечное решение на выгодных условиях</li>
+										<li>Работа с иногородними клиентами</li>
+										<li>Юридический анализ документов</li>
+										<li>Работа с военной ипотекой</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="button-header">
+							<div class="button-service">
+								<a href="#contacts" class="button">СВЯЗАТЬСЯ</a>
+							</div>
+						</div>
+					</div>
+				</div>
+		</header>
+	</div>
+	<div class="scrolling-menu hidden-sm hidden-xs">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 ">
+					<div class="scr-mnu">
+						<nav>
+							<ul>
+								<li class="anchor-about" ><a href="#about">Обо мне</a></li>
+								<li class="anchor-service"><a href="#service">Услуги</a></li>
+								<li class="anchor-objects"><a href="#objects">Объекты</a></li>
+								<li class="anchor-comments"><a href="#comments">Отзывы</a></li>
+								<li class="anchor-contacts"><a href="#contacts">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-about anchor" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+				<div class="my-photo-wrapper">
+					<div class="my-photo">
+						<img src="img/face.png" alt="">
+					</div>
+				</div>
+				</div>
+				<div class="col-md-8">
+					<div class="about-me">
+						<h1>Обо<span class="highlight ">МНЕ</span></h1>
+						<span>Hello!, I'm Rieltor, User experience designer based in Russia.</span>
+						<span>Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum nte ipsum primis in faucibus orci luctus et ultrices. Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus.</span>
+						<span class="bold-me">"Proin adipiscing porta tellus, ut feugiat nibh adipiscing sit amet. In eu justo a felis faucibus ornare vel id metus. Vestibulum ante ipsum primis".</span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="wrapper-social">
+						<div class="soc-circle"><a href=""><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a></div>
+						<div class="soc-circle"><a href=""><i class="fa fa-envelope-open" aria-hidden="true"></i></a></div>
+						<div class="soc-circle"><a href=""><i class="fa fa-vk" aria-hidden="true"></i></a></div>
+						<div class="soc-circle"><a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="service-section-wrapper" id="service">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+						<h1>Предоставляемые</h1> <h1 class="highlight">УСЛУГИ</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="col-md-12">
+						<div class="block-service">
+							<div class="service-icon ">
+								<i class="fa fa-university" aria-hidden="true"></i>
+							</div>
+							<div class="service-description ">
+								<h3>приобритение недвижимости</h3>
+								<span>Подбор интересных и выгодных вариантов недвижимости для жилья</span>
+								<span>Работа только с надежными застройщиками</span>
+								<span>Приобретение квартиры по цене застройщика</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+					<div class="block-service">
+						<div class="service-icon ">
+							<i class="fa fa-file-text" aria-hidden="true"></i>
+						</div>
+						<div class="service-description ">
+							<h3>анализ документов</h3>
+							<span>Юридический анализ документов объекта недвижимости.</span>
+							<span>Мониторинг рынка новостроек, надежности застройщиков.</span>
+						</div>
+					</div>
+					</div>
+					<div class="col-md-12">
+					<div class="block-service">
+						<div class="service-icon ">
+							<img src="img/ipoteka.svg" alt="">
+						</div>
+						<div class="service-description ">
+							<h3>ипотечные решения</h3>
+							<span>Получение ипотечного решения на выгодных для покупателя условиях.</span>
+							<span>Помощь в подборе выгодной программы ипотечного кредитования и подачи заявки онлайн.</span>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="col-md-12">
+						<div class="block-service">
+							<div class="service-icon ">
+								<i class="fa fa-money" aria-hidden="true"></i>
+							</div>
+							<div class="service-description ">
+								<h3>капитал</h3>
+								<span>Работа с материнским капиталом, военной ипотекой.</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="block-service">
+							<div class="service-icon ">
+								<i class="fa fa-tree" aria-hidden="true"></i>
+							</div>
+							<div class="service-description ">
+								<h3>иногородние клиенты</h3>
+								<span>Для иногородних клиентов - встреча в аэропорту и заселение в гостиницу.</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="button-section-two">
+							<a href="#contacts" class="button b-two">оставить заявку</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-object-wrapper" id="objects">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="object-title wow flipInY">
+						<h1>
+							Предыдущие
+						</h1>
+						<h1 class="highlight">
+							объекты
+						</h1>
+					</div>
+				</div>
+			</div>
+			<div class="object-row">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="object-elem ">
+
+							<div class="object-img">
+								<div class="object-hover">
+									<i class="fa fa-search-plus" aria-hidden="true"></i>
+								</div>
+								<img src="img/annie-spratt-40665.jpg" alt="">
+
+							</div>
+							<div class="object-text">
+								<h3>Проспект мира 39/4</h3>
+								<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="object-elem">
+							<div class="object-img">
+								<div class="object-hover">
+									<i class="fa fa-search-plus" aria-hidden="true"></i>
+								</div>
+								<img src="img/jolene-hardy-18952.jpg" alt="">
+							</div>
+							<div class="object-text">
+								<h3>Проспект мира 39/4</h3>
+								<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="object-elem">
+							<div class="object-img">
+								<div class="object-hover">
+									<i class="fa fa-search-plus" aria-hidden="true"></i>
+								</div>
+								<img src="img/ostap-senyuk-189425.jpg" alt="">
+							</div>
+							<div class="object-text">
+								<h3>Проспект мира 39/4</h3>
+								<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="object-elem">
+							<div class="object-img">
+								<div class="object-hover">
+									<i class="fa fa-search-plus" aria-hidden="true"></i>
+								</div>
+								<img src="img/thomas-litangen-92623.jpg" alt="">
+							</div>
+							<div class="object-text">
+								<h3>Проспект мира 39/4</h3>
+								<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="object-row">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="object-elem">
+								<div class="object-img">
+									<div class="object-hover">
+										<i class="fa fa-search-plus" aria-hidden="true"></i>
+									</div>
+									<img src="img/annie-spratt-40665.jpg" alt="">
+								</div>
+								<div class="object-text">
+									<h3>Проспект мира 39/4</h3>
+									<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="object-elem">
+								<div class="object-img">
+									<div class="object-hover">
+										<i class="fa fa-search-plus" aria-hidden="true"></i>
+									</div>
+									<img src="img/annie-spratt-40665.jpg" alt="">
+								</div>
+								<div class="object-text">
+									<h3>Проспект мира 39/4</h3>
+									<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="object-elem"">
+								<div class="object-img">
+									<div class="object-hover">
+										<i class="fa fa-search-plus" aria-hidden="true"></i>
+									</div>
+									<img src="img/annie-spratt-40665.jpg" alt="">
+								</div>
+								<div class="object-text">
+									<h3>Проспект мира 39/4</h3>
+									<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="object-elem"">
+								<div class="object-img">
+									<div class="object-hover">
+										<i class="fa fa-search-plus" aria-hidden="true"></i>
+									</div>
+									<img src="img/annie-spratt-40665.jpg" alt="">
+								</div>
+								<div class="object-text">
+									<h3>Проспект мира 39/4</h3>
+									<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</div>
+	<div class="comments-wrapper hidden-xs" id="comments">
+		<div class="comments-bg"></div>
+				<div class="comments-text-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="title-comments">
+									<h1 class="highlight">отзывы</h1>
+									<h1>клиентов</h1>
+								</div>
+							</div>
+						</div>
+						<div class="row ">
+							<div class="col-md-12">
+								<div class="viewer">
+									  <div class="slider-wrapper">
+										<div class="slide">
+											<div class="inner-slide">
+												<div class="photo-comment"><img src="img/Face.PNG" alt=""></div>
+												<div class="text-comment">
+													<h3>Галина Петрович Отрубкина</h3>
+													<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</span>
+												</div>
+											</div>
+										</div>
+										<div class="slide">
+											<div class="inner-slide">
+												<div class="photo-comment"><img src="img/Face.PNG" alt=""></div>
+												<div class="text-comment">
+													<h3>Галина Петрович Отрубкина</h3>
+													<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</span>
+												</div>
+											</div>
+										</div>
+										<div class="slide">
+											<div class="inner-slide">
+												<div class="photo-comment"><img src="img/Face.PNG" alt=""></div>
+												<div class="text-comment">
+													<h3>Галина Петрович Отрубкина</h3>
+													<span>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.</span>
+												</div>
+											</div>
+										</div>
+									  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div class="comments-next">
+							<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+						</div>
+						<div class="comments-prev">
+							<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+						</div>
+				</div>
+	</div>
+	<div class="contacts-wrapper" id="contacts">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="contacts-title">
+						<h1>Оставьте</h1>
+						<h1 class="highlight">Заявку</h1>
+						<h3>и я свяжусь с вами</h3>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="contacts-input">
+						<form action="">
+							<input type="text" placeholder="Ваше Имя...">
+							<input type="text" placeholder="Ваш Email...">
+							<div class="textarea-wrapper">
+								<textarea name="" id="" cols="30" rows="10" placeholder="Введите ваше сообщение ..."></textarea>
+							</div>
+							<input type="submit" class="button" value="ОСТАВИТЬ ЗАЯВКУ">
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-xs-12 col-sm-12">
+					<div class="contact-footer">
+						<h1 class="highlight">Контакты</h1>
+						<ul>
+							<li>Address : 121 King Street, Melbourne Victoria 3000, Russia</li>
+							<li>Email : info@jonk.com</li>
+							<li>Phone : +61 3 8376 6284</li>
+							<li>Fax : +61 3 8376 6284</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-8 pull-right col-xs-12 col-sm-12">
+					<div class="wrapper-social">
+						<div class="soc-circle"><a href=""><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a></div>
+						<div class="soc-circle"><a href=""><i class="fa fa-envelope-open" aria-hidden="true"></i></a></div>
+						<div class="soc-circle"><a href=""><i class="fa fa-vk" aria-hidden="true"></i></a></div>
+						<div class="soc-circle"><a href=""><i class="fa fa-whatsapp" aria-hidden="true"></i></a></div>
+					</div>
+				</div>
+				<div class="col-md-12 col-xs-12 col-sm-12">
+					<div class="copyright-wrapper">
+						<span>© Copyright  2017. All Right Reserved, by Quando 
+							<img src="img/Logo.png" alt="">
+						</span>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+
+
+<link rel="stylesheet" href="css/main.min.css">
+<script src="js/scripts.min.js"></script>
+
+
+</body>
+</html>

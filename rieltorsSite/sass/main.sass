@@ -1,0 +1,1005 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+/* ---------------- загрузочный экран------------------- */
+.pre-loader
+	position: absolute
+	z-index: 999
+	width: 100%
+	height: 100%
+	background-color: #ffa800
+
+.dots
+	width: 0
+	height: 0
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	margin: auto
+	-webkit-filter: url(#goo)
+	filter: url(#goo)
+
+
+.dot
+	width: 0
+	height: 0
+	position: absolute
+	left: 0
+	top: 0
+
+.dot:before
+	content: ''
+	width: 20px
+	height: 20px
+	border-radius: 50%
+	background: #fff
+	position: absolute
+	left: 50%
+	top: -55px
+	margin-left: -10px
+	margin-top: -10px
+
+@-webkit-keyframes dot-0 
+  0% 
+    -webkit-transform: rotate(180deg)
+            transform: rotate(180deg)
+  
+  100% 
+    -webkit-transform: rotate(343.63636deg)
+            transform: rotate(343.63636deg)
+  
+
+@keyframes dot-0 
+  0% 
+    -webkit-transform: rotate(180deg)
+            transform: rotate(180deg)
+  
+  100% 
+    -webkit-transform: rotate(343.63636deg)
+            transform: rotate(343.63636deg)
+ 
+.dot:nth-child(1)
+  -webkit-transform: rotate(0deg)
+          transform: rotate(0deg)
+  -webkit-animation: dot-0 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-0 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-1
+  0% 
+    -webkit-transform: rotate(212.72727deg)
+            transform: rotate(212.72727deg)
+  
+  100% 
+    -webkit-transform: rotate(540deg)
+            transform: rotate(540deg)
+  
+
+@keyframes dot-1 
+  0% 
+    -webkit-transform: rotate(212.72727deg)
+            transform: rotate(212.72727deg)
+  
+  100% 
+    -webkit-transform: rotate(540deg)
+            transform: rotate(540deg)
+  
+
+.dot:nth-child(2) 
+  -webkit-transform: rotate(32.72727deg)
+          transform: rotate(32.72727deg)
+  -webkit-animation: dot-1 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-1 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-2 
+  0% 
+    -webkit-transform: rotate(245.45455deg)
+            transform: rotate(245.45455deg)
+  
+  100% 
+    -webkit-transform: rotate(736.36364deg)
+            transform: rotate(736.36364deg)
+  
+
+@keyframes dot-2 
+  0% 
+    -webkit-transform: rotate(245.45455deg)
+            transform: rotate(245.45455deg)
+  
+  100% 
+    -webkit-transform: rotate(736.36364deg)
+            transform: rotate(736.36364deg)
+  
+
+.dot:nth-child(3)
+  -webkit-transform: rotate(65.45455deg)
+          transform: rotate(65.45455deg)
+  -webkit-animation: dot-2 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-2 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-3 
+  0% 
+    -webkit-transform: rotate(278.18182deg)
+            transform: rotate(278.18182deg)
+  
+  100% 
+    -webkit-transform: rotate(932.72727deg)
+            transform: rotate(932.72727deg)
+  
+
+@keyframes dot-3 
+  0% 
+    -webkit-transform: rotate(278.18182deg)
+            transform: rotate(278.18182deg)
+  
+  100% 
+    -webkit-transform: rotate(932.72727deg)
+            transform: rotate(932.72727deg)
+  
+
+.dot:nth-child(4) 
+  -webkit-transform: rotate(98.18182deg)
+          transform: rotate(98.18182deg)
+  -webkit-animation: dot-3 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-3 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-4 
+  0% 
+    -webkit-transform: rotate(310.90909deg)
+            transform: rotate(310.90909deg)
+  
+  100% 
+    -webkit-transform: rotate(1129.09091deg)
+            transform: rotate(1129.09091deg)
+  
+
+@keyframes dot-4 
+  0% 
+    -webkit-transform: rotate(310.90909deg)
+            transform: rotate(310.90909deg)
+  
+  100% 
+    -webkit-transform: rotate(1129.09091deg)
+            transform: rotate(1129.09091deg)
+  
+
+.dot:nth-child(5) 
+  -webkit-transform: rotate(130.90909deg)
+          transform: rotate(130.90909deg)
+  -webkit-animation: dot-4 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-4 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-5 
+  0% 
+    -webkit-transform: rotate(343.63636deg)
+            transform: rotate(343.63636deg)
+  
+  100% 
+    -webkit-transform: rotate(1325.45455deg)
+            transform: rotate(1325.45455deg)
+  
+
+@keyframes dot-5 
+  0% 
+    -webkit-transform: rotate(343.63636deg)
+            transform: rotate(343.63636deg)
+  
+  100% 
+    -webkit-transform: rotate(1325.45455deg)
+            transform: rotate(1325.45455deg)
+  
+
+.dot:nth-child(6) 
+  -webkit-transform: rotate(163.63636deg)
+          transform: rotate(163.63636deg)
+  -webkit-animation: dot-5 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-5 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-6 
+  0% 
+    -webkit-transform: rotate(376.36364deg)
+            transform: rotate(376.36364deg)
+  
+  100% 
+    -webkit-transform: rotate(1521.81818deg)
+            transform: rotate(1521.81818deg)
+  
+
+@keyframes dot-6 
+  0% 
+    -webkit-transform: rotate(376.36364deg)
+            transform: rotate(376.36364deg)
+  
+  100% 
+    -webkit-transform: rotate(1521.81818deg)
+            transform: rotate(1521.81818deg)
+  
+
+.dot:nth-child(7) 
+  -webkit-transform: rotate(196.36364deg)
+          transform: rotate(196.36364deg)
+  -webkit-animation: dot-6 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-6 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-7 
+  0% 
+    -webkit-transform: rotate(409.09091deg)
+            transform: rotate(409.09091deg)
+  
+  100% 
+    -webkit-transform: rotate(1718.18182deg)
+            transform: rotate(1718.18182deg)
+  
+
+@keyframes dot-7 
+  0% 
+    -webkit-transform: rotate(409.09091deg)
+            transform: rotate(409.09091deg)
+  
+  100% 
+    -webkit-transform: rotate(1718.18182deg)
+            transform: rotate(1718.18182deg)
+  
+
+.dot:nth-child(8) 
+  -webkit-transform: rotate(229.09091deg)
+          transform: rotate(229.09091deg)
+  -webkit-animation: dot-7 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-7 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-8 
+  0% 
+    -webkit-transform: rotate(441.81818deg)
+            transform: rotate(441.81818deg)
+  
+  100% 
+    -webkit-transform: rotate(1914.54545deg)
+            transform: rotate(1914.54545deg)
+  
+
+@keyframes dot-8 
+  0% 
+    -webkit-transform: rotate(441.81818deg)
+            transform: rotate(441.81818deg)
+  
+  100% 
+    -webkit-transform: rotate(1914.54545deg)
+            transform: rotate(1914.54545deg)
+  
+
+.dot:nth-child(9) 
+  -webkit-transform: rotate(261.81818deg)
+          transform: rotate(261.81818deg)
+  -webkit-animation: dot-8 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-8 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-9 
+  0% 
+    -webkit-transform: rotate(474.54545deg)
+            transform: rotate(474.54545deg)
+  
+  100% 
+    -webkit-transform: rotate(2110.90909deg)
+            transform: rotate(2110.90909deg)
+  
+
+@keyframes dot-9 
+  0% 
+    -webkit-transform: rotate(474.54545deg)
+            transform: rotate(474.54545deg)
+  
+  100% 
+    -webkit-transform: rotate(2110.90909deg)
+            transform: rotate(2110.90909deg)
+  
+
+.dot:nth-child(10) 
+  -webkit-transform: rotate(294.54545deg)
+          transform: rotate(294.54545deg)
+  -webkit-animation: dot-9 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-9 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+@-webkit-keyframes dot-10 
+  0% 
+    -webkit-transform: rotate(507.27273deg)
+            transform: rotate(507.27273deg)
+  
+  100% 
+    -webkit-transform: rotate(2307.27273deg)
+            transform: rotate(2307.27273deg)
+  
+
+@keyframes dot-10 
+  0% 
+    -webkit-transform: rotate(507.27273deg)
+            transform: rotate(507.27273deg)
+  
+  100% 
+    -webkit-transform: rotate(2307.27273deg)
+            transform: rotate(2307.27273deg)
+  
+
+.dot:nth-child(11) 
+  -webkit-transform: rotate(327.27273deg)
+          transform: rotate(327.27273deg)
+  -webkit-animation: dot-10 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+          animation: dot-10 5s cubic-bezier(0.3, 0, 0.7, 1) infinite
+
+/* ----------------------------------------------------- */
+.highlight
+	font-family: "GothamProBlack",Helvetica,Arial,sans-serif !important
+	color: $accent !important
+	text-transform: uppercase !important
+	display: inline-block !important
+
+.arrow-up
+	font-size: 30px
+	color: #fff
+	width: 70px
+	height: 70px
+	z-index: 999
+	background-color: $accent
+	opacity: 0.5
+	position: fixed
+	bottom: 50px
+	right: 50px
+	border-radius: 20px
+	text-align: center
+	line-height: 70px
+	display: none
+	&:hover
+		transition: 0.5s
+		opacity: 1
+
+
+.scrolling-menu
+	z-index: 9
+	background-color: rgba(53, 55, 70, 0.6)
+	position: fixed
+	top: -58px
+	left: 0
+	width: 100%
+	height: 58px
+	overflow: hidden
+	.scr-mnu
+		nav
+			ul
+				margin: 0
+				float: none
+				display: flex
+				justify-content: center
+				li
+					display: inline-block
+					a
+						font-family: "GothamProMedium", Helvetica,Arial,sans-serif
+						font-size: em(12px)
+						height: 55px
+						line-height: 55px
+						text-align: center
+						text-decoration: none
+						padding-left: 23px
+						padding-right: 23px
+						color: #fff
+						&:hover
+							text-decoration: none
+							color: $accent
+							transition: 0.5s
+				.active
+					border-bottom: 3px solid $accent
+					a
+						color: $accent
+
+
+.wrapper-parallax
+	height: 100vh
+	min-height: 600px
+	overflow: hidden
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: -11
+.parallax
+	background: url("../img/alexander-pemberton-95212.jpg")
+	background-position: center
+	background-repeat: no-repeat
+	background-size: cover
+	filter: blur(10px)
+	height: 110%
+	position: absolute
+	top: -5%
+	width: 110%
+	left: -5%
+
+header
+	height: 100vh
+	min-height: 815px;
+body
+	font-family: "GothamProRegular", Helvetica,Arial,sans-serif
+	font-size: 16px
+	overflow-x: hidden
+.m-mobile
+	position: fixed
+	z-index: 99
+	span
+		line-height: 55px
+		font-family: "GothamProMedium",Helvetica,Arial,sans-serif
+		font-size: em(20px)
+.mobile
+	font-family: "GothamProMedium",Helvetica,Arial,sans-serif
+	font-size: em(25px)
+	span
+		line-height: 95px
+		text-align: center
+.top-menu
+	ul
+		list-style-type: none
+		position: relative
+		float: right
+		li
+			display: inline-block
+			a
+				font-family: "GothamProMedium", Helvetica,Arial,sans-serif
+				font-size: em(20px)
+				height: 95px
+				line-height: 95px
+				text-align: center
+				text-decoration: none
+				padding-left: 26px
+				color: #fff
+				&:hover
+					text-decoration: none
+					color: $accent
+					transition: 0.5s
+		margin: 0
+		padding: 0
+.top-line
+	min-height: 95px
+	width: 100%
+	color: #fff
+	background-color: rgba(53, 55, 70, 0.4)
+	position: relative
+	top: 0
+	z-index: 99
+.logo-wrapper
+	margin-top: 20px
+	display: flex
+	align-items: center
+.logo
+	width: 400px
+	text-align: center
+	h1
+		width: 100%
+		border-bottom: 1px solid #000
+		color: $accent
+		font-family: "GothamProBlack", Helvetica,Arial,sans-serif
+		font-size: em(60px)
+		-webkit-text-stroke: 1px #000
+		margin: 0
+		line-height: 65px
+	span
+		width: 100%
+		font-family: "GothamProBold", Helvetica,Arial,sans-serif
+		font-size: em(25px)
+		color: #fff
+		-webkit-text-stroke: 1px #000
+		margin-top: 5px
+		display: block
+.rieltor-service-wrapper
+	align-items: center
+	float: right
+	margin: 10% 0
+.rieltor-service
+	h1
+		font-family: "GothamProBlack", Helvetica,Arial,sans-serif
+		font-size: em(50px)
+		color: #fff
+		-webkit-text-stroke: 1px #000
+		margin: 0
+		display: inline-block
+		height: 80px
+	ul
+		margin: 0
+		li
+			list-style-type: none
+			text-align: right
+			color: #fff
+			font-family: "GothamProMedium", Helvetica,Arial,sans-serif
+			-webkit-text-stroke: 1px #000
+			font-size: em(25px)
+			// height: 40px
+
+	.text-sochi
+		color: $accent
+		position:relative
+		padding-left: 5px
+
+.button
+	display: block
+	border-radius: 10px
+	width: 260px
+	height: 70px
+	background-color: $accent
+	box-shadow: 0 -10px rgb(221, 146, 0) inset
+	transition: 0.3s
+	font-family: "GothamProBlack",Helvetica,Arial,sans-serif
+	font-size: em(20px)
+	color: #353746
+	border: 0
+	&:hover
+		background-color: rgb(221, 146, 0)
+		text-decoration: none
+		color: #353746
+	&:active
+		outline: none
+		color: #353746
+	&:focus
+		outline: none
+		background-color: #a46d02
+		box-shadow: 0 -10px #a46d02 inset
+		color: #353746
+
+.button-service
+	a
+		line-height: 70px
+		text-decoration: none
+		text-align: center
+
+.button-header
+	float: right
+	position: relative
+	margin-top: 20px
+
+.tgl-mnu-wr
+	background-color: $accent;
+	width: 100%;
+	height: 55px;
+	position: fixed;
+	right: 0;
+	z-index: 8
+.toggle-menu
+	display: block;
+	width: 28px;
+	height: 28px;
+	margin-top: 18px;
+	margin-right: 35px;
+	float: right;
+	span:after, span:before 
+		content: ""
+		position: absolute
+		left: 0
+		top: 9px
+	span:after
+		top: 18px
+	span 
+		position: relative
+		display: block
+	span, span:after, span:before
+		width: 100%
+		height: 2px
+		background-color: #fff
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+	&.on span
+		background-color: transparent
+	&.on span:before
+		transform: rotate(45deg) translate(-1px, 0px)
+	&.on span:after
+		transform: rotate(-45deg) translate(6px, -7px)
+.top-mobile
+	right: 0
+	background-color: rgba(53, 55, 70, 0.4)
+	top: 55px
+	position: fixed
+	z-index: 8
+	display: none
+	ul
+		list-style-type: none
+		font-family: "GothamProMedium",Helvetica,Arial,sans-serif
+		text-align: right
+		li
+			a
+				padding-right: 35px
+				padding-top: 10px
+				line-height: 40px
+				color: #fff
+
+.section-about
+	display: flex
+	align-items: center
+	min-height: 515px
+	min-width: 100%
+	background-color: #353746
+.my-photo-wrapper
+	width: 100%
+	display: flex
+	align-items: center
+	justify-content: center
+	height: 100%
+.my-photo
+	border-radius: 175px;
+	overflow: hidden;
+	height: 269px;
+	width: 269px;
+	display: flex;
+	justify-content: center;
+	border: 5px solid $accent
+	img
+		height: 110%
+		margin-right: 50px
+.about-me
+	h1
+		margin: 0
+		padding: 0
+		font-family: "GothamProLight",Helvetica,Arial,sans-serif
+		font-size: em(40px)
+		color: #fff
+		display: inline-block
+	span
+		color: #fff
+		font-family: "GothamProLight",Helvetica,Arial,sans-serif
+	.bold-me
+		display: block
+		font-family: "GothamProBold",Helvetica,Arial,sans-serif
+		padding-top: 20px
+		padding-bottom: 20px
+.wrapper-social
+	float: right
+	margin-top: 45px
+.soc-circle
+	cursor: pointer
+	width: 45px
+	height: 45px
+	background-color: #fff
+	border-radius: 100%
+	display: inline-block
+	text-align: center
+	line-height: 45px
+	margin-left: 15px
+	a
+		color: #353746
+		font-size: em(25px)
+	&:hover
+		transition: 0.5s ease
+		background-color: $accent
+
+.service-section-wrapper
+	padding-top: 40px;
+	text-align: center
+	min-height: 790px
+	display: flex
+	background-color: #FFF
+	width: 100%
+	h1
+		display: inline-block
+
+.service-description
+	display: inline-block
+	text-align: left
+	width: 80%
+	margin-left: 25px
+	h3
+		margin: 0
+		margin-bottom: 5px
+		text-transform: uppercase
+		font-size: em(20px)
+		font-family: "GothamProBold",Helvetica,Arial,sans-serif
+	span
+		font-family: "GothamProRegular",Helvetica,Arial,sans-serif
+		font-size: em(15px)
+		display: block
+
+
+
+
+.block-service
+	display: flex
+	align-items: center
+	margin-top: 40px
+.service-icon
+	color: #353746
+	display: flex
+	justify-content: center
+	align-items: center
+	max-width: 100px
+	min-width: 100px
+	width: 20%
+	height: 100px
+	background-color: $accent
+	border-radius: 100%
+	font-size: em(40px)
+	img
+		transform: scale(0.4, 0.4)
+
+.button-section-two
+	position: relative
+	margin-top: 100px
+.b-two
+	background-color: #44c347 
+	text-transform: uppercase 
+	box-shadow: 0 -10px rgb(55, 152, 57) inset 
+	margin-left: auto
+	margin-right: auto
+	&:hover
+		background-color: rgb(55, 152, 57)
+	&:active
+		background-color: #2a772c
+		box-shadow: 0 -10px rgb(42, 119, 44) inset 
+	&:focus
+		background-color: #2a772c
+		box-shadow: 0 -10px rgb(42, 119, 44) inset 
+
+.section-object-wrapper
+	width: 100%
+	min-height: 1071px
+	background-color: #353746
+	padding-top: 60px
+	.object-title
+		text-align: center
+	h1
+		margin: 0
+		padding: 0
+		font-family: "GothamProRegular",Helvetica,Arial,sans-serif
+		font-size: em(40px)
+		color: #fff
+		display: inline-block
+
+.object-row
+	padding-top: 30px
+.object-elem
+	height: 405px
+	background-color: #52556b
+	.object-text
+		color: #fff;
+		padding: 10px 10px 10px 10px
+		h3
+			font-size: em(18px)
+			font-family: "GothamProBold",Helvetica,Arial,sans-serif
+			margin: 0
+		span
+			font-size: em(14px)
+			font-family: "GothamProRegular",Helvetica,Arial,sans-serif
+			margin: 0
+
+	.object-img
+		position: relative
+		overflow: hidden
+		height: 250px
+		img
+			display: block
+			height: 100%
+		&:hover
+			.object-hover
+				cursor: pointer
+				background-color: rgba(57, 59, 73, 0.7)
+				color: rgba(255, 255, 255, 1)
+
+
+	.object-hover
+		transition: 0.5s
+		position: absolute
+		width: 100%
+		height: 100%
+		background-color: rgba(57, 59, 73, 0)
+		bottom: 0
+		color: rgba(255, 255, 255, 0)
+		font-size: em(30px)
+		display: flex
+		align-items: center
+		justify-content: center
+
+.comments-wrapper
+
+	position: relative
+	height: 628px
+	width: 100%
+	overflow: hidden
+.comments-bg
+	background: url("../img/luis-llerena-14778.jpg")
+	background-repeat: no-repeat
+	background-position: center
+	width: 110%
+	height: 110%
+	position: absolute
+	left: -5%
+	top: -5%
+	right: -5%
+	background-size: 100%
+	filter: blur(5px)
+.comments-text-wrapper
+	padding-top: 70px
+	position: absolute
+	background-color: rgba(255, 168, 0, 0.5)
+	width: 100%
+	height: 100%
+.title-comments
+	text-align: center
+	h1
+		display: inline-block
+		margin: 0
+	.highlight
+		color: #fff !important
+
+
+.comments-next
+	height: 628px
+	position: absolute
+	cursor: pointer
+	bottom: 0
+	width: 15%
+	background-color: rgba(53, 55, 70, 0.4)
+	transition: 0.5s
+	right: 0
+	text-align: center
+	line-height: 628px
+	font-size: em(60px)
+	color: rgba(255, 255, 255, 0.4)
+	&:hover
+		background-color: rgba(53, 55, 70, 0.8)
+		color: rgba(255, 255, 255, 1)
+.comments-prev
+	height: 628px
+	position: absolute
+	cursor: pointer
+	bottom: 0
+	width: 15%
+	background-color: rgba(53, 55, 70, 0.4)
+	transition: 0.5s
+	left: 0
+	text-align: center
+	line-height: 628px
+	font-size: em(60px)
+	color: rgba(255, 255, 255, 0.4)
+	&:hover
+		background-color: rgba(53, 55, 70, 0.8)
+		color: rgba(255, 255, 255, 1)
+.all-dot
+	position: relative
+	display: block
+	margin-left: auto
+	margin-right: auto
+	margin-top: 45px
+	width: 520px
+	.dot
+		width: 20px
+		height: 20px
+		border-radius: 100%
+		background-color: #fff
+		display: inline-block
+		margin-left: 40px
+		margin-right: 40px
+	.dot-select
+		background-color: rgba(53, 55, 70, 1)
+
+.contacts-wrapper
+	padding-top: 70px
+	height: 767px
+	background-color: #FFF
+.contacts-title
+	text-align: center
+	h1
+		display: inline-block
+		margin: 0
+	h3
+		font-size: em(20px)
+		margin: 0
+
+.contacts-input
+	
+	padding-top: 20px
+	input[type="text"], textarea
+		margin-left: auto
+		margin-right: auto
+		display: block
+		resize: none
+		width: 66%
+		margin-top: 10px
+		line-height: 45px
+		height: 45px
+		border-radius: 8px
+		border: none
+		outline: none
+		background-color: rgba(53, 55, 70, 0.7)
+		padding: 10px
+		color: #fff
+		font-family: "GothamProLightItalic",Helvetica,Arial,sans-serif
+		&::placeholder
+			font-family: "GothamProLightItalic",Helvetica,Arial,sans-serif
+			color: #E0E0E0
+			font-size: em(18px)
+	input[type = "submit"]
+		width: 66%
+		height: 65px
+		display: block
+		margin-right: auto
+		margin-left: auto
+		margin-top: 20px
+		background-color: #44c347
+		box-shadow: 0 -10px rgb(55, 152, 57) inset
+		&:hover
+			background-color: rgb(55, 152, 57)
+		&:focus
+			background-color: rgb(55, 152, 57)
+			box-shadow: 0 -10px rgb(55, 152, 57) inset
+
+
+	.textarea-wrapper
+		textarea
+			width: 100%
+			height: 300px
+		width: 66%
+		margin-right: auto
+		margin-left: auto
+
+
+.slide
+	outline: none
+	.inner-slide
+		padding-top: 30px
+		margin-left: auto
+		margin-right: auto
+		width: 80%
+	.text-comment
+		color: #fff
+		h3
+			font-family: "GothamProMedium",Helvetica,Arial,sans-serif
+			font-size: em(20px)
+		span
+			font-family: "GothamProItalic",Helvetica,Arial,sans-serif
+			font-size: em(18px)
+	.photo-comment
+		width: 90px
+		height: 90px
+		border-radius: 100%
+		border: 3px solid rgba(53, 55, 70, 1)
+		overflow: hidden
+		img
+			height: 100%
+.slick-arrow
+	display: none !important
+.slick-dots
+	li
+		margin: 0 20px
+	bottom: -60px
+	button
+		margin: 0 40px
+		&:before
+			font-size: 20px !important
+			color: #fff
+
+footer
+	min-height: 325px
+	width: 100%
+	background-color: rgba(53, 55, 70, 1)
+	.contact-footer
+		margin-top: 30px
+		h1
+			margin: 0
+		ul
+			margin: 0
+			padding: 0
+			list-style-type: none
+			li
+				color: #fff
+				font-family: "GothamProRegular",Helvetica,Arial,sans-serif
+				font-size: em(20px)
+
+.copyright-wrapper
+	margin-top: 20px
+	text-align: center
+	width: 100%
+	border-top: 2px solid $accent
+	span
+		line-height: 50px
+		font-family: "GothamProMedium",Helvetica,Arial,sans-serif
+		font-size: em(20px)
+		color: #fff
+	img
+		height: 35px
+		transform: scale(-1, 1);
+
+@import "media" // Всегда в конце

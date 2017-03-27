@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="libs/iconmoon/style.css">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>
+		@keyframes sk-stretchdelay {
+			0%, 40%, 100%{
+				-webkit-transform: scaleY(0.4);
+				transform: scaleY(0.4);
+			}
+			20%{
+				-webkit-transform: scaleY(1.0);
+				transform: scaleY(1.0);
+			}
+		}
+		@-webkit-keyframes sk-stretchdelay {
+			0%, 40%, 100%{
+				-webkit-transform: scaleY(0.4);
+				transform: scaleY(0.4);
+			}
+			20%{
+				-webkit-transform: scaleY(1.0);
+				transform: scaleY(1.0);
+			}
+		}
+		#page-preloader {
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: #152134;
+			z-index: 999999999;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			-ms-align-items: center;
+			align-items: center;
+			justify-content: center;
+			-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-ms-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;;
+		}
+		#page-preloader .spinner{
+			width: 170px;
+			height: 175px;
+			position: relative;
+			background: url('img/bg-logo.png') no-repeat 50% 50%;
+			margin: 0 auto;
+			text-align: center;
+			font-size: 10px;
+			display: block;
+		}
+		.spinner-inner {
+			margin: 0px auto;
+			margin-top: 10px;
+			width: 50px;
+			height: 40px;
+			text-align: center;
+			font-size: 10px;
+			display: block;
+		}
+		.spinner-inner > div {
+			background-color: #00f6ff;
+			height: 100%;
+			width: 6px;
+			display: inline-block;
+			animation: sk-stretchdelay 1.2s infinite ease-in-out;
+			-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+		}
+
+		.spinner-inner .rect2 {
+			-webkit-animation-delay: -1.1s;
+			animation-delay: -1.1s;
+		}
+
+
+		.spinner-inner .rect3 {
+			-webkit-animation-delay: -1.0s;
+			animation-delay: -1.0s;
+		}
+
+
+		.spinner-inner .rect4 {
+			-webkit-animation-delay: -0.9s;
+			animation-delay: -0.9s;
+		}
+
+
+		.spinner-inner .rect5 {
+			-webkit-animation-delay: -0.8s;
+			animation-delay: -0.8s;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="page-preloader"><span class="spinner"></span>
+		<div class="spinner-inner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+	</div>
+	<div class="modal-window">
+		<div class="modal-bg"></div>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="login-wrapper">
+					<div id="login-container" class="login-container">
+						<a class="close-btn"><i class="fa fa-close"></i></a>
+						<div class="login-content">
+							<div class="modal-logo">
+								<img src="img/bg-logo.png" alt="FG CASINO">
+							</div>
+							<div class="row row-centered messages">
+							</div>
+							<form id="login-form" action="" method="post" autocomplete="off" novalidate="">
+								<div class="inputfield username">
+									<input required="" pattern=".{1,}" id="login-username" name="username" class="input-text" autocomplete="off" placeholder="Enter your username" formnovalidate="" aria-autocomplete="inline" type="text">
+								</div>
+								<div class="inputfield password">
+									<input required="" pattern=".{1,}" id="login-password" name="password" class="pass input-text" autocomplete="off" placeholder="Your password" type="password">
+								</div>
+								<div>
+									<input name="login-submit" value="Login" class="btn btn-big btn-red btn-betspin login-submit" type="submit">
+								</div>
+							</form>
+						<form id="forgot-form" action="" method="post" autocomplete="off" style="display: none;" novalidate="">
+							<div class="inputfield username email">
+								<input required="" id="forgot-email" name="email" autocomplete="off" class="input-text" placeholder="Enter your e-mail" type="email">
+							</div>
+							<div>
+								<input name="forgot-submit" value="Submit" class="btn btn-big btn-betspin btn-red" type="submit">
+							</div>
+						</form>
+						<div class="help-txt" style="text-align: center;">
+							<p class="forgot">
+							<span id="remember-password" class="login-links">
+							Forgot something? <span class="red">No worries.</span>
+							</span>
+							</p>
+						</div>
+						<div class="help-txt" style="text-align: center;">
+							<p class="new">
+								<span id="close-modal-on-sign-up" class="login-links">
+								New here? <span class="red register">Create an account.</span>
+								</span>
+							</p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div id="createaccount-form-modal" class="createaccount createaccount-form">
+					<div class="reg-error" style="display: none;">
+					<div class="reg-error-content">
+					<a class="reg-error-close-btn"><i class="fa fa-close"></i></a>
+					</div>
+					</div>
+					<div style="display: block; margin-top: 0px;" class="boxes-holder">
+					<form action="" method="post">
+					<div class="box box-1">
+					<h1>Create a free account in two easy steps</h1>
+					<fieldset>
+					<div class="form-row">
+					<label>Email</label>
+					<input tabindex="1" name="email" id="input-email" class="tippeable" original-title="" error1="Hmm, doesn't seem quite right. Could you check it once again?" error2="This email is already taken. Please choose another." autofocus="true" type="email">
+					<div class="email-service-icons service-icons case1">
+					<i class="fa fa-circle-o-notch fa-spin check-spinner"></i>
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row info">
+					<label>Username</label>
+					<a class="info-btn" href="/" original-title="Username can contain small and capital letters and numbers."><i class="fa fa-question-circle"></i></a>
+					<input autocomplete="off" tabindex="2" name="username" id="input-username" class="tippeable" original-title="" error1="Something went wrong. Please try with letters and numbers only and keep it max 17 characters." error2="This username is already taken. Please choose another." type="text">
+					<div class="username-service-icons service-icons case2">
+					<i class="fa fa-circle-o-notch fa-spin check-spinner"></i>
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>First name</label>
+					<input tabindex="3" name="firstname" id="input-firstname" class="tippeable" original-title="" error1="Something went wrong. The first name has to be at least 2 letters long." type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>Last name</label>
+					<input tabindex="4" name="lastname" id="input-lastname" class="tippeable" original-title="" error1="Something went wrong. The last name has to be at least 2 letters long." type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>Password</label>
+					<input autocomplete="off" tabindex="5" name="password" id="input-password" class="tippeable" original-title="" error1="Something went wrong. The password has to be minimum 8 characters including one number and an uppercase letter." type="password">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					<ul class="password-constraints">
+					<li class=" constraint-length active"><i class="fa fa-circle"></i>At least 8 characters</li>
+					<li class=" constraint-num-specialchar active"><i class="fa fa-circle"></i>A number and an uppercase letter</li>
+					</ul>
+					</div>
+					<div class="form-row">
+					<label>Confirm password</label>
+					<input tabindex="6" id="input-retype-password" class="tippeable" original-title="" error1="The passwords don't match. Could you try again, please?" type="password">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<div class="next-btn-holder">
+					<a href="/" class="button btn btn-red btn-big reg-next-btn btn-betspin" disabled="">Next, personal details</a>
+					</div>
+					</div>
+					<div class="box box-2">
+					<div class="personal-details">
+					<fieldset>
+					<div class="form-row">
+					<label>Country</label>
+					<input id="input-country2" disabled="" value="Sweden" type="text">
+					<input tabindex="7" name="country" id="input-country" class="tippeable" original-title="" error1="Something went wrong. Could you check your answer once again?" value="Sweden" type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>City</label>
+					<a original-title="" class="info-btn" href="/"></a>
+					<input tabindex="8" name="city" id="input-city" class="tippeable" original-title="" error1="Something went wrong. Could you check your answer once again?" type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>Street address</label>
+					<input tabindex="9" name="address" id="input-street" class="tippeable" original-title="" error1="Something went wrong. Could you check your answer once again?" type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>Postal code</label>
+					<a original-title="" class="info-btn" href="/"></a>
+					<input maxlength="15" tabindex="10" name="postalcode" id="input-postal-code" class="tippeable" original-title="" error1="Could you try again? The code seems to be missing some digits." type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>Telephone</label>
+					<div class="row phone-row">
+					<div class="col-xs-4 col">
+					<input tabindex="-1" name="prefix" id="input-phone-prefix" maxlength="4" type="tel">
+					</div>
+					<div class="col-xs-8 col">
+					<input tabindex="11" name="telephone" id="input-phone" class="tippeable" original-title="" error1="Oops! Could you try again? The number seems to be missing some digits." type="tel">
+					<div class="service-icons case3">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>Birthday</label>
+					<div class="row birthday-row">
+					<div class="col-xs-3">
+					<input tabindex="12" id="input-day" class="date-day date" placeholder="dd" min="1" max="31" maxlength="2">
+					</div>
+					<div class="col-xs-3">
+					<input tabindex="13" id="input-month" class="date-month date" placeholder="mm" min="1" max="12" maxlength="2">
+					</div>
+					<div class="col-xs-6">
+					<input original-title="" tabindex="14" id="input-year" class="tippeable date-year date" placeholder="year" min="1900" max="2050" maxlength="4" error1="Are you sure you typed the date right?">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row secquestionpickerholder">
+					<label>Security question</label>
+					<select style="display: none;" id="secquestionpicker" class="selectpicker"><option value="1">My favourite colour?</option><option value="2">My pet's name?</option><option value="3">My favourite bet?</option><option value="4">My favourite horse?</option><option value="5">My favourite place?</option><option value="6">My favourite superhero?</option><option value="7">My favourite team?</option><option value="8">My middle name?</option><option value="9">My mother's maiden name?</option></select><div class="btn-group bootstrap-select"><button title="My favourite colour?" data-id="secquestionpicker" type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown"><span class="filter-option pull-left">My favourite colour?</span>&nbsp;<i class="fa fa-chevron-down"></i></button><div class="dropdown-menu open"><ul class="dropdown-menu inner selectpicker" role="menu"><li class="selected" data-original-index="0"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite colour?</span>"><span class="text">My favourite colour?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My pet's name?</span>"><span class="text">My pet's name?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite bet?</span>"><span class="text">My favourite bet?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite horse?</span>"><span class="text">My favourite horse?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite place?</span>"><span class="text">My favourite place?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite superhero?</span>"><span class="text">My favourite superhero?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="6"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite team?</span>"><span class="text">My favourite team?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="7"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My middle name?</span>"><span class="text">My middle name?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="8"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My mother's maiden name?</span>"><span class="text">My mother's maiden name?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div></div>
+					</div>
+					<div class="form-row">
+					<label>Answer</label>
+					<a original-title="" class="info-btn" href="/"></a>
+					<input original-title="" tabindex="15" name="securityquestion" id="input-secquestion-answer" class="tippeable" error1="The answer has to be at least 2 letters long." type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset class="gender">
+					<input tabindex="16" id="gender1" name="gender" value="male" checked="" type="radio">
+					<label for="gender1">
+					Male <span class="fa-stack gender1-icon">
+					<i class="fa fa-circle"></i>
+					<i class="fa fa-circle"></i>
+					</span>
+					</label>
+					<input tabindex="17" id="gender2" name="gender" value="female" type="radio">
+					<label for="gender2">
+					Female <span class="fa-stack gender2-icon">
+					<i class="fa fa-circle"></i>
+					<i class="fa fa-circle"></i>
+					</span>
+					</label>
+					</fieldset>
+					<fieldset class="email-offers">
+					<input tabindex="18" id="email-offers-check" type="checkbox">
+					<label for="email-offers-check">I don't want to receive bonus offers by email.</label>
+					</fieldset>
+					<div class="activate-btn-holder">
+					<a href="/" tabindex="19" class="btn btn-big btn-red submit-reg-btn btn-betspin" disabled="">Next</a>
+					</div>
+					<p style="display: none;" class="terms-and-conditions">By clicking the button above, you confirm that you are at least 18 years old and agree with our <a href="terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
+					</div>
+					</div>
+					<div class="box box-3">
+					<div class="activation-box">
+					<h1>Verify your account</h1>
+					<p class="desc">You have received a text message (SMS) with your verification code. Please, enter it below.</p>
+					<fieldset>
+					<div class="form-row smscode">
+					<label>Verification code</label>
+					<a class="info-btn" href="/" original-title="You have received a text message (SMS) with your verification code. Please, enter it below."><i class="fa fa-question-circle"></i></a>
+					<input tabindex="20" name="smsverification" id="smsverification" class="tippeable" autocomplete="off" maxlength="6" minlength="4" original-title="" error1="Invalid verification code" type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<div class="submit-btn-holder">
+					<a href="/" tabindex="21" class="btn btn-big btn-red submit-reg-btn btn-betspin" disabled="">Create account</a>
+					</div>
+					<p class="terms-and-conditions">By clicking the button above, you confirm that you are at least 18 years old and agree with our <a href="terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
+					<fieldset class="resend-fieldset">
+					<div class="show-resend-btn-holder">
+					<a href="/" tabindex="23" class="btn btn-big btn-red show-resendcode-btn btn-betspin">Change your phone number / Resend the code</a>
+					</div>
+					<div class="resend-holder">
+					<div class="form-row telephonecopy">
+					<label>Telephone</label>
+					<div class="row phone-row">
+					<div class="col-xs-4 col">
+					<input tabindex="-1" name="prefix" id="input-phone-prefix-copy" maxlength="4" type="tel">
+					</div>
+					<div class="col-xs-8 col">
+					<input tabindex="24" name="telephone-copy" id="telephone-copy" class="tippeable" original-title="" error1="Oops! Could you try again? The number seems to be missing some digits." type="tel">
+					<div class="service-icons case3">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div class="form-row">
+					<div class="resend-btn-holder">
+					<a href="/" tabindex="25" class="btn btn-big btn-red resendcode-btn btn-betspin">Resend code</a>
+					</div>
+					</div>
+					</div>
+					</fieldset>
+					<a class="email-link" href="mailto:customercare@betspin.com">Need help? Contact Customer Care</a>
+					</div>
+					</div>
+					<input name="btag" class="result" value="" type="hidden">
+					<input name="urlreferrer" class="result" value="" type="hidden">
+					<input id="birthday-value" name="birthday" class="result" type="hidden">
+					<input id="countryid-value" name="countryid" value="" type="hidden">
+					<input id="securityid-value" name="securityid" value="1" type="hidden">
+					<input id="gender-value" name="genderid" value="1" type="hidden">
+					<input id="offers-value" name="allowsnewsandoffers" value="0" type="hidden">
+					</form>
+					</div>
+					<div class="loader-spinner" style="display: none;"><div class="r1"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div></div>
+					<div class="register-success" style="display: none">
+					<i class="fa fa-check-circle" aria-hidden="true"></i>
+					<h1>Success!</h1>
+					<p>Your account is now verified and you're ready to start reaping your rewards.</p>
+					<a class="btn btn-betspin btn-login-after-register">Let's play!</a>
+					</div>
+					<div class="bonus-holder">
+					<a class="close-btn"><i class="fa fa-close"></i></a>
+					<img class="logo" src="img/logo.png">
+					<img class="bonus" src="img/register/wb-side-image-en.jpg">
+					<div class="secure">
+					<img id="comodo-logo" src="img/register/comodo-secure.png" alt="Comodo secure">
+					 
+					<a href="" target="_blank"><img id="maltaga-logo" src="img/register/mgalogo.png" alt="mga - Malta Gaming Authority"></a>
+					</div>
+					</div>
+				</div>
+				<div class="select-language">
+					<div class="get-language"><input type="radio" name="language" id="lang1" value="russian" class="language" checked="checked"><label for="lang1">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang2" value="english" class="language"><label for="lang2">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang3" value="russian" class="language"><label for="lang3">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang4" value="russian" class="language"><label for="lang4">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang5" value="russian" class="language"><label for="lang5">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang6" value="russian" class="language"><label for="lang6">Russian</label></div>
+					<div class="language-set button">
+						confirm
+					</div>
+				</div>
+				<div class="providers">
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>Providers</h3>
+						</div>
+					</div>
+					<div class="col-xs-6 col">
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxBetsoft" name="provider-checkbox" value="betsoft" type="checkbox">
+								<label for="checkboxBetsoft" class="css-label filter-label">Betsoft</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxGreenTube" name="provider-checkbox" value="green tube" type="checkbox">
+								<label for="checkboxGreenTube" class="css-label filter-label">Green Tube</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxIGT" name="provider-checkbox" value="igt" type="checkbox">
+								<label for="checkboxIGT" class="css-label filter-label">IGT</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxMicrogaming" name="provider-checkbox" value="microgaming" type="checkbox">
+								<label for="checkboxMicrogaming" class="css-label filter-label">Microgaming</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxNetEnt" name="provider-checkbox" value="netent" type="checkbox">
+								<label for="checkboxNetEnt" class="css-label filter-label">Net Entertainment</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col">
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxPNG" value="play n go" name="provider-checkbox" type="checkbox">
+								<label for="checkboxPNG" class="css-label filter-label">Play'n GO</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxQuickspin" name="provider-checkbox" value="quickspin" type="checkbox">
+								<label for="checkboxQuickspin" class="css-label filter-label">Quickspin</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12"><input class="css-checkbox" id="checkboxScientific" name="provider-checkbox" value="scientific games" type="checkbox">
+								<label for="checkboxScientific" class="css-label filter-label">Scientific Games</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxYggdrasil" name="provider-checkbox" value="yggdrasil" type="checkbox">
+								<label for="checkboxYggdrasil" class="css-label filter-label">Yggdrasil</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxNYX" name="provider-checkbox" value="nyx gaming" type="checkbox">
+								<label for="checkboxNYX" class="css-label filter-label">NYX Gaming</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="providers-set button">
+							confirm
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-account-wrapper">
+		<div class="modal-account-bg"></div>
+		<div class="modal-lg">
+			<div class="account-content">
+				<ul class="account-settings-menubar">
+				<li class="account-settings-navigation active account-settings-p">Personal settings</li>
+				<li id="account-gamelimits" class="account-settings-navigation">Gaming limits</li>
+				<li id="account-transactions" class="account-settings-navigation">Transaction history</li>
+				<li id="account-gamingtransactions" class="account-settings-navigation">Gaming transactions</li>
+				<li id="account-kyc" class="account-settings-navigation">Account verification</li>
+				</ul>
+				<div class="account-settings-container account-container active" style="display: block;">
+				<table class="settings">
+				<tbody><tr>
+				<td class="left-column">
+				<div class="info-box">
+				<form action="" method="post" name="userdataForm" id="userdataForm">
+				<div class="info-header">Personal details</div>
+				<span class="settings-label">Email address (please contact Customer Care to change)</span>
+				<input style="color: #9a978d;" class="settings-input" value="mail@mail.ru" disabled="" type="text">
+				<span class="settings-label">Street address</span>
+				<input class="settings-input" name="address1" value="Address 123" type="text">
+				<table style="width: 100%;">
+				<tbody><tr>
+				<td style="width: 49%"><span class="settings-label">Postal code</span><input class="settings-input" name="postalcode" value="1111" type="text"></td>
+				<td style="width: 2%"></td>
+				<td style="width: 49%"><span class="settings-label">City / Town</span><input class="settings-input" name="city" value="City" type="text"></td>
+				</tr>
+				</tbody></table>
+				<table style="width: 100%;">
+				<tbody><tr>
+				<td style="width: 20%"><span class="settings-label">Prefix</span><input onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" maxlength="3" class="settings-input" name="mobileprefix" value="+7" type="text"></td>
+				<td style="width: 2%"></td>
+				<td style="width: 78%"><span class="settings-label">Phone number</span><input onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" class="settings-input" name="mobile" value="123456789" type="text"></td>
+				</tr>
+				</tbody></table>
+				<input style="margin-top: 22px;" name="userdata-submit" class="btn settings-button btn-red" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				<td style="width: 2%;"></td>
+				<td class="right-column">
+				<div class="info-box">
+				<form action="" method="post" name="passwordForm" id="passwordForm">
+				<div class="info-header">Change password</div>
+				<span class="settings-label">Old password</span>
+				<input class="settings-input" name="oldpassword" placeholder="Enter your password" value="" type="password">
+				<span class="settings-label">New password</span>
+				<input class="settings-input" id="newpassword" name="newpassword" placeholder="Enter new password" value="" type="password">
+				<div class="password-validation">
+				<p>A valid password includes:</p>
+				<table style="width: 100%;">
+				<tbody><tr>
+				<td>
+				<div class="password-rule" id="checkLength"></div>
+				</td>
+				<td><span id="labelCheckUppercase">At least 8 characters</span></td>
+				</tr>
+				<tr>
+				<td>
+				<div class="password-rule" id="checkSpecial"></div>
+				</td>
+				<td><span id="labelCheckUppercase">Letter and number or a special character</span></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input id="password-submit" name="password-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				<div class="info-box" style="margin-top: 10px;">
+				<form action="" method="post" name="offersForm" id="offersForm">
+				<div class="info-header">Promotions</div>
+				<span class="settings-label">Send me offers and Betspin news via:</span>
+				<div class="row">
+				<div class="col-xs-6">
+				<input class="css-checkbox" id="checkboxEmail" name="allowsnewsandoffers" checked="" type="checkbox">
+				<label for="checkboxEmail" class="css-label css-label-noafter">Email</label>
+				</div>
+				<div class="col-xs-6">
+				<input class="css-checkbox" id="checkboxSMS" name="allowsnewsandofferssms" checked="" type="checkbox">
+				<label for="checkboxSMS" class="css-label css-label-noafter">SMS</label>
+				</div>
+				</div>
+				<input name="offers-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="account-gamelimits-container account-container active" style="display: none;">
+				<table class="settings">
+				<tbody><tr>
+				<td class="left-column">
+				<div class="info-box" style="margin-top: 10px;">
+				<form action="" method="post" name="depositlimitForm" id="depositlimitForm">
+				<div class="info-header">Deposit limit</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio1" name="limitduration" type="radio"><label for="radio1" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio2" name="limitduration" type="radio"><label for="radio2" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio3" name="limitduration" type="radio"><label for="radio3" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="depositlimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				<form action="" method="post" name="losslimitForm" id="losslimitForm">
+				<div class="info-header">Loss limit</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio4" name="limitduration" type="radio"><label for="radio4" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio5" name="limitduration" type="radio"><label for="radio5" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio6" name="limitduration" type="radio"><label for="radio6" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="losslimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				<form action="" method="post" name="wagerlimitForm" id="wagerlimitForm" style="display: none;">
+				<div class="info-header">Wagering limit</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio7" name="limitduration" type="radio"><label for="radio7" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio8" name="limitduration" type="radio"><label for="radio8" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio9" name="limitduration" type="radio"><label for="radio9" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="wagerlimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				<form action="" method="post" name="sessionlimitForm" id="sessionlimitForm">
+				<div class="info-header">Session time limit in minutes</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio10" name="limitduration" type="radio"><label for="radio10" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio11" name="limitduration" type="radio"><label for="radio11" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio12" name="limitduration" type="radio"><label for="radio12" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="sessionlimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				<td style="width: 2%;"></td>
+				<td class="right-column">
+				<div class="info-header">Active limits</div>
+				<div class="current-limits-row">
+				<table>
+				<tbody><tr>
+				<td class="left">Deposit limit</td>
+				<td class="right">Not active</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="current-limits-row">
+				<table>
+				<tbody><tr>
+				<td class="left">Loss limit</td>
+				<td class="right">Not active</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="current-limits-row">
+				<table>
+				</table>
+				</div>
+				<div class="current-limits-row" style="margin-bottom: 20px; border: none;">
+				<table>
+				<tbody><tr>
+				<td class="left">Session time limit in minutes</td>
+				<td class="right">Not active</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="info-box">
+				<div class="info-header">Take a break</div>
+				<form action="" method="post" name="exclusionForm" id="exclusionForm">
+				<input value="1" class="css-radio" id="radioexclude1" name="exclusionduration" type="radio"><label for="radioexclude1" class="css-label">24 hours</label><br><input value="2" class="css-radio" id="radioexclude2" name="exclusionduration" type="radio"><label for="radioexclude2" class="css-label">7 days</label><br> <br><br>
+				<label class="suspend-account-permanent-note"></label>
+				<input name="exclusion-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="account-transactions-container account-container" style="display: none;">
+				<div class="month-selector">
+				<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+				<li class="active" data-month="2">Mar 17</li><li data-month="1">Feb 17</li><li data-month="0">Jan 17</li><li data-month="11">Dec 16</li><li data-month="10">Nov 16</li><li data-month="9">Oct 16</li><li data-month="8">Sep 16</li><li data-month="7">Aug 16</li><li data-month="6">Jul 16</li><li data-month="5">Jun 16</li><li data-month="4">May 16</li><li data-month="3">Apr 16</li></ul>
+				</div>
+				<table style="width: 100%;" class="transactions footable" data-page-size="10">
+				<thead>
+				<tr>
+				<th>Transaction ID</th>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Amount</th>
+				<th>Status</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="loading footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">loading...</td>
+				</tr>
+				<tr class="no-results footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">No transactions found</td>
+				</tr>
+				</tbody>
+				<tfoot class="hide-if-no-paging">
+				<tr>
+				<td colspan="5">
+				<div class="pagination"></div>
+				</td>
+				</tr>
+				</tfoot>
+				</table>
+				<div class="hidden lang-keys" style="display: none;">
+				<span id="lang-key-pending">Pending</span>
+				<span id="lang-key-waitingapproval">Waiting Approval</span>
+				<span id="lang-key-approved">Approved</span>
+				<span id="lang-key-declined">Declined</span>
+				<span id="lang-key-deposit">Deposit</span>
+				<span id="lang-key-withdrawal">Withdrawal</span>
+				<span id="lang-key-cancelled">Cancelled</span>
+				<span id="lang-key-cancelwithdrawal">Cancel withdrawal</span>
+				</div>
+				</div>
+				<div class="account-gamingtransactions-container account-container" style="display: none;">
+				<div class="month-selector">
+				<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+				<li class="active" data-month="2">Mar 17</li><li data-month="1">Feb 17</li><li data-month="0">Jan 17</li><li data-month="11">Dec 16</li><li data-month="10">Nov 16</li><li data-month="9">Oct 16</li><li data-month="8">Sep 16</li><li data-month="7">Aug 16</li><li data-month="6">Jul 16</li><li data-month="5">Jun 16</li><li data-month="4">May 16</li><li data-month="3">Apr 16</li></ul>
+				</div>
+				<table style="width: 100%;" class="gamingtransactions transactions footable" data-page-size="10">
+				<thead>
+				<tr>
+				<th>Date</th>
+				<th>Game</th>
+				<th>Currency</th>
+				<th>Bet</th>
+				<th>Win</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="loading footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">loading...</td>
+				</tr>
+				<tr class="no-results footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">No transactions found</td>
+				</tr>
+				</tbody>
+				<tfoot class="hide-if-no-paging">
+				<tr>
+				<td colspan="5">
+				<div class="pagination"></div>
+				</td>
+				</tr>
+				</tfoot>
+				</table>
+				</div>
+				<div class="account-bonuses-container account-container" style="display: none;">
+				<div class="info-header">Bonus wagering status</div>
+				<p></p>
+				<script>
+							var doughnutChartData = {
+								wageringAmount: 0,
+								bonusWagering: 0,
+								remaining:0            };
+						</script>
+				<div class="info-box">
+				<div id="bonus-left-box" class="bonus-box">
+				<div id="doughnutChart" class="chart"></div>
+				</div>
+				<div id="bonus-right-box" class="bonus-box">
+				<ul>
+				<li>
+				<label>Wagering requirements</label>
+				0 € </li>
+				<li>
+				<label>Completed wagering</label>
+				0 € </li>
+				<li>
+				<label>To be wagered</label>
+				0 € </li>
+				</ul>
+				</div>
+				</div>
+				</div>
+				<div class="account-kyc-container account-container active" style="display: none;">
+				<div class="kyc-container">
+				<div class="kyc-header">
+				<div class="kyc-head">
+				<h3>Identification</h3>
+				<p>We need the following documents to<br> identify you in order to safely make withdrawals.</p>
+				</div>
+				<div class="kyc-status">
+				<strong>ID not verified</strong>
+				</div>
+				<div style="clear: both;"></div>
+				</div>
+				<div class="kyc-info">
+				<h2>Upload Documents</h2>
+				<ul>
+				<li>Please take a photo of the documents and upload them here. Make sure that text is readable.</li>
+				<li>All documents are handled confidentially.</li>
+				<li>We will process the sent documents in one to three hours upon recieving them.</li>
+				<li>Every payment method must be verified separately.</li>
+				</ul>
+				</div>
+				<div id="kyc-forms" class="kyc-upload-container">
+				<div class="kyc-form" id="selected-kyc-form-170939">
+				<div class="kyc-title">Proof of ID <div class="kyc-instructions">
+				<span class="question">?</span>
+				Instructions
+				<div class="tip">
+				<h3>Proof of ID</h3>
+				<p>A valid copy of your passport, ID card or driving license. </p>
+				</div>
+				</div>
+				</div>
+				<div data-id="170939" class="kyc-upload dropzone ">
+				<div class="msg-suc">
+				File sent successfully </div>
+				<form action="" method="post" enctype="multipart/form-data">
+				<input name="kycitemid" value="170939" type="hidden">
+				<input name="kyctypeid" value="1" type="hidden">
+				<input name="kycupload" id="submit-kycfile-170939" data-id="170939" value="Upload" class="btn kyc-submit" type="submit">
+				<label>
+				<span class="init">Drag a document here or click to choose a file</span>
+				<span class="holding"><span class="file"></span>Change</span>
+				<span class="uploading">
+				Uploading... </span>
+				<span class="invalid-file">
+				Invalid file selected, please check file type and size and try again </span>
+				<div class="progress">
+				<div class="bar" style="width: 0%;"></div>
+				</div>
+				<input data-id="170939" id="kycfile-170939" name="kycfile" class="kyc-file" type="file">
+				</label>
+				</form>
+				</div>
+				<div class="clear"></div>
+				</div>
+				<div class="kyc-form" id="selected-kyc-form-170940">
+				<div class="kyc-title">Proof of address <div class="kyc-instructions">
+				<span class="question">?</span>
+				Instructions
+				<div class="tip">
+				<h3>Proof of address</h3>
+				<p>A full copy of your recent utility bill, where we can see your name and address, issued within the last 3 months.</p>
+				</div>
+				</div>
+				</div>
+				<div data-id="170940" class="kyc-upload dropzone ">
+				<div class="msg-suc">
+				File sent successfully </div>
+				<form action="" method="post" enctype="multipart/form-data">
+				<input name="kycitemid" value="170940" type="hidden">
+				<input name="kyctypeid" value="2" type="hidden">
+				<input name="kycupload" id="submit-kycfile-170940" data-id="170940" value="Upload" class="btn kyc-submit" type="submit">
+				<label>
+				<span class="init">Drag a document here or click to choose a file</span>
+				<span class="holding"><span class="file"></span>Change</span>
+				<span class="uploading">
+				Uploading... </span>
+				<div class="progress">
+				<div class="bar" style="width: 0%;"></div>
+				</div>
+				<span class="invalid-file">
+				Invalid file selected, please check file type and size and try again </span>
+				<input data-id="170940" id="kycfile-170940" name="kycfile" class="kyc-file" type="file">
+				</label>
+				</form>
+				</div>
+				<div class="clear"></div>
+				</div>
+				<div class="kyc-form" id="selected-kyc-form-170941">
+				<div class="kyc-title">Proof of payment <div class="kyc-instructions">
+				<span class="question">?</span>
+				Instructions
+				<div class="tip">
+				<h3>Credit Card</h3>
+				<p>Copies of the credit card used (front and back). For your own personal security and the integrity of your credit card, please blank out the digits so that only the first 6 and last 4 digits are visible. Please note that the CVC digits on the back side of your card should also be blanked out.</p>
+				<h3>E-wallet</h3>
+				<p>Skrill – A screenshot/printscreen of your Skrill profile, with your name and e-mail address visible. You can find this at 'My Account' &gt; 'Settings'&gt; 'Personal info' when logged into your Skrill account.</p>
+				<p>Neteller – A screenshot/printscreen of your Neteller profile, with your name and Neteller ID visible.</p>
+				<p>Bank transfer – A document of your bank statement with your name, bank account number and the bank logo visible.</p>
+				</div>
+				</div>
+				</div>
+				<div data-id="170941" class="kyc-upload dropzone ">
+				<div class="msg-suc">
+				File sent successfully </div>
+				<form action="" method="post" enctype="multipart/form-data">
+				<input name="kycitemid" value="170941" type="hidden">
+				<input name="kyctypeid" value="3" type="hidden">
+				<input name="kycupload" id="submit-kycfile-170941" data-id="170941" value="Upload" class="btn kyc-submit" type="submit">
+				<label>
+				<span class="init">Drag a document here or click to choose a file</span>
+				<span class="holding"><span class="file"></span>Change</span>
+				<span class="uploading">
+				Uploading... </span>
+				<div class="progress">
+				<div class="bar" style="width: 0%;"></div>
+				</div>
+				<span class="invalid-file">
+				Invalid file selected, please check file type and size and try again </span>
+				<input data-id="170941" id="kycfile-170941" name="kycfile" class="kyc-file" type="file">
+				</label>
+				</form>
+				</div>
+				<div class="clear"></div>
+				</div>
+				</div>
+				</div>
+				</div>
+			</div>
+			<div class="deposit-content"></div>
+		</div>
+	</div>
+
+<div class="body-container">
+	<div class="left-navigation-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+	<div class="left-navigation-wrapper">
+			<nav class="left-navigation">
+				<ul>
+					<li class="lobby active">
+						<a href="index.html"><span>lobby</span></a>
+					</li>
+					<li class="deposit">
+						<a>
+							<div class="icon icon-payment">
+							</div>
+							<span>deposit</span>
+						</a>
+					</li>
+					<li class="withdraw">
+						<a>
+							<div class="icon icon-money">
+							</div>
+							<span>withdraw</span>
+						</a>
+					</li>
+					<li class="account"><a><span>account</span></a></li>
+					<li class="left-navigation-hover"></li>
+				</ul>
+			</nav>
+			<div style="position: relative; width: 315px;" class="left-menu-content">
+				<div class="menu-expand" id="menu-expand-deposit">
+					<div style="visibility: inherit; opacity: 1; display: block;" class="expand-content">
+						<h2 class="header-bold">How much would you like to deposit?</h2>
+						<p class="golden">Select a payment method</p>
+						<div class="deposit selector">
+							<select class="deposit selectpickerdeposit" style="width: 100%; display: none;">
+								<option value="3/7/1" id="Visa">Visa</option>
+								<option value="4/8/1" id="MasterCard">MasterCard</option>
+								<option value="9/5/1" id="Skrill">Skrill</option>
+								<option value="8/2/1" id="Neteller">Neteller</option>
+								<option value="119/22/1" id="Ecopayz">Ecopayz</option>
+							</select>
+							<div class="btn-group bootstrap-select deposit">
+								<button title="MasterCard" type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown">
+									<span class="filter-option pull-left">MasterCard</span>&nbsp;<span class="caret"></span>
+								</button>
+								<div class="dropdown-menu">
+									<ul class="dropdown-menu inner selectpicker" role="menu">
+										<li class="" data-original-index="0">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Visa</span>">
+												<span class="text">Visa</span>
+												<span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li class="selected" data-original-index="1">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>MasterCard</span>">
+												<span class="text">MasterCard</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li data-original-index="2">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Skrill</span>">
+												<span class="text">Skrill</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li data-original-index="3">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Neteller</span>">
+												<span class="text">Neteller</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li data-original-index="4">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Ecopayz</span>">
+												<span class="text">Ecopayz</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+						<div class="method-details" style="">
+							<div class="method-detail-row">
+								<table>
+									<tbody>
+										<tr style="color: #e7e3d3;">
+											<td style="width: 70px; border-bottom: 1px solid #393e49;">
+												<span class="key">Fee:</span>
+											</td>
+											<td style="border-bottom: 1px solid #393e49;">
+												<span class="key">Limits:</span>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<span class="fee">2.5</span> <span class="percentage" style="">&nbsp;%</span><span style="display: none;" class="sign">&nbsp;€</span>
+											</td>
+											<td>
+												<span class="minlimit">20</span> - <span class="maxlimit">5000</span>&nbsp;€
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<input type="text" placeholder="Bonus Code">
+							<input type="text" placeholder="20">
+							<a class="deposit-open">DEPOSIT NOW</a>
+					</div>
+				</div>
+				<div class="menu-expand" id="menu-expand-withdraw">
+					<div class="expand-content">
+						<h2 class="header-bold">Your balance is 0 €</h2><br><br>
+					</div>
+				</div>
+				<div class="menu-expand" id="menu-expand-account">
+					<div class="expand-content">
+						<h2 class="header-bold">Account</h2><br>
+						<p>View and manage your account settings and gaming limits.</p>
+						<div class="account-details">
+							<div class="account-detail-row">
+								<span class="key">Real money</span>
+								<span class="value"><span id="accountRealMoney">0</span> €</span>
+							</div>
+							<div class="account-detail-row">
+								<span class="key">Bonus money</span>
+								<span class="value"><span id="accountBonusMoney">0</span> €</span>
+							</div>
+							<div id="user-bonuses" class="account-detail-row hidden">
+								<span class="key">Bonus</span>
+								<span class="value"></span>
+							<div class="clear"></div>
+							</div>
+							<div class="account-detail-row">
+								<span class="key">Time logged in</span>
+								<span class="value">00:03:39</span>
+							</div>
+							<div id="user-limit-1" class="account-detail-row hidden">
+								<span class="key">Deposit limit</span>
+								<span class="value red"></span>
+							</div>
+							<div id="user-limit-2" class="account-detail-row hidden" style="display: none;">
+								<span class="key">Wagering limit</span>
+								<span class="value red"></span>
+							</div>
+							<div id="user-limit-3" class="account-detail-row hidden">
+								<span class="key">Loss limit</span>
+								<span class="value red"></span>
+							</div>
+							<div id="user-limit-6" class="account-detail-row hidden" style="border: none;">
+								<span class="key">Session limit</span>
+								<span class="value red"><span class="val"></span> <span>min</span></span>
+							</div>
+						</div>
+						<br>
+						<div class="account-link golden" id="account-settings" style="border-top: 1px solid #393e49;">
+							<a href="#" id="account-settings-btn" class="golden account-link-title">Account settings</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="main-wrapper">
+	<header>
+		<div class="top-line">
+			<div class="logo">
+				<a href="index.html"><img src="img/logo.png" alt=""</a>
+			</div>
+			
+		</div>
+		<div class="menu-line">
+			<div class="main-menu">
+				<nav>
+					<ul>
+						<li><a href="slots.html">casino</a></li>
+						<li><a href="live.html">live casino</a></li>
+						<li><a href="poker.html">poker</a></li>
+						<li><a>bingo</a></li>
+						<li><a href="promotions.html">bonus</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="login">
+				<div class="login-user">
+					<form action="">
+						<a class="register">Register</a>
+						<a class="login-btn">Login</a>
+						<!-- <input type="submit" value="Login"> -->
+						<!-- <input type="password" placeholder="Password" autocomplete="on"> <a class="top-forgot-account">Forgot?</a> -->
+						<!-- <input type="text" placeholder="Username" autocomplete="off"> -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="help-toggle">help</div>
+	<div class="help-block">
+		<div class="help-nav">
+			<span class="help-back"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</span><span class="help-close">Close window <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+		</div>
+			<div class="help-content">
+				<div class="first-screen">
+					<div class="how-help">
+						<h2>How can we help you?</h2>
+						<p>Email or chat with us, browse the FAQ and connect with us in social media. </p>
+						<p>Live Chat is open 08:00–00:00 CET.</p>
+					</div>
+					<ul class="help-menu">
+						<li class="func-help">
+							<div class="option live-chat">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Live chat</h4>
+									<p>Chat with our Customer Care Crew</p>
+								</div>
+							</div>
+						</li>
+						<li class="func-help support-message">
+							<div class="option">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Send message to support</h4>
+									<p>We will get back to you shortly</p>
+								</div>
+							</div>
+						</li>
+						<li class="func-help find-answers">
+							<div class="option">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Find answers</h4>
+									<p>Check out our FAQ page</p>
+								</div>
+							</div>
+						</li>
+						<li class="facebook">
+							<a href="#facebook">
+								<div class="option">
+									<div class="help-menu-icon"></div>
+									<div class="description">
+										<h4>Connect on Facebook</h4>
+										<p>Comment, Like & Share</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="twitter">
+							<a href="#twitter">
+								<div class="option">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Follow us on Twitter</h4>
+									<p>#Betspin @betspinners</p>
+								</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="contacts">
+						<h3>Contact us by email at:</h3>
+						<a href="#">email@email.com</a>
+					</div>
+				</div>
+				<div class="chat-screen other-screen">
+					<form action="">
+						<h5>Your email address: *</h5>
+						<input type="text" id="chat-email" name="email" placeholder="Email">
+						<h5>What is your query related to? *</h5>
+						<input type="radio" name="chat-radio" value="bonuses" id="bonuses"><label for="bonuses">Bonuses / free spins</label><br>
+						<input type="radio" name="chat-radio" value="bonus-codes" id="bonus-codes"><label for="bonus-codes">Bonus codes / ongoing offers</label><br>
+						<input type="radio" name="chat-radio" value="payments" id="payments"><label for="payments">Payments</label><br>
+						<input type="radio" name="chat-radio" value="account" id="account"><label for="account">Account</label><br>
+						<input type="radio" name="chat-radio" value="other" id="other"><label for="other">Other/feedback</label><br>
+						<input type="submit" value="start the chat">
+					</form>
+				</div>
+				<div class="message-to-support other-screen">
+					<h2>Send message to support</h2>
+					<p>We will get back to you shortly</p>
+					<form action="" method="post">
+						<input type="text" name="email" placeholder="Email">
+						<input type="text" name="theme" placeholder="Subject">
+						<textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+						<input type="submit" value="Send">
+					</form>
+				</div>
+				<div class="faq other-screen">
+					<div class="header-faq">
+						<h2>Frequently Asked Questions</h2>
+						<p>What’s been discussed lately?</p>
+						<div class="faq-search-wrapper">
+							<input type="text" class="faq-search" placeholder="Browse by category">
+						</div>
+					</div>
+					<div class="question-wrapper">
+						<ul class="questions">
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+	
+
+	</div>
+		<div class="main-wrapper">
+			<div class="betspin-promo">
+				<div class="gradient-shadow"></div>
+				<div class="promo-content">
+					<div class="background"></div>
+					<img src="img/promotions/campaign-head-image.jpg">
+					<div class="promo-data">
+						<h1>Kick off your week with 3 days of free spins by depositing on Monday.</h1>
+						<div class="description"></div>
+						<h2></h2>
+						<div class="description"></div>
+						<div class="offers-box" style="">75 free spins<br>
+						on Wild Wild West<br>
+						(25 per day on Monday, Tuesday and Wednesday)<br>
+						<span class="red">Bonus code: MONDAY</span><br>
+						Deposit: €/$/£ 30 or more<br></div>
+						<a class="deposit button btn-big btn-red btn-betspin">GET FREE SPINS</a>
+						<hr>
+						<h3>Terms and conditions</h3>
+						<ul>
+							<li>Free spins will be awarded automatically on Monday (after re-log), Tuesday and Wednesday when logging in between 00:00–23:59 UTC.</li>
+							<li>In order to claim the free spins, enter the bonus code and deposit a minimum of €/$/£ 30 on Monday between 00:00–23:59 UTC.</li>
+							<li>Free spin winnings have 25x wagering requirement.</li>
+							<li>In order to qualify for free spin winnings you must play through your deposit at least once.</li>
+							<li>Free spins are restricted for UK players using Skrill or Neteller deposit method.</li>
+							<li>General bonus T&amp;C apply.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="footer-wrapper">
+		<div class="footer-info-line">
+			<div class="footer-last-games">
+				<span class="last-game-trigger">last games</span>
+				<div class="language-selector">
+				<div class="moduletable">
+					<div class="mod-languages">
+						<div class="lang-inline">
+							<div class="lang-other" style="display: none;">
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">FI</span>
+									<a href="">
+									<img src="img/icons/fi.svg" title="Finnish (FI)" alt="Finnish (FI)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">SV</span>
+									<a href="">
+									<img src="img/icons/sv.svg" title="Swedish (SV)" alt="Swedish (SV)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">NO</span>
+									<a href="">
+									<img src="img/icons/no.svg" title="Norway (NO)" alt="Norway (NO)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">CA</span>
+									<a href="">
+									<img src="img/icons/en_ca.svg" title="English (CA)" alt="English (CA)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">AU</span>
+									<a href="">
+									<img src="img/icons/en_au.svg" title="English (AU)" alt="English (AU)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">UK</span>
+									<a href="">
+									<img src="img/icons/en_gb.svg" title="English (UK)" alt="English (UK)" witdh="20px" height="20px"></a>
+								</div>
+							</div>
+								<div class="lang lang-active" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">EN</span>
+									<a href="">
+									<img src="img/icons/en.svg" title="English (ALL)" alt="English (ALL)" witdh="20px" height="20px"></a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="last-games-wrapper"></div>
+			</div>
+			<div class="last-winners">
+				<div class="last-winners-dropdown">
+					<div class="winners-inner">
+						<ul class="lasest-winners">
+							<li class="winner-item-prev"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="main-wrapper clearfix">
+				<div class="footer-links clearfix">
+					<div class="links-about">
+						<h4>Get to know Betspin</h4>
+						<ul>
+							<li><a href="promotions.html">Promotions</a></li>
+							<li><a href="bonus-terms.html">Casino bonus terms</a></li>
+							<li><a href="about-us.html">About us</a></li>
+							<li><a href="">Betspinners blog</a></li>
+							<li><a href="">Affiliate program</a></li>
+						</ul>
+					</div>
+					<div class="links-money">
+						<h4>Safe playing environment</h4>
+						<ul>
+							<li><a href="responsible.html">Responsible gaming</a></li>
+							<li><a href="payment-options.html">Payment options</a></li>
+							<li><a href="security.html">Security & privacy</a></li>
+							<li><a href="terms.html">Terms & conditions</a></li>
+						</ul>
+					</div>
+					<div class="links-social">
+						<h4>We are social</h4>
+						<span class="facebook"><a href="">Facebook</a></span>
+						<span class="youtube"><a href="">Youtube</a></span>
+						<span class="vimeo"><a href="">Vimeo</a></span>
+					</div>
+					<div class="bg-logo">
+						<img src="img/bg-logo.png" alt="">
+					</div>
+				</div>
+				<div class="footer-icons">
+					<div class="first-line">
+						<img src="img/footer/game-providers.png" alt="game providers">
+					</div>
+					<div class="second-line">
+						<img src="img/footer/payment-providers.png" alt="payment providers">
+					</div>
+					<div class="third-line">
+						<div class="wrapper">
+							<a href="#"><img src="img/footer/meister.png" alt="meister"></a>
+							<a href="#"><img src="img/footer/mgalogo.png" alt="mgalogo"></a>
+							<a href="#"><img src="img/footer/curacao_egaming.png" alt="curacao egaming"></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copiright">
+					<h4>Copyright © 2016 Candid Gaming Limited</h4>
+					<p>This website is operated by MT SecureTrade Limited, a company incorporated under the laws of Malta with registration number C56545 and registered address at GB Buildings, Penthouse, Watar Street, Ta’ Xbiex XBX 1301, Malta. MT SecureTrade Limited is licensed and regulated by the Malta Gaming Authority under the licences: MGA/CL1/954/2014 (issued on 19 May 2014) and MGA/CL1/955/2014 (issued on 19 May 2014). MT SecureTrade is also licensed and regulated by the UK Gambling Commission under the licence: 039575-R-319439-002 (issued on 13 August 2015).</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+
+	<link rel="stylesheet" href="libs/slick/slick.css">
+	<link rel="stylesheet" href="libs/slick/slick-theme.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

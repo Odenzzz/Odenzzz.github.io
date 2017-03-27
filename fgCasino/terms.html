@@ -1,0 +1,2110 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="libs/iconmoon/style.css">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>
+		@keyframes sk-stretchdelay {
+			0%, 40%, 100%{
+				-webkit-transform: scaleY(0.4);
+				transform: scaleY(0.4);
+			}
+			20%{
+				-webkit-transform: scaleY(1.0);
+				transform: scaleY(1.0);
+			}
+		}
+		@-webkit-keyframes sk-stretchdelay {
+			0%, 40%, 100%{
+				-webkit-transform: scaleY(0.4);
+				transform: scaleY(0.4);
+			}
+			20%{
+				-webkit-transform: scaleY(1.0);
+				transform: scaleY(1.0);
+			}
+		}
+		#page-preloader {
+			position: fixed;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background: #152134;
+			z-index: 999999999;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
+			-ms-align-items: center;
+			align-items: center;
+			justify-content: center;
+			-webkit-flex-direction: column;
+			-moz-flex-direction: column;
+			-ms-flex-direction: column;
+			-o-flex-direction: column;
+			flex-direction: column;;
+		}
+		#page-preloader .spinner{
+			width: 170px;
+			height: 175px;
+			position: relative;
+			background: url('img/bg-logo.png') no-repeat 50% 50%;
+			margin: 0 auto;
+			text-align: center;
+			font-size: 10px;
+			display: block;
+		}
+		.spinner-inner {
+			margin: 0px auto;
+			margin-top: 10px;
+			width: 50px;
+			height: 40px;
+			text-align: center;
+			font-size: 10px;
+			display: block;
+		}
+		.spinner-inner > div {
+			background-color: #00f6ff;
+			height: 100%;
+			width: 6px;
+			display: inline-block;
+			animation: sk-stretchdelay 1.2s infinite ease-in-out;
+			-webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+		}
+
+		.spinner-inner .rect2 {
+			-webkit-animation-delay: -1.1s;
+			animation-delay: -1.1s;
+		}
+
+
+		.spinner-inner .rect3 {
+			-webkit-animation-delay: -1.0s;
+			animation-delay: -1.0s;
+		}
+
+
+		.spinner-inner .rect4 {
+			-webkit-animation-delay: -0.9s;
+			animation-delay: -0.9s;
+		}
+
+
+		.spinner-inner .rect5 {
+			-webkit-animation-delay: -0.8s;
+			animation-delay: -0.8s;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="page-preloader"><span class="spinner"></span>
+		<div class="spinner-inner">
+			<div class="rect1"></div>
+			<div class="rect2"></div>
+			<div class="rect3"></div>
+			<div class="rect4"></div>
+			<div class="rect5"></div>
+		</div>
+	</div>
+	<div class="modal-window">
+		<div class="modal-bg"></div>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="login-wrapper">
+					<div id="login-container" class="login-container">
+						<a class="close-btn"><i class="fa fa-close"></i></a>
+						<div class="login-content">
+							<div class="modal-logo">
+								<img src="img/bg-logo.png" alt="FG CASINO">
+							</div>
+							<div class="row row-centered messages">
+							</div>
+							<form id="login-form" action="" method="post" autocomplete="off" novalidate="">
+								<div class="inputfield username">
+									<input required="" pattern=".{1,}" id="login-username" name="username" class="input-text" autocomplete="off" placeholder="Enter your username" formnovalidate="" aria-autocomplete="inline" type="text">
+								</div>
+								<div class="inputfield password">
+									<input required="" pattern=".{1,}" id="login-password" name="password" class="pass input-text" autocomplete="off" placeholder="Your password" type="password">
+								</div>
+								<div>
+									<input name="login-submit" value="Login" class="btn btn-big btn-red btn-betspin login-submit" type="submit">
+								</div>
+							</form>
+						<form id="forgot-form" action="" method="post" autocomplete="off" style="display: none;" novalidate="">
+							<div class="inputfield username email">
+								<input required="" id="forgot-email" name="email" autocomplete="off" class="input-text" placeholder="Enter your e-mail" type="email">
+							</div>
+							<div>
+								<input name="forgot-submit" value="Submit" class="btn btn-big btn-betspin btn-red" type="submit">
+							</div>
+						</form>
+						<div class="help-txt" style="text-align: center;">
+							<p class="forgot">
+							<span id="remember-password" class="login-links">
+							Forgot something? <span class="red">No worries.</span>
+							</span>
+							</p>
+						</div>
+						<div class="help-txt" style="text-align: center;">
+							<p class="new">
+								<span id="close-modal-on-sign-up" class="login-links">
+								New here? <span class="red register">Create an account.</span>
+								</span>
+							</p>
+						</div>
+						</div>
+					</div>
+				</div>
+				<div id="createaccount-form-modal" class="createaccount createaccount-form">
+					<div class="reg-error" style="display: none;">
+					<div class="reg-error-content">
+					<a class="reg-error-close-btn"><i class="fa fa-close"></i></a>
+					</div>
+					</div>
+					<div style="display: block; margin-top: 0px;" class="boxes-holder">
+					<form action="" method="post">
+					<div class="box box-1">
+					<h1>Create a free account in two easy steps</h1>
+					<fieldset>
+					<div class="form-row">
+					<label>Email</label>
+					<input tabindex="1" name="email" id="input-email" class="tippeable" original-title="" error1="Hmm, doesn't seem quite right. Could you check it once again?" error2="This email is already taken. Please choose another." autofocus="true" type="email">
+					<div class="email-service-icons service-icons case1">
+					<i class="fa fa-circle-o-notch fa-spin check-spinner"></i>
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row info">
+					<label>Username</label>
+					<a class="info-btn" href="/" original-title="Username can contain small and capital letters and numbers."><i class="fa fa-question-circle"></i></a>
+					<input autocomplete="off" tabindex="2" name="username" id="input-username" class="tippeable" original-title="" error1="Something went wrong. Please try with letters and numbers only and keep it max 17 characters." error2="This username is already taken. Please choose another." type="text">
+					<div class="username-service-icons service-icons case2">
+					<i class="fa fa-circle-o-notch fa-spin check-spinner"></i>
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>First name</label>
+					<input tabindex="3" name="firstname" id="input-firstname" class="tippeable" original-title="" error1="Something went wrong. The first name has to be at least 2 letters long." type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>Last name</label>
+					<input tabindex="4" name="lastname" id="input-lastname" class="tippeable" original-title="" error1="Something went wrong. The last name has to be at least 2 letters long." type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>Password</label>
+					<input autocomplete="off" tabindex="5" name="password" id="input-password" class="tippeable" original-title="" error1="Something went wrong. The password has to be minimum 8 characters including one number and an uppercase letter." type="password">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					<ul class="password-constraints">
+					<li class=" constraint-length active"><i class="fa fa-circle"></i>At least 8 characters</li>
+					<li class=" constraint-num-specialchar active"><i class="fa fa-circle"></i>A number and an uppercase letter</li>
+					</ul>
+					</div>
+					<div class="form-row">
+					<label>Confirm password</label>
+					<input tabindex="6" id="input-retype-password" class="tippeable" original-title="" error1="The passwords don't match. Could you try again, please?" type="password">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<div class="next-btn-holder">
+					<a href="/" class="button btn btn-red btn-big reg-next-btn btn-betspin" disabled="">Next, personal details</a>
+					</div>
+					</div>
+					<div class="box box-2">
+					<div class="personal-details">
+					<fieldset>
+					<div class="form-row">
+					<label>Country</label>
+					<input id="input-country2" disabled="" value="Sweden" type="text">
+					<input tabindex="7" name="country" id="input-country" class="tippeable" original-title="" error1="Something went wrong. Could you check your answer once again?" value="Sweden" type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>City</label>
+					<a original-title="" class="info-btn" href="/"></a>
+					<input tabindex="8" name="city" id="input-city" class="tippeable" original-title="" error1="Something went wrong. Could you check your answer once again?" type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>Street address</label>
+					<input tabindex="9" name="address" id="input-street" class="tippeable" original-title="" error1="Something went wrong. Could you check your answer once again?" type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>Postal code</label>
+					<a original-title="" class="info-btn" href="/"></a>
+					<input maxlength="15" tabindex="10" name="postalcode" id="input-postal-code" class="tippeable" original-title="" error1="Could you try again? The code seems to be missing some digits." type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row">
+					<label>Telephone</label>
+					<div class="row phone-row">
+					<div class="col-xs-4 col">
+					<input tabindex="-1" name="prefix" id="input-phone-prefix" maxlength="4" type="tel">
+					</div>
+					<div class="col-xs-8 col">
+					<input tabindex="11" name="telephone" id="input-phone" class="tippeable" original-title="" error1="Oops! Could you try again? The number seems to be missing some digits." type="tel">
+					<div class="service-icons case3">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div class="form-row">
+					<label>Birthday</label>
+					<div class="row birthday-row">
+					<div class="col-xs-3">
+					<input tabindex="12" id="input-day" class="date-day date" placeholder="dd" min="1" max="31" maxlength="2">
+					</div>
+					<div class="col-xs-3">
+					<input tabindex="13" id="input-month" class="date-month date" placeholder="mm" min="1" max="12" maxlength="2">
+					</div>
+					<div class="col-xs-6">
+					<input original-title="" tabindex="14" id="input-year" class="tippeable date-year date" placeholder="year" min="1900" max="2050" maxlength="4" error1="Are you sure you typed the date right?">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset>
+					<div class="form-row secquestionpickerholder">
+					<label>Security question</label>
+					<select style="display: none;" id="secquestionpicker" class="selectpicker"><option value="1">My favourite colour?</option><option value="2">My pet's name?</option><option value="3">My favourite bet?</option><option value="4">My favourite horse?</option><option value="5">My favourite place?</option><option value="6">My favourite superhero?</option><option value="7">My favourite team?</option><option value="8">My middle name?</option><option value="9">My mother's maiden name?</option></select><div class="btn-group bootstrap-select"><button title="My favourite colour?" data-id="secquestionpicker" type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown"><span class="filter-option pull-left">My favourite colour?</span>&nbsp;<i class="fa fa-chevron-down"></i></button><div class="dropdown-menu open"><ul class="dropdown-menu inner selectpicker" role="menu"><li class="selected" data-original-index="0"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite colour?</span>"><span class="text">My favourite colour?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My pet's name?</span>"><span class="text">My pet's name?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite bet?</span>"><span class="text">My favourite bet?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite horse?</span>"><span class="text">My favourite horse?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="4"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite place?</span>"><span class="text">My favourite place?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="5"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite superhero?</span>"><span class="text">My favourite superhero?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="6"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My favourite team?</span>"><span class="text">My favourite team?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="7"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My middle name?</span>"><span class="text">My middle name?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="8"><a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>My mother's maiden name?</span>"><span class="text">My mother's maiden name?</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div></div>
+					</div>
+					<div class="form-row">
+					<label>Answer</label>
+					<a original-title="" class="info-btn" href="/"></a>
+					<input original-title="" tabindex="15" name="securityquestion" id="input-secquestion-answer" class="tippeable" error1="The answer has to be at least 2 letters long." type="text">
+					<div class="service-icons case2">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<fieldset class="gender">
+					<input tabindex="16" id="gender1" name="gender" value="male" checked="" type="radio">
+					<label for="gender1">
+					Male <span class="fa-stack gender1-icon">
+					<i class="fa fa-circle"></i>
+					<i class="fa fa-circle"></i>
+					</span>
+					</label>
+					<input tabindex="17" id="gender2" name="gender" value="female" type="radio">
+					<label for="gender2">
+					Female <span class="fa-stack gender2-icon">
+					<i class="fa fa-circle"></i>
+					<i class="fa fa-circle"></i>
+					</span>
+					</label>
+					</fieldset>
+					<fieldset class="email-offers">
+					<input tabindex="18" id="email-offers-check" type="checkbox">
+					<label for="email-offers-check">I don't want to receive bonus offers by email.</label>
+					</fieldset>
+					<div class="activate-btn-holder">
+					<a href="/" tabindex="19" class="btn btn-big btn-red submit-reg-btn btn-betspin" disabled="">Next</a>
+					</div>
+					<p style="display: none;" class="terms-and-conditions">By clicking the button above, you confirm that you are at least 18 years old and agree with our <a href="terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
+					</div>
+					</div>
+					<div class="box box-3">
+					<div class="activation-box">
+					<h1>Verify your account</h1>
+					<p class="desc">You have received a text message (SMS) with your verification code. Please, enter it below.</p>
+					<fieldset>
+					<div class="form-row smscode">
+					<label>Verification code</label>
+					<a class="info-btn" href="/" original-title="You have received a text message (SMS) with your verification code. Please, enter it below."><i class="fa fa-question-circle"></i></a>
+					<input tabindex="20" name="smsverification" id="smsverification" class="tippeable" autocomplete="off" maxlength="6" minlength="4" original-title="" error1="Invalid verification code" type="text">
+					<div class="service-icons case1">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</fieldset>
+					<div class="submit-btn-holder">
+					<a href="/" tabindex="21" class="btn btn-big btn-red submit-reg-btn btn-betspin" disabled="">Create account</a>
+					</div>
+					<p class="terms-and-conditions">By clicking the button above, you confirm that you are at least 18 years old and agree with our <a href="terms-and-conditions" target="_blank">Terms and Conditions</a>.</p>
+					<fieldset class="resend-fieldset">
+					<div class="show-resend-btn-holder">
+					<a href="/" tabindex="23" class="btn btn-big btn-red show-resendcode-btn btn-betspin">Change your phone number / Resend the code</a>
+					</div>
+					<div class="resend-holder">
+					<div class="form-row telephonecopy">
+					<label>Telephone</label>
+					<div class="row phone-row">
+					<div class="col-xs-4 col">
+					<input tabindex="-1" name="prefix" id="input-phone-prefix-copy" maxlength="4" type="tel">
+					</div>
+					<div class="col-xs-8 col">
+					<input tabindex="24" name="telephone-copy" id="telephone-copy" class="tippeable" original-title="" error1="Oops! Could you try again? The number seems to be missing some digits." type="tel">
+					<div class="service-icons case3">
+					<i class="fa fa-check"></i>
+					</div>
+					</div>
+					</div>
+					</div>
+					<div class="form-row">
+					<div class="resend-btn-holder">
+					<a href="/" tabindex="25" class="btn btn-big btn-red resendcode-btn btn-betspin">Resend code</a>
+					</div>
+					</div>
+					</div>
+					</fieldset>
+					<a class="email-link" href="mailto:customercare@betspin.com">Need help? Contact Customer Care</a>
+					</div>
+					</div>
+					<input name="btag" class="result" value="" type="hidden">
+					<input name="urlreferrer" class="result" value="" type="hidden">
+					<input id="birthday-value" name="birthday" class="result" type="hidden">
+					<input id="countryid-value" name="countryid" value="" type="hidden">
+					<input id="securityid-value" name="securityid" value="1" type="hidden">
+					<input id="gender-value" name="genderid" value="1" type="hidden">
+					<input id="offers-value" name="allowsnewsandoffers" value="0" type="hidden">
+					</form>
+					</div>
+					<div class="loader-spinner" style="display: none;"><div class="r1"></div><div class="r2"></div><div class="r3"></div><div class="r4"></div><div class="r5"></div></div>
+					<div class="register-success" style="display: none">
+					<i class="fa fa-check-circle" aria-hidden="true"></i>
+					<h1>Success!</h1>
+					<p>Your account is now verified and you're ready to start reaping your rewards.</p>
+					<a class="btn btn-betspin btn-login-after-register">Let's play!</a>
+					</div>
+					<div class="bonus-holder">
+					<a class="close-btn"><i class="fa fa-close"></i></a>
+					<img class="logo" src="img/logo.png">
+					<img class="bonus" src="img/register/wb-side-image-en.jpg">
+					<div class="secure">
+					<img id="comodo-logo" src="img/register/comodo-secure.png" alt="Comodo secure">
+					 
+					<a href="" target="_blank"><img id="maltaga-logo" src="img/register/mgalogo.png" alt="mga - Malta Gaming Authority"></a>
+					</div>
+					</div>
+				</div>
+				<div class="select-language">
+					<div class="get-language"><input type="radio" name="language" id="lang1" value="russian" class="language" checked="checked"><label for="lang1">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang2" value="english" class="language"><label for="lang2">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang3" value="russian" class="language"><label for="lang3">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang4" value="russian" class="language"><label for="lang4">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang5" value="russian" class="language"><label for="lang5">Russian</label></div>
+					<div class="get-language"><input type="radio" name="language" id="lang6" value="russian" class="language"><label for="lang6">Russian</label></div>
+					<div class="language-set button">
+						confirm
+					</div>
+				</div>
+				<div class="providers">
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>Providers</h3>
+						</div>
+					</div>
+					<div class="col-xs-6 col">
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxBetsoft" name="provider-checkbox" value="betsoft" type="checkbox">
+								<label for="checkboxBetsoft" class="css-label filter-label">Betsoft</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxGreenTube" name="provider-checkbox" value="green tube" type="checkbox">
+								<label for="checkboxGreenTube" class="css-label filter-label">Green Tube</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxIGT" name="provider-checkbox" value="igt" type="checkbox">
+								<label for="checkboxIGT" class="css-label filter-label">IGT</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxMicrogaming" name="provider-checkbox" value="microgaming" type="checkbox">
+								<label for="checkboxMicrogaming" class="css-label filter-label">Microgaming</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxNetEnt" name="provider-checkbox" value="netent" type="checkbox">
+								<label for="checkboxNetEnt" class="css-label filter-label">Net Entertainment</label>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6 col">
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxPNG" value="play n go" name="provider-checkbox" type="checkbox">
+								<label for="checkboxPNG" class="css-label filter-label">Play'n GO</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxQuickspin" name="provider-checkbox" value="quickspin" type="checkbox">
+								<label for="checkboxQuickspin" class="css-label filter-label">Quickspin</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12"><input class="css-checkbox" id="checkboxScientific" name="provider-checkbox" value="scientific games" type="checkbox">
+								<label for="checkboxScientific" class="css-label filter-label">Scientific Games</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxYggdrasil" name="provider-checkbox" value="yggdrasil" type="checkbox">
+								<label for="checkboxYggdrasil" class="css-label filter-label">Yggdrasil</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<input class="css-checkbox" id="checkboxNYX" name="provider-checkbox" value="nyx gaming" type="checkbox">
+								<label for="checkboxNYX" class="css-label filter-label">NYX Gaming</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="providers-set button">
+							confirm
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-account-wrapper">
+		<div class="modal-account-bg"></div>
+		<div class="modal-lg">
+			<div class="account-content">
+				<ul class="account-settings-menubar">
+				<li class="account-settings-navigation active account-settings-p">Personal settings</li>
+				<li id="account-gamelimits" class="account-settings-navigation">Gaming limits</li>
+				<li id="account-transactions" class="account-settings-navigation">Transaction history</li>
+				<li id="account-gamingtransactions" class="account-settings-navigation">Gaming transactions</li>
+				<li id="account-kyc" class="account-settings-navigation">Account verification</li>
+				</ul>
+				<div class="account-settings-container account-container active" style="display: block;">
+				<table class="settings">
+				<tbody><tr>
+				<td class="left-column">
+				<div class="info-box">
+				<form action="" method="post" name="userdataForm" id="userdataForm">
+				<div class="info-header">Personal details</div>
+				<span class="settings-label">Email address (please contact Customer Care to change)</span>
+				<input style="color: #9a978d;" class="settings-input" value="mail@mail.ru" disabled="" type="text">
+				<span class="settings-label">Street address</span>
+				<input class="settings-input" name="address1" value="Address 123" type="text">
+				<table style="width: 100%;">
+				<tbody><tr>
+				<td style="width: 49%"><span class="settings-label">Postal code</span><input class="settings-input" name="postalcode" value="1111" type="text"></td>
+				<td style="width: 2%"></td>
+				<td style="width: 49%"><span class="settings-label">City / Town</span><input class="settings-input" name="city" value="City" type="text"></td>
+				</tr>
+				</tbody></table>
+				<table style="width: 100%;">
+				<tbody><tr>
+				<td style="width: 20%"><span class="settings-label">Prefix</span><input onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" maxlength="3" class="settings-input" name="mobileprefix" value="+7" type="text"></td>
+				<td style="width: 2%"></td>
+				<td style="width: 78%"><span class="settings-label">Phone number</span><input onkeypress="return event.charCode >= 48 &amp;&amp; event.charCode <= 57" class="settings-input" name="mobile" value="123456789" type="text"></td>
+				</tr>
+				</tbody></table>
+				<input style="margin-top: 22px;" name="userdata-submit" class="btn settings-button btn-red" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				<td style="width: 2%;"></td>
+				<td class="right-column">
+				<div class="info-box">
+				<form action="" method="post" name="passwordForm" id="passwordForm">
+				<div class="info-header">Change password</div>
+				<span class="settings-label">Old password</span>
+				<input class="settings-input" name="oldpassword" placeholder="Enter your password" value="" type="password">
+				<span class="settings-label">New password</span>
+				<input class="settings-input" id="newpassword" name="newpassword" placeholder="Enter new password" value="" type="password">
+				<div class="password-validation">
+				<p>A valid password includes:</p>
+				<table style="width: 100%;">
+				<tbody><tr>
+				<td>
+				<div class="password-rule" id="checkLength"></div>
+				</td>
+				<td><span id="labelCheckUppercase">At least 8 characters</span></td>
+				</tr>
+				<tr>
+				<td>
+				<div class="password-rule" id="checkSpecial"></div>
+				</td>
+				<td><span id="labelCheckUppercase">Letter and number or a special character</span></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input id="password-submit" name="password-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				<div class="info-box" style="margin-top: 10px;">
+				<form action="" method="post" name="offersForm" id="offersForm">
+				<div class="info-header">Promotions</div>
+				<span class="settings-label">Send me offers and Betspin news via:</span>
+				<div class="row">
+				<div class="col-xs-6">
+				<input class="css-checkbox" id="checkboxEmail" name="allowsnewsandoffers" checked="" type="checkbox">
+				<label for="checkboxEmail" class="css-label css-label-noafter">Email</label>
+				</div>
+				<div class="col-xs-6">
+				<input class="css-checkbox" id="checkboxSMS" name="allowsnewsandofferssms" checked="" type="checkbox">
+				<label for="checkboxSMS" class="css-label css-label-noafter">SMS</label>
+				</div>
+				</div>
+				<input name="offers-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="account-gamelimits-container account-container active" style="display: none;">
+				<table class="settings">
+				<tbody><tr>
+				<td class="left-column">
+				<div class="info-box" style="margin-top: 10px;">
+				<form action="" method="post" name="depositlimitForm" id="depositlimitForm">
+				<div class="info-header">Deposit limit</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio1" name="limitduration" type="radio"><label for="radio1" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio2" name="limitduration" type="radio"><label for="radio2" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio3" name="limitduration" type="radio"><label for="radio3" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="depositlimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				<form action="" method="post" name="losslimitForm" id="losslimitForm">
+				<div class="info-header">Loss limit</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio4" name="limitduration" type="radio"><label for="radio4" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio5" name="limitduration" type="radio"><label for="radio5" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio6" name="limitduration" type="radio"><label for="radio6" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="losslimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				<form action="" method="post" name="wagerlimitForm" id="wagerlimitForm" style="display: none;">
+				<div class="info-header">Wagering limit</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio7" name="limitduration" type="radio"><label for="radio7" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio8" name="limitduration" type="radio"><label for="radio8" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio9" name="limitduration" type="radio"><label for="radio9" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="wagerlimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				<form action="" method="post" name="sessionlimitForm" id="sessionlimitForm">
+				<div class="info-header">Session time limit in minutes</div>
+				<div class="amount-container">
+				<table>
+				<tbody><tr>
+				<td style="width: 30%; border-right: 1px solid #393e49;">
+				<div class="amount-label">Maximum</div>
+				</td>
+				<td style="width: 70%"><input placeholder="Amount" class="amount-input" name="limitamount" type="text"></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="radio-container">
+				<table style="width: 100%; margin-top: 5px;">
+				<tbody><tr>
+				<td style="width: 30%"><input value="1" class="css-radio" id="radio10" name="limitduration" type="radio"><label for="radio10" class="css-label">24 hours</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="2" class="css-radio" id="radio11" name="limitduration" type="radio"><label for="radio11" class="css-label">7 days</label></td>
+				<td style="width: 5%"></td>
+				<td style="width: 30%"><input value="3" class="css-radio" id="radio12" name="limitduration" type="radio"><label for="radio12" class="css-label">30 days</label></td>
+				</tr>
+				</tbody></table>
+				</div>
+				<input name="sessionlimit-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				<td style="width: 2%;"></td>
+				<td class="right-column">
+				<div class="info-header">Active limits</div>
+				<div class="current-limits-row">
+				<table>
+				<tbody><tr>
+				<td class="left">Deposit limit</td>
+				<td class="right">Not active</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="current-limits-row">
+				<table>
+				<tbody><tr>
+				<td class="left">Loss limit</td>
+				<td class="right">Not active</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="current-limits-row">
+				<table>
+				</table>
+				</div>
+				<div class="current-limits-row" style="margin-bottom: 20px; border: none;">
+				<table>
+				<tbody><tr>
+				<td class="left">Session time limit in minutes</td>
+				<td class="right">Not active</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="info-box">
+				<div class="info-header">Take a break</div>
+				<form action="" method="post" name="exclusionForm" id="exclusionForm">
+				<input value="1" class="css-radio" id="radioexclude1" name="exclusionduration" type="radio"><label for="radioexclude1" class="css-label">24 hours</label><br><input value="2" class="css-radio" id="radioexclude2" name="exclusionduration" type="radio"><label for="radioexclude2" class="css-label">7 days</label><br> <br><br>
+				<label class="suspend-account-permanent-note"></label>
+				<input name="exclusion-submit" class="btn settings-button" value="Update" type="submit">
+				<div class="clear"></div>
+				</form>
+				</div>
+				</td>
+				</tr>
+				</tbody></table>
+				</div>
+				<div class="account-transactions-container account-container" style="display: none;">
+				<div class="month-selector">
+				<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+				<li class="active" data-month="2">Mar 17</li><li data-month="1">Feb 17</li><li data-month="0">Jan 17</li><li data-month="11">Dec 16</li><li data-month="10">Nov 16</li><li data-month="9">Oct 16</li><li data-month="8">Sep 16</li><li data-month="7">Aug 16</li><li data-month="6">Jul 16</li><li data-month="5">Jun 16</li><li data-month="4">May 16</li><li data-month="3">Apr 16</li></ul>
+				</div>
+				<table style="width: 100%;" class="transactions footable" data-page-size="10">
+				<thead>
+				<tr>
+				<th>Transaction ID</th>
+				<th>Date</th>
+				<th>Description</th>
+				<th>Amount</th>
+				<th>Status</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="loading footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">loading...</td>
+				</tr>
+				<tr class="no-results footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">No transactions found</td>
+				</tr>
+				</tbody>
+				<tfoot class="hide-if-no-paging">
+				<tr>
+				<td colspan="5">
+				<div class="pagination"></div>
+				</td>
+				</tr>
+				</tfoot>
+				</table>
+				<div class="hidden lang-keys" style="display: none;">
+				<span id="lang-key-pending">Pending</span>
+				<span id="lang-key-waitingapproval">Waiting Approval</span>
+				<span id="lang-key-approved">Approved</span>
+				<span id="lang-key-declined">Declined</span>
+				<span id="lang-key-deposit">Deposit</span>
+				<span id="lang-key-withdrawal">Withdrawal</span>
+				<span id="lang-key-cancelled">Cancelled</span>
+				<span id="lang-key-cancelwithdrawal">Cancel withdrawal</span>
+				</div>
+				</div>
+				<div class="account-gamingtransactions-container account-container" style="display: none;">
+				<div class="month-selector">
+				<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+				<li class="active" data-month="2">Mar 17</li><li data-month="1">Feb 17</li><li data-month="0">Jan 17</li><li data-month="11">Dec 16</li><li data-month="10">Nov 16</li><li data-month="9">Oct 16</li><li data-month="8">Sep 16</li><li data-month="7">Aug 16</li><li data-month="6">Jul 16</li><li data-month="5">Jun 16</li><li data-month="4">May 16</li><li data-month="3">Apr 16</li></ul>
+				</div>
+				<table style="width: 100%;" class="gamingtransactions transactions footable" data-page-size="10">
+				<thead>
+				<tr>
+				<th>Date</th>
+				<th>Game</th>
+				<th>Currency</th>
+				<th>Bet</th>
+				<th>Win</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr class="loading footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">loading...</td>
+				</tr>
+				<tr class="no-results footable-disabled">
+				<td colspan="5" class="text-center" style="display: none;">No transactions found</td>
+				</tr>
+				</tbody>
+				<tfoot class="hide-if-no-paging">
+				<tr>
+				<td colspan="5">
+				<div class="pagination"></div>
+				</td>
+				</tr>
+				</tfoot>
+				</table>
+				</div>
+				<div class="account-bonuses-container account-container" style="display: none;">
+				<div class="info-header">Bonus wagering status</div>
+				<p></p>
+				<script>
+							var doughnutChartData = {
+								wageringAmount: 0,
+								bonusWagering: 0,
+								remaining:0            };
+						</script>
+				<div class="info-box">
+				<div id="bonus-left-box" class="bonus-box">
+				<div id="doughnutChart" class="chart"></div>
+				</div>
+				<div id="bonus-right-box" class="bonus-box">
+				<ul>
+				<li>
+				<label>Wagering requirements</label>
+				0 € </li>
+				<li>
+				<label>Completed wagering</label>
+				0 € </li>
+				<li>
+				<label>To be wagered</label>
+				0 € </li>
+				</ul>
+				</div>
+				</div>
+				</div>
+				<div class="account-kyc-container account-container active" style="display: none;">
+				<div class="kyc-container">
+				<div class="kyc-header">
+				<div class="kyc-head">
+				<h3>Identification</h3>
+				<p>We need the following documents to<br> identify you in order to safely make withdrawals.</p>
+				</div>
+				<div class="kyc-status">
+				<strong>ID not verified</strong>
+				</div>
+				<div style="clear: both;"></div>
+				</div>
+				<div class="kyc-info">
+				<h2>Upload Documents</h2>
+				<ul>
+				<li>Please take a photo of the documents and upload them here. Make sure that text is readable.</li>
+				<li>All documents are handled confidentially.</li>
+				<li>We will process the sent documents in one to three hours upon recieving them.</li>
+				<li>Every payment method must be verified separately.</li>
+				</ul>
+				</div>
+				<div id="kyc-forms" class="kyc-upload-container">
+				<div class="kyc-form" id="selected-kyc-form-170939">
+				<div class="kyc-title">Proof of ID <div class="kyc-instructions">
+				<span class="question">?</span>
+				Instructions
+				<div class="tip">
+				<h3>Proof of ID</h3>
+				<p>A valid copy of your passport, ID card or driving license. </p>
+				</div>
+				</div>
+				</div>
+				<div data-id="170939" class="kyc-upload dropzone ">
+				<div class="msg-suc">
+				File sent successfully </div>
+				<form action="" method="post" enctype="multipart/form-data">
+				<input name="kycitemid" value="170939" type="hidden">
+				<input name="kyctypeid" value="1" type="hidden">
+				<input name="kycupload" id="submit-kycfile-170939" data-id="170939" value="Upload" class="btn kyc-submit" type="submit">
+				<label>
+				<span class="init">Drag a document here or click to choose a file</span>
+				<span class="holding"><span class="file"></span>Change</span>
+				<span class="uploading">
+				Uploading... </span>
+				<span class="invalid-file">
+				Invalid file selected, please check file type and size and try again </span>
+				<div class="progress">
+				<div class="bar" style="width: 0%;"></div>
+				</div>
+				<input data-id="170939" id="kycfile-170939" name="kycfile" class="kyc-file" type="file">
+				</label>
+				</form>
+				</div>
+				<div class="clear"></div>
+				</div>
+				<div class="kyc-form" id="selected-kyc-form-170940">
+				<div class="kyc-title">Proof of address <div class="kyc-instructions">
+				<span class="question">?</span>
+				Instructions
+				<div class="tip">
+				<h3>Proof of address</h3>
+				<p>A full copy of your recent utility bill, where we can see your name and address, issued within the last 3 months.</p>
+				</div>
+				</div>
+				</div>
+				<div data-id="170940" class="kyc-upload dropzone ">
+				<div class="msg-suc">
+				File sent successfully </div>
+				<form action="" method="post" enctype="multipart/form-data">
+				<input name="kycitemid" value="170940" type="hidden">
+				<input name="kyctypeid" value="2" type="hidden">
+				<input name="kycupload" id="submit-kycfile-170940" data-id="170940" value="Upload" class="btn kyc-submit" type="submit">
+				<label>
+				<span class="init">Drag a document here or click to choose a file</span>
+				<span class="holding"><span class="file"></span>Change</span>
+				<span class="uploading">
+				Uploading... </span>
+				<div class="progress">
+				<div class="bar" style="width: 0%;"></div>
+				</div>
+				<span class="invalid-file">
+				Invalid file selected, please check file type and size and try again </span>
+				<input data-id="170940" id="kycfile-170940" name="kycfile" class="kyc-file" type="file">
+				</label>
+				</form>
+				</div>
+				<div class="clear"></div>
+				</div>
+				<div class="kyc-form" id="selected-kyc-form-170941">
+				<div class="kyc-title">Proof of payment <div class="kyc-instructions">
+				<span class="question">?</span>
+				Instructions
+				<div class="tip">
+				<h3>Credit Card</h3>
+				<p>Copies of the credit card used (front and back). For your own personal security and the integrity of your credit card, please blank out the digits so that only the first 6 and last 4 digits are visible. Please note that the CVC digits on the back side of your card should also be blanked out.</p>
+				<h3>E-wallet</h3>
+				<p>Skrill – A screenshot/printscreen of your Skrill profile, with your name and e-mail address visible. You can find this at 'My Account' &gt; 'Settings'&gt; 'Personal info' when logged into your Skrill account.</p>
+				<p>Neteller – A screenshot/printscreen of your Neteller profile, with your name and Neteller ID visible.</p>
+				<p>Bank transfer – A document of your bank statement with your name, bank account number and the bank logo visible.</p>
+				</div>
+				</div>
+				</div>
+				<div data-id="170941" class="kyc-upload dropzone ">
+				<div class="msg-suc">
+				File sent successfully </div>
+				<form action="" method="post" enctype="multipart/form-data">
+				<input name="kycitemid" value="170941" type="hidden">
+				<input name="kyctypeid" value="3" type="hidden">
+				<input name="kycupload" id="submit-kycfile-170941" data-id="170941" value="Upload" class="btn kyc-submit" type="submit">
+				<label>
+				<span class="init">Drag a document here or click to choose a file</span>
+				<span class="holding"><span class="file"></span>Change</span>
+				<span class="uploading">
+				Uploading... </span>
+				<div class="progress">
+				<div class="bar" style="width: 0%;"></div>
+				</div>
+				<span class="invalid-file">
+				Invalid file selected, please check file type and size and try again </span>
+				<input data-id="170941" id="kycfile-170941" name="kycfile" class="kyc-file" type="file">
+				</label>
+				</form>
+				</div>
+				<div class="clear"></div>
+				</div>
+				</div>
+				</div>
+				</div>
+			</div>
+			<div class="deposit-content"></div>
+		</div>
+	</div>
+
+<div class="body-container">
+	<div class="left-navigation-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+	<div class="left-navigation-wrapper">
+			<nav class="left-navigation">
+				<ul>
+					<li class="lobby active">
+						<a href="index.html"><span>lobby</span></a>
+					</li>
+					<li class="deposit">
+						<a>
+							<div class="icon icon-payment">
+							</div>
+							<span>deposit</span>
+						</a>
+					</li>
+					<li class="withdraw">
+						<a>
+							<div class="icon icon-money">
+							</div>
+							<span>withdraw</span>
+						</a>
+					</li>
+					<li class="account"><a><span>account</span></a></li>
+					<li class="left-navigation-hover"></li>
+				</ul>
+			</nav>
+			<div style="position: relative; width: 315px;" class="left-menu-content">
+				<div class="menu-expand" id="menu-expand-deposit">
+					<div style="visibility: inherit; opacity: 1; display: block;" class="expand-content">
+						<h2 class="header-bold">How much would you like to deposit?</h2>
+						<p class="golden">Select a payment method</p>
+						<div class="deposit selector">
+							<select class="deposit selectpickerdeposit" style="width: 100%; display: none;">
+								<option value="3/7/1" id="Visa">Visa</option>
+								<option value="4/8/1" id="MasterCard">MasterCard</option>
+								<option value="9/5/1" id="Skrill">Skrill</option>
+								<option value="8/2/1" id="Neteller">Neteller</option>
+								<option value="119/22/1" id="Ecopayz">Ecopayz</option>
+							</select>
+							<div class="btn-group bootstrap-select deposit">
+								<button title="MasterCard" type="button" class="btn dropdown-toggle selectpicker btn-default" data-toggle="dropdown">
+									<span class="filter-option pull-left">MasterCard</span>&nbsp;<span class="caret"></span>
+								</button>
+								<div class="dropdown-menu">
+									<ul class="dropdown-menu inner selectpicker" role="menu">
+										<li class="" data-original-index="0">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Visa</span>">
+												<span class="text">Visa</span>
+												<span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li class="selected" data-original-index="1">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>MasterCard</span>">
+												<span class="text">MasterCard</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li data-original-index="2">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Skrill</span>">
+												<span class="text">Skrill</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li data-original-index="3">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Neteller</span>">
+												<span class="text">Neteller</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+										<li data-original-index="4">
+											<a tabindex="0" class="" data-normalized-text="<span class=&quot;text&quot;>Ecopayz</span>">
+												<span class="text">Ecopayz</span><span class="glyphicon glyphicon-ok check-mark"></span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+						<div class="method-details" style="">
+							<div class="method-detail-row">
+								<table>
+									<tbody>
+										<tr style="color: #e7e3d3;">
+											<td style="width: 70px; border-bottom: 1px solid #393e49;">
+												<span class="key">Fee:</span>
+											</td>
+											<td style="border-bottom: 1px solid #393e49;">
+												<span class="key">Limits:</span>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<span class="fee">2.5</span> <span class="percentage" style="">&nbsp;%</span><span style="display: none;" class="sign">&nbsp;€</span>
+											</td>
+											<td>
+												<span class="minlimit">20</span> - <span class="maxlimit">5000</span>&nbsp;€
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<input type="text" placeholder="Bonus Code">
+							<input type="text" placeholder="20">
+							<a class="deposit-open">DEPOSIT NOW</a>
+					</div>
+				</div>
+				<div class="menu-expand" id="menu-expand-withdraw">
+					<div class="expand-content">
+						<h2 class="header-bold">Your balance is 0 €</h2><br><br>
+					</div>
+				</div>
+				<div class="menu-expand" id="menu-expand-account">
+					<div class="expand-content">
+						<h2 class="header-bold">Account</h2><br>
+						<p>View and manage your account settings and gaming limits.</p>
+						<div class="account-details">
+							<div class="account-detail-row">
+								<span class="key">Real money</span>
+								<span class="value"><span id="accountRealMoney">0</span> €</span>
+							</div>
+							<div class="account-detail-row">
+								<span class="key">Bonus money</span>
+								<span class="value"><span id="accountBonusMoney">0</span> €</span>
+							</div>
+							<div id="user-bonuses" class="account-detail-row hidden">
+								<span class="key">Bonus</span>
+								<span class="value"></span>
+							<div class="clear"></div>
+							</div>
+							<div class="account-detail-row">
+								<span class="key">Time logged in</span>
+								<span class="value">00:03:39</span>
+							</div>
+							<div id="user-limit-1" class="account-detail-row hidden">
+								<span class="key">Deposit limit</span>
+								<span class="value red"></span>
+							</div>
+							<div id="user-limit-2" class="account-detail-row hidden" style="display: none;">
+								<span class="key">Wagering limit</span>
+								<span class="value red"></span>
+							</div>
+							<div id="user-limit-3" class="account-detail-row hidden">
+								<span class="key">Loss limit</span>
+								<span class="value red"></span>
+							</div>
+							<div id="user-limit-6" class="account-detail-row hidden" style="border: none;">
+								<span class="key">Session limit</span>
+								<span class="value red"><span class="val"></span> <span>min</span></span>
+							</div>
+						</div>
+						<br>
+						<div class="account-link golden" id="account-settings" style="border-top: 1px solid #393e49;">
+							<a href="#" id="account-settings-btn" class="golden account-link-title">Account settings</a>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div class="main-wrapper">
+	<div class="rad-bg"></div>
+	<header>
+		<div class="top-line">
+			<div class="logo">
+				<a href="index.html"><img src="img/logo.png" alt=""</a>
+			</div>
+			
+		</div>
+		<div class="menu-line">
+			<div class="main-menu">
+				<nav>
+					<ul>
+						<li><a href="slots.html">casino</a></li>
+						<li><a href="live.html">live casino</a></li>
+						<li><a href="poker.html">poker</a></li>
+						<li><a>bingo</a></li>
+						<li><a href="promotions.html">bonus</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="login">
+				<div class="login-user">
+					<form action="">
+						<a class="register">Register</a>
+						<a class="login-btn">Login</a>
+						<!-- <input type="submit" value="Login"> -->
+						<!-- <input type="password" placeholder="Password" autocomplete="on"> <a class="top-forgot-account">Forgot?</a> -->
+						<!-- <input type="text" placeholder="Username" autocomplete="off"> -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="help-toggle">help</div>
+	<div class="help-block">
+		<div class="help-nav">
+			<span class="help-back"><i class="fa fa-chevron-left" aria-hidden="true"></i> Back</span><span class="help-close">Close window <i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+		</div>
+			<div class="help-content">
+				<div class="first-screen">
+					<div class="how-help">
+						<h2>How can we help you?</h2>
+						<p>Email or chat with us, browse the FAQ and connect with us in social media. </p>
+						<p>Live Chat is open 08:00–00:00 CET.</p>
+					</div>
+					<ul class="help-menu">
+						<li class="func-help">
+							<div class="option live-chat">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Live chat</h4>
+									<p>Chat with our Customer Care Crew</p>
+								</div>
+							</div>
+						</li>
+						<li class="func-help support-message">
+							<div class="option">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Send message to support</h4>
+									<p>We will get back to you shortly</p>
+								</div>
+							</div>
+						</li>
+						<li class="func-help find-answers">
+							<div class="option">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Find answers</h4>
+									<p>Check out our FAQ page</p>
+								</div>
+							</div>
+						</li>
+						<li class="facebook">
+							<a href="#facebook">
+								<div class="option">
+									<div class="help-menu-icon"></div>
+									<div class="description">
+										<h4>Connect on Facebook</h4>
+										<p>Comment, Like & Share</p>
+									</div>
+								</div>
+							</a>
+						</li>
+						<li class="twitter">
+							<a href="#twitter">
+								<div class="option">
+								<div class="help-menu-icon"></div>
+								<div class="description">
+									<h4>Follow us on Twitter</h4>
+									<p>#Betspin @betspinners</p>
+								</div>
+								</div>
+							</a>
+						</li>
+					</ul>
+					<div class="contacts">
+						<h3>Contact us by email at:</h3>
+						<a href="#">email@email.com</a>
+					</div>
+				</div>
+				<div class="chat-screen other-screen">
+					<form action="">
+						<h5>Your email address: *</h5>
+						<input type="text" id="chat-email" name="email" placeholder="Email">
+						<h5>What is your query related to? *</h5>
+						<input type="radio" name="chat-radio" value="bonuses" id="bonuses"><label for="bonuses">Bonuses / free spins</label><br>
+						<input type="radio" name="chat-radio" value="bonus-codes" id="bonus-codes"><label for="bonus-codes">Bonus codes / ongoing offers</label><br>
+						<input type="radio" name="chat-radio" value="payments" id="payments"><label for="payments">Payments</label><br>
+						<input type="radio" name="chat-radio" value="account" id="account"><label for="account">Account</label><br>
+						<input type="radio" name="chat-radio" value="other" id="other"><label for="other">Other/feedback</label><br>
+						<input type="submit" value="start the chat">
+					</form>
+				</div>
+				<div class="message-to-support other-screen">
+					<h2>Send message to support</h2>
+					<p>We will get back to you shortly</p>
+					<form action="" method="post">
+						<input type="text" name="email" placeholder="Email">
+						<input type="text" name="theme" placeholder="Subject">
+						<textarea name="message" cols="30" rows="10" placeholder="Message"></textarea>
+						<input type="submit" value="Send">
+					</form>
+				</div>
+				<div class="faq other-screen">
+					<div class="header-faq">
+						<h2>Frequently Asked Questions</h2>
+						<p>What’s been discussed lately?</p>
+						<div class="faq-search-wrapper">
+							<input type="text" class="faq-search" placeholder="Browse by category">
+						</div>
+					</div>
+					<div class="question-wrapper">
+						<ul class="questions">
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+							<li class="category-question">
+								<a class="trigger-category">Account</a>
+								<ul>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+									<li class="question">
+										How can I open an account at Betspin?
+										<p class="answer">
+											Opening an account at Betspin is easy and only takes a few minutes. Simply fill in the required fields on our Registration page. Immediately after you’ll receive a confirmation email with an activation link. Activate your account by clicking on the link and you’ll be ready to play. Please check your spam folder if you haven’t received the email within a couple of minutes after completing your registration. 
+										</p>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+	</div>
+		<div class="main-wrapper">
+			<div class="item-page">
+				<div>
+					<h2>Terms &amp; Conditions</h2>
+					<p class="subheader">TERMS AND CONDITIONS OF USE OF SERVICES ON WEBSITE WWW.BETSPIN.COM</p>
+					<p class="datetime">Version 2.4, last updated 3rd March 2017</p>
+					<ol>
+					<li>INTRODUCTION
+					<ol>
+					<li>By using and/or visiting any section of the Website www.betspin.com (the "Website"); or by opening an account on the Website you agree to be bound by:
+					<ol>
+					<li>The General Terms and Conditions, on this page;</li>
+					<li>The Privacy Policy,</li>
+					<li>Any game rules,</li>
+					<li>Any terms and conditions of promotions, bonuses and special offers which may be found on the Website from time to time.</li>
+					</ol>
+					</li>
+					<li>All of the terms and conditions listed above shall together be referred to as "the Terms", “Terms” or “these Terms”.</li>
+					<li>Please read the Terms carefully before accepting them. If you do not agree to accept and be bound by the Terms please do not open an account or continue to use the Website. Your continued use of the Website constitutes acceptance of the Terms.</li>
+					</ol>
+					</li>
+					<li>PARTIES
+					<ol>
+					<li>This website is operated by MT SecureTrade Limited (“us”, “our”, “we” or the “Company”), a company incorporated under the laws of Malta with registration number C56545 and registered address at GB Buildings, Penthouse, Watar Street, Ta’ Xbiex XBX 1301, Malta. For customers accessing the services from Great Britain (“GB”) MT SecureTrade Limited is licensed and regulated by the Gambling Commission and holds a Remote Casino Operating License number 39575. For non-GB players MT Secure trade Limited is licensed and regulated by the Malta Gaming Authority (www.mga.org.mt) by virtue of the following licenses: MGA/CL1/954/2014 (issued on 19 May 2014), MGA/CL1/955/2014 (issued on 19 May 2014), MGA/CL2/1122/2015 (issued on 30 March 2016) and MGA/CL3/1134/2015 (issued on 30 March 2016).</li>
+					<li>We may at times provide additional games not licensed and regulated by the Malta Gaming Authority. Such games will be clearly indicated during the gameplay. Regardless of games played, all deposits and withdrawals are the sole responsibility of Company and Company has full responsibility towards the player for the management of funds on Your Account. All games provided to GB players are licensed and regulated by the UK Gambling Commission.</li>
+					</ol>
+					</li>
+					<li>CHANGES TO THE TERMS OF USE
+					<ol>
+					<li>We may need to change the Terms for a number of reasons, including but not limited to, for commercial reasons, or in order to comply with new laws and regulations. The most up-to-date Terms can be accessed here, and the date on which they came into force is noted.</li>
+					<li>We will notify you of material changes to these Terms prior to them taking effect. Where we make changes to the Terms, which we wish to notify you of, we will do so by email or by placing a notice on the Website. You must re-confirm acceptance, before the changes come into effect and you are able to place bets on our Website.</li>
+					</ol>
+					</li>
+					<li>YOUR ACCOUNT
+					<ol>
+					<li>In order to place a bet via the Website, you will need to open an account on the Website ("Your Account").</li>
+					<li>For various legal or commercial reasons, we do not permit accounts to be opened or used by customers resident in certain jurisdictions, including the United States of America (and its dependencies, military bases and territories including but not limited to American Samoa, Cyprus, Guam, Marshall Islands, Northern Mariana Islands, Puerto Rico, and Virgin Islands), Afghanistan, Algeria, Belgium, Bouvet Island, British Indian Ocean Territory, Bulgaria, Comoros, Czech Republic, Denmark, Ecuador, Estonia, Ethiopia, France, Greenland, Guam, Holy See (Vatican City State), Hong Kong, Hungary, India, Indonesia, Iran, Iraq, Ireland (sports betting prohibited), Israel, Italy, Jordan, Democratic People's Republic of Korea, Kuwait, Libya, Malaysia, Montenegro, Myanmar, New Caledonia, Nigeria, Pakistan, State of Palestine, Philippines, Portugal, Romania, Singapore, Somalia, South Africa, South Georgia and the South Sandwich Islands, South Sudan, Spain, Sudan, Syria, The Faroe Islands, Turkey, Western Sahara, Yemen or other restricted jurisdictions (“Restricted Jurisdiction”) as communicated by us from time to time. By using the Website you confirm you are not a resident in a Restricted Jurisdiction. If you open or use the Website while residing in a Restricted Jurisdiction: your account may be closed by us immediately; any winnings and bonuses will be confiscated and remaining balance returned (subject to reasonable charges), and any returns, winnings or bonuses which you have gained or accrued will be forfeited by you and may be reclaimed by us; and you will return to us on demand any such funds which have been withdrawn.</li>
+					<li>When attempting to open an account or using the Website, it is the responsibility of the player to verify whether gambling is legal in that particular jurisdiction.</li>
+					<li>A player must register personally by following the on-screen instructions.</li>
+					<li>When you open Your Account you will be asked to provide us with personal information, including your name, date of birth, and appropriate contact details, including an address, telephone number and e-mail address ("Your Contact Details").</li>
+					<li>You hereby acknowledge and accept that, by using the services at the Website, you may both win and lose money.</li>
+					<li>Only players registered from the United Kingdom are permitted to open an account in Pounds Sterling (GBP). All other players are requested to open an account in their local currency or EUR.</li>
+					<li>Your Account must be registered in your own, correct, name. You may only open one account on this Website. Any other accounts that you open on the Website shall be considered "Duplicate Accounts". Any Duplicate Accounts may be closed by us immediately and:
+					<ol>
+					<li>Any winnings and bonuses will be confiscated and remaining balance returned (subject to reasonable charges);</li>
+					<li>Any returns, winnings or bonuses which you have gained or accrued during such time as the Duplicate Account was active will be forfeited by you and may be reclaimed by us, and you will return to us on demand any such funds which have been withdrawn from the Duplicate Account.</li>
+					</ol>
+					</li>
+					<li>If you wish to open another account, you may do so by contacting the support team at <span id="cloak36501"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak36501').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy36501 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy36501 = addy36501 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak36501').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy36501 + '\'>' +addy36501+'<\/a>';
+					 //-->
+					 </script>. If a new account is opened, the old account will be closed.</li>
+					<li>You must maintain Your Account and keep your details up-to-date. If you wish to close Your Account you must send a request to do so to <span id="cloak22073"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak22073').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy22073 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy22073 = addy22073 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak22073').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy22073 + '\'>' +addy22073+'<\/a>';
+					 //-->
+					 </script>.</li>
+					<li>We are required by the terms of our British Operating Licence to inform customers about how we hold funds on account for you, and the extent to which funds are protected in the event of insolvency - see http://www.gamblingcommission.gov.uk/Consumers/Protection-of-customer-funds.aspx</li>
+					<li>We hold customer funds in a separate account from company funds accounts. This means that steps have been taken to protect customer funds but that there is no absolute guarantee that all funds will be repaid in the event of insolvency. This meets the Gambling Commission’s requirements for the segregation of customer funds at the level: Basic protection.</li>
+					<li>By accepting the Terms the user allows and authorizes us to keep him/her informed about changes on the Website new services and promotions by email, phone and SMS. The user can opt out from this communication by sending an email to <span id="cloak32975"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak32975').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy32975 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy32975 = addy32975 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak32975').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy32975 + '\'>' +addy32975+'<\/a>';
+					 //-->
+					 </script> or choosing “My Account” – “My Details”.</li>
+					</ol>
+					</li>
+					<li>VERIFICATION OF YOUR AGE AND IDENTITY
+					<ol>
+					<li>You warrant that:
+					<ol>
+					<li>You are at least 18 years of age, or any higher age required by laws that apply to you the (“Legal Age”). When opening an account you will be required to confirm that you are at least 18 years of age. It is an offence for any GB person under the age of 18 to participate in gambling;</li>
+					<li>The details supplied when opening Your Account are correct;</li>
+					<li>You are the rightful owner of the money in Your Account;</li>
+					<li>You are a resident in a jurisdiction which allows gambling;</li>
+					<li>You are not a resident in Restricted Jurisdiction; and</li>
+					<li>The money deposited is not derived from any activity which is illegal.</li>
+					</ol>
+					</li>
+					<li>The company complies with UK, Maltese and European laws, regulations and guidelines for the prevention of money laundering and the funding of terrorism. Suspicious transactions shall be investigated by the company and, if necessary, a suspicious transaction report will be made by the company to the competent Maltese Authorities. In any such event, the company is prohibited from informing any players or third parties involved, save in limited circumstances, that an investigation is being or may be carried out, or that information has been or may be transmitted to the competent Authorities. Furthermore, in the event of any suspicious transactions, the company may suspend, block or close the account(s) of the relevant player(s) and withhold funds as may be required by law and/or by the competent Authorities.</li>
+					<li>All transactions made by players on our site are checked to prevent money laundering and all other illegal activity.</li>
+					<li>By agreeing to the Terms you authorise us to undertake such Checks as we may require ourselves or may be required by third parties (including regulatory bodies and authorities) to confirm your age, identity and contact details and to prevent money laundering (the "Checks").</li>
+					<li>We reserve the right to withhold any payment to/from a player’s account, to such player, until we are satisfied that the identity, age and place of residence of the player has been suitably verified.</li>
+					<li>We are required to undertake verification of your age. In the case of British players, if such verification is not completed to our satisfaction within 72 hours of you first depositing money into Your Account we are required to freeze Your Account until such time as we can successfully verify that you are over 18 years old. We are also required to verify your identity upon your gambling spend reaching a certain threshold. We are required to lock Your Account to prevent any withdrawals until such time as your identity has been verified. We may use a recognised third party provider to undertake these Checks on our behalf. By agreeing to these Terms you authorise us to provide your personal details to such third party, who will keep a record of the information we provide to them.</li>
+					<li>In certain circumstances we may have to contact you and ask you to provide further information to us in order to complete the Checks. If you do not or cannot provide us with such information then we may suspend Your Account until you have provided us with such information, or we may permanently close Your Account. Additionally, (in the case of non-GB players) you will have to provide identification whenever you make a withdrawal of funds amounting to Two Thousand Three Hundred Euros (EUR 2,300) or more. Acceptable documentation to complete the Checks include:
+					<ol>
+					<li>Passport, national identity card or driving license together with a recent utility bill (e.g. gas, telephone, insurance) less than three months old.</li>
+					<li>Proof of payment – subject to the deposit method used (copy of the credit card used, screen shot of e-wallet or recent bank statement).</li>
+					<li>Additional verification may be required such as proof of funding of e-wallet accounts.</li>
+					</ol>
+					</li>
+					<li>In the case of non-GB players if we are unable to confirm that you are of Legal Age then we may suspend Your Account.</li>
+					<li>In the case of GB-players if you are proven to have been under that age at the time you accessed any gambling facilities, including any free spins, then:
+					<ol>
+					<li>Your Account will be closed;</li>
+					<li>In line with UK regulation, any person found to have created and/or operated an account whilst underage shall have any and all stakes refunded (less withdrawals, should there be any).</li>
+					</ol>
+					</li>
+					<li>In the case of non-GB players if you are proven to have been under that age at the time you made any gambling or gaming transactions, then:
+					<ol>
+					<li>Your Account will be closed;</li>
+					<li>Any winnings and bonuses will be confiscated and remaining balance returned (subject to reasonable charges);</li>
+					<li>Any winnings which you have accrued during such time will be forfeited by you and you will return to us any such funds which have been withdrawn from Your Account.</li>
+					</ol>
+					</li>
+					</ol>
+					</li>
+					<li>INACTIVITY AND DELETION OF PLAYER ACCOUNTS
+					<ol>
+					<li>If a player account remains inactive (i.e. when no login is performed at the operator’s Website) for a period of more than 12 months, we are entitled to charge a monthly account maintenance fee of €5, starting on the 13th month of inactivity. Following 12 months of uninterrupted inactivity, we will send a reminder mail to you via the e-mail address saved in Your Account details. Upon receipt of this reminder mail, you will have 30 days to log into your player account. If no login is registered within this 30-day period, €5 of real money credit or bonus money credit will be deducted from the balance. If the balance is less than €5 then the whole amount will be deducted. If the account remains inactive after 13 consecutive months, you will be sent a reminder mail every month and a monthly charge of €5 will be incurred and deducted from the real money credit or bonus money credit of the player account accordingly.</li>
+					<li>If the player account remains inactive for more than 12 months and the account balance is €0, no further charge will be incurred. The inactivity fee will be incurred on a monthly basis until the next login is performed at the Website, in this case, the operator is entitled to block the player account.</li>
+					</ol>
+					</li>
+					<li>USERNAME, PASSWORD, AND CUSTOMER INFORMATION
+					<ol>
+					<li>After opening Your Account, you must not disclose (whether deliberately or accidentally) your username and password to anyone else. If you have lost or forgotten Your Account details you may retrieve your password by clicking on the “Forgot Password?” link below the login portal.</li>
+					</ol>
+					</li>
+					<li>DEPOSITS TO YOUR ACCOUNT
+					<ol>
+					<li>If you wish to participate in betting or gaming using the Website, you must deposit money into Your Account which you can then use to place bets or play games.</li>
+					<li>Deposits to the cash player account are made by transfer of money to the company’s account by way of the payment methods stated on the Website. The payment methods currently available include debit cards, credit cards, E-Wallet payments, Prepaid Cards, Instant Banking, Fast Bank Transfers and Bank Transfers. The company reserves the right, to change the accepted methods of payment at its sole discretion. The company further reserves the right to accept certain methods of payment only subject to the fulfilment of certain conditions. The company does not warrant that all methods of payment are available at all times. To verify which payment and withdrawal methods that are currently available and the time lapse these take to process kindly visit our Deposit tab in the main page of our Website.</li>
+					<li>We do not accept cash funds sent to us.</li>
+					<li>By depositing money you agree not to make any charge-backs, reversals or otherwise cancel any deposits into Your Account, and agree to refund and compensate us for unpaid deposits.</li>
+					<li>The company can, under certain circumstances, credit a player’s account with so called bonus money. The conditions for the crediting of the bonus (e.g. First Deposit Bonus) and the amount of the bonus is determined by the company and set out on the Website from time to time. For promotions that are currently running please follow this link: https://www.betspin.com/en/promotions.</li>
+					<li>The bonus is stated separately on the account. It can only be paid out once it has been transformed into real cash winnings. If an account contains both the player’s own money and bonus money, the bonus money will only be available for wagering once the existing money has been used. Specific bonus conditions may be published on the Website with the launch of specific bonus schemes. Before fulfilling the bonus turnover conditions if you transfer or withdraw the main deposit amount, bonus amount and all winnings from this bonus will be forfeited.</li>
+					<li>Your Account is not a bank account and is therefore not insured, guaranteed, sponsored or otherwise protected by any banking insurance system. Additionally any money deposited with us in Your Account will not earn any interest.</li>
+					<li>We may at any time set off any positive balance on Your Account against any amount you owe to us when we re-settle any bets or wagers pursuant to Duplicate Accounts, Collusion, Cheating, Fraud and Criminal Activity or Errors.</li>
+					<li>In relation to deposits of funds into Your Account, you shall only use such debit and credit cards and other payment methods that are valid and lawfully belong to you.</li>
+					<li>Deposits to Your Account can be made in a number of permitted currencies chosen by the user upon registration. Deposits made to Your Account will be made in the currency chosen at registration. We retain the right to have Deposits on our site calculated to our base currency, the Euro. We use the ECB day rate at the time of Deposit. You hereby acknowledge that We cannot bear any responsibility or liability for any currency fluctuations in making any such conversions. We reserve the right to add or remove currency options at our discretion.</li>
+					</ol>
+					</li>
+					<li>WITHDRAWALS FROM YOUR ACCOUNT
+					<ol>
+					<li>You may request withdrawal of funds from Your Account at any time provided that:
+					<ol>
+					<li>All payments made into Your Account have been confirmed as cleared and none have been charged-back, reversed or otherwise cancelled;</li>
+					<li>Any Checks referred to in paragraph 5 above have been completed.</li>
+					<li>You have made a minimum of one deposit to Your Account and you have wagered at least once, in full, the deposited amount. At the company’s sole and absolute discretion, you may be permitted to withdraw without turning over the amount at least once in full, subject to a processing fee of not less than 10% of the amount being withdrawn.</li>
+					</ol>
+					</li>
+					<li>We will attempt to accommodate your request regarding the payment method and currency of your withdrawal. This, however, cannot be guaranteed. All withdrawals will be remitted only to the same account from where the funds paid into the player’s account originated. We reserve the right to charge a fee amounting to our own costs (including the cost of the deposits) for withdrawals of funds that have not been put into play.</li>
+					<li>Player funds which are restricted from playing will be displayed in a separate balance on the player’s main page, a player may not withdraw these restricted funds (bonus money).</li>
+					<li>You are responsible for reporting your winnings and losses to your local tax or other authorities.</li>
+					<li>The time taken for a withdrawal will depend on whether KYC documentation is needed and the speed at which it is delivered however the usual lapse of time for a withdrawal to be processed is as follows:</li>
+					<li>Withdrawal Method - Time Lapse Required
+					<ol>
+					<li>Credit / Debit Cards: 3 to 4 working days</li>
+					<li>Online Bank Transfer: N/A</li>
+					<li>E-Wallets: Instant</li>
+					<li>Prepaid Cards: N/A</li>
+					<li>Bank Transfer: 3 to 4 working days</li>
+					</ol>
+					</li>
+					<li>If an account has been dormant, closed, blocked or excluded for any reason and for any period of time the player may contact our support team to recover any pending funds that he might still have in the account. Our support team will immediately launch an investigation into the claim and the player will be contacted back with information of how the funds will be transferred back to him. If there is a dispute over the account or the funds held within it we will contact the Malta Gaming Authority for an opinion on the best way forward.</li>
+					<li>In relation to withdrawals of funds from Your Account, you shall only use such debit and credit cards and other payment methods that are valid and lawfully belong to you.</li>
+					<li>Withdrawals to Your Account can be made in a number of permitted currencies chosen by the user upon registration. Withdrawals from Your Account will be made in the currency chosen at registration. We retain the right to have Withdrawals on our site calculated to our base currency, the Euro. We use the ECB day rate at the time of Withdrawal. You hereby acknowledge that We cannot bear any responsibility or liability for any currency fluctuations in making any such conversions. We reserve the right to add or remove currency options at our discretion.</li>
+					<li>Under certain circumstances we reserve the right to process withdrawals back only to the customers verified bank account.</li>
+					</ol>
+					</li>
+					<li>PLACING A BET OR GAMING
+					<ol>
+					<li>It is your responsibility to ensure that the details of any transaction are correct.</li>
+					<li>You can access your transaction history on the Website.</li>
+					<li>We reserve the right to refuse the whole or part of any transaction requested by you at any time in our sole discretion. No transaction is accepted by us until we have confirmed to you that it has been accepted. If you do not receive a confirmation that your transaction has been accepted, you should contact Customer Services.</li>
+					<li>Once your bet is confirmed, you cannot cancel the transaction without our written consent.</li>
+					</ol>
+					</li>
+					<li>COLLUSION, CHEATING, FRAUD AND CRIMINAL ACTIVITY
+					<ol>
+					<li>The following activities are not allowed and constitute a material breach of the Terms:
+					<ol>
+					<li>Colluding with third parties;</li>
+					<li>Using unfair advantage or influence (commonly known as cheating), including the exploitation of a fault, loophole or error in our software, the use of automated players (sometimes known as 'bots'); or the exploitation of an 'error';</li>
+					<li>Undertaking fraudulent activities to your advantage, including but not limited to the use of a stolen, cloned or otherwise unauthorised credit or debit card, as a source of funds;</li>
+					<li>Taking part in any criminal activities including but not limited to money laundering and any offence with criminal repercussions.</li>
+					<li>Transferring of funds from one player account to another.</li>
+					</ol>
+					</li>
+					<li>We will take all reasonable steps to prevent such activities; detect them and the relevant players; and deal with the relevant players appropriately. We will not be liable for any loss or damage which you or any other player may incur as a result of collusive, fraudulent or otherwise illegal activity, or cheating, and any action we take in respect of the same will be at our sole discretion.</li>
+					<li>If you suspect a person is colluding, cheating or undertaking a fraudulent activity, please report it to us by e-mailing <span id="cloak73228"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak73228').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy73228 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy73228 = addy73228 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak73228').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy73228 + '\'>' +addy73228+'<\/a>';
+					 //-->
+					 </script>.</li>
+					<li>We reserve the right to inform relevant authorities, other online gaming or gambling operators, other online service providers and banks, credit card companies, electronic payment providers or other financial institutions of your identity and of any suspected unlawful, fraudulent or improper activity, and you agree to cooperate fully with us to investigate any such activity.</li>
+					</ol>
+					</li>
+					<li>OTHER PROHIBITED ACTIVITES
+					<ol>
+					<li>You should not use the Website for any purpose which is considered to be defamatory, abusive, obscene, racist, sexist, discriminatory, or offensive. You must not use any abusive or aggressive language or images; swear, threaten, harass or abuse any other person, including other users, or behave in such a manner towards any Company staff used to provide the Website or Customer Services.</li>
+					<li>You shall not corrupt the Website, flood the Website with information so as to cause the Website to not function, nor use any features which may affect the function of the Website in any way for example (but not limited to) releasing or propagating viruses, worms, logic bombs or similar. Any multiple submissions or spam are strictly prohibited. You must not interfere or tamper with, remove or otherwise alter in any way, any information in any form which is included on the Website.</li>
+					<li>You shall use the Website for personal entertainment only and shall not be allowed to reproduce the Website or any part of it in any form whatsoever without our express consent.</li>
+					<li>You must not attempt to gain unauthorised access to the Website, the servers on which the Website is stored or any server, computer or database connected to the Website. You must not attack the Website via a denial-of-service attack or similar. When breaching this provision we will report any such breach to the relevant law enforcement authorities and we will co-operate with those authorities by disclosing your identity to them. In the event of such a breach, your right to use the Website will cease immediately.</li>
+					<li>We will not be liable for any loss or damage caused by a distributed denial-of-service attack, viruses or other technologically harmful material that may infect Your computer equipment, computer programs, data or other proprietary material due to Your use of the Website or to Your downloading of any material posted on such Website, or on any website linked to the Website.</li>
+					<li>It is prohibited to sell, transfer and/or acquire accounts from other players.</li>
+					</ol>
+					</li>
+					<li>CLOSURE AND TERMINATION BY US
+					<ol>
+					<li>In the case of non-GB players it is company policy in the interests of security and in accordance with Maltese legislation, that if no transaction has been recorded on Your Account for thirty months (an “Inactive Account”), subject to clause 6.1, we shall remit the balance in that account to you. If you cannot be satisfactorily located any funds in that account will be handed over to the Malta Gaming Authority. Thus the funds are available to the player wishing to withdraw them. Note that this provision is not applicable to GB players.</li>
+					<li>Your Inactive Account will be terminated with written notice (or attempted notice) using Your Contact Details. In the event of any such termination by us, other than where such closure and termination is made pursuant to paragraph 11 (Collusion, Cheating, Fraud and Criminal Activity) or paragraph 18 (Breach of the Terms of Use) of these Terms, we will refund the balance of Your Account to you. If you cannot be located, the funds shall be remitted to the relevant gambling authority.</li>
+					<li>The company may refuse to open an account or may opt to close a players’ account which has already been opened at its own discretion. Notwithstanding this all contractual obligations already undertaken or entered into will be honoured.</li>
+					<li>In the event of any suspicious transaction/s, the company reserves the right to suspend or block a players’ account and withhold funds as may be required by law or the competent authority.</li>
+					</ol>
+					</li>
+					<li>ALTERATION OF THE WEBSITE OR PROMOTIONS
+					<ol>
+					<li>We may, in our absolute discretion, alter or amend any product/promotion offered via the Website/Email/SMS at any time.</li>
+					</ol>
+					</li>
+					<li>IT FAILURE
+					<ol>
+					<li>Where unexpected system flaws, faults or errors occur in the software or hardware which we use to provide the Website we will take immediate steps to remedy the problem.</li>
+					<li>We do not accept any liability for IT failures which are caused by your equipment used to access the Website or faults which relate to your internet service provider.</li>
+					</ol>
+					</li>
+					<li>ERRORS OR OMISSIONS
+					<ol>
+					<li>A number of circumstances may arise where a bet is accepted, or a payment is made, by us in Error.</li>
+					<li>Neither we (including our directors, employees, partners or agents) nor our partners or suppliers shall be liable for any loss including loss of winnings that results from any Error by us or an error by you. You will forfeit any winnings/losses that result from any such Error.</li>
+					</ol>
+					</li>
+					<li>EXCLUSION OF OUR LIABILITY
+					<ol>
+					<li>Your access to and use of the products offered via the Website, is at your sole option, discretion and risk.</li>
+					<li>We will provide the Website with reasonable skill and care and substantially as described in the Terms. We do not make any other promises or warranties the Website, or the products offered via the Website, and hereby exclude (to the extent permitted by law) all implied warranties in respect of the same.</li>
+					<li>We shall not be liable to You in contract, tort (including negligence) or otherwise for any business losses, including but not limited to loss of data, profits, revenue, business, opportunity, goodwill, reputation or business interruption or for any losses in relation to your use of the Website.</li>
+					</ol>
+					</li>
+					<li>BREACH OF THE TERMS OF USE
+					<ol>
+					<li>You shall compensate us in full for any claims, liabilities, costs, expenses (including legal fees) and any other charges that may arise as a result of your breach of the Terms.</li>
+					<li>Where you are in material breach of the Terms, we reserve the right, but shall not be required, to:
+					<ol>
+					<li>Provide you with notice (using Your Contact Details) that you are in breach requiring you to stop the relevant act or failure to act,</li>
+					<li>Suspend Your Account so that you are unable to place bets or play games on the Website,</li>
+					<li>Close Your Account with or without prior notice from us.</li>
+					<li>Recover from Your Account the amount of any pay-outs, bonuses or winnings which have been affected by any material breach.</li>
+					<li>We have the right to disable any user identification code or password if in our reasonable opinion you have failed to comply with any of the provisions of the Terms.</li>
+					</ol>
+					</li>
+					</ol>
+					</li>
+					<li>INTELLECTUAL PROPERTY RIGHTS
+					<ol>
+					<li>All Website design, text, graphics, music, sound, photographs, video, the selection and arrangement thereof, software compilations, underlying source code, software and all other material contained within the Website are subject to copyright and other proprietary rights which are either owned by us or used under licence from third party rights owners. To the extent that any material contained on the Website may be downloaded or printed then such material may be downloaded to a single personal computer only and hard copy portions may be printed solely for your own personal and non-commercial use.</li>
+					<li>Under no circumstances shall the use of the Website grant to any user any interest in any intellectual property rights (for example copyright, know-how or trademarks) owned by us or by any third party whatsoever.</li>
+					<li>No rights whatsoever are granted to use or reproduce any trade names, trademarks or logos which appear on the Website except as specifically permitted in accordance with the Terms of Use.</li>
+					</ol>
+					</li>
+					<li>YOUR PERSONAL INFORMATION
+					<ol>
+					<li>We are required according to the Data Protection Act of 2001 (Chapter 440 of the Laws of Malta) and the Data Protection Act 1998 to comply with data protection requirements in the way in which we use any personal information collected from you in your use of the Website. We therefore take very seriously our obligations in relation to the way in which we use your personal information.</li>
+					<li>By providing us with the information, you consent to our processing your personal Information for the purposes set out in the Terms, for operating the Website or to comply with a legal or regulatory obligation.</li>
+					<li>As a policy the Company will not disclose any personal information to anyone other than those employees that need access to your data to provide you with a service and to our third party providers who undertake Checks on our behalf. We may also share your personal data within our group of companies (companies directly or indirectly controlling, controlled by, or under common control with the Company, having at least 50% common ownership with the Company or owning 50% of the issued share capital of the Company) to inform you of changes, new services and promotions that we think you may find interesting. If you do not wish to receive such direct marketing data, you may opt out of such service by contacting the support team at <span id="cloak66536"><a href="mailto:contact@betspin.com">contact@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak66536').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy66536 = 'c&#111;nt&#97;ct' + '&#64;';
+					 addy66536 = addy66536 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak66536').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy66536 + '\'>' +addy66536+'<\/a>';
+					 //-->
+					 </script></li>
+					<li>We will retain copies of any communications that you send to us (including copies of any emails) in order to maintain accurate records of the information that we have received from you.</li>
+					<li>Players have the right to their personal data held by the operator in accordance with the Data Protection Laws. Players are also entitled to change or amend their respective personal data.</li>
+					<li>The company will use all responsible means to protect player, but is not liable should a third party unlawfully seize such data. Lawful supply of such data to third parties is on an opt-in basis.</li>
+					<li>The operator has the obligation to forward any information to the relevant authorities in case of fraudulent or suspicious behaviour. By accepting the company’s Privacy Policy, players are giving their permission to the company to verify the data by using third party databases.</li>
+					</ol>
+					</li>
+					<li>USE OF COOKIES ON THE WEBSITE
+					<ol>
+					<li>The Website uses 'cookies' to assist the functionality of the Website. A cookie is a small file of text which is downloaded onto your computer when you access the Website and it allows us to recognise when you come back to the Website. Information on deleting or controlling cookies is available at www.aboutcookies.org. Please note that by deleting our cookies or disabling future cookies you may not be able to access certain areas or features of the Website.</li>
+					</ol>
+					</li>
+					<li>COMPLAINTS AND NOTICES
+					<ol>
+					<li>NON-GB PLAYERS
+					<ol>
+					<li>This section (22.1) applies only to non-GB players.</li>
+					<li>If you wish to make a complaint regarding the Website, a first step should be to, as soon as reasonably possible, contact Customer Services by emailing us at <span id="cloak60473"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak60473').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy60473 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy60473 = addy60473 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak60473').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy60473 + '\'>' +addy60473+'<\/a>';
+					 //-->
+					 </script>.</li>
+					<li>We aim to provide you with a substantive response to your complaint as soon as practically possible and seek to resolve your complaint within eight weeks from the date we receive the complaint. Depending on the complexity of the complaint, our investigation may take longer than eight weeks to resolve. We will ensure that we write to you within eight weeks of the date we receive your complaint with either a final response or an update of the position explaining why we are not in a position to provide a final response, and when we expect to be in a position to do so.</li>
+					<li>An advisor will log your call/message, investigate your enquiry and respond to it. If your concern is not resolved at this stage you can escalate the complaint by referring the matter in writing to the Head of Customer Operations at <span id="cloak70625"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak70625').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy70625 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy70625 = addy70625 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak70625').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy70625 + '\'>' +addy70625+'<\/a>';
+					 //-->
+					 </script>. We aim to keep you informed throughout the process. On receipt of your complaint we will email you and acknowledge that we have received your complaint, will confirm the particulars of your complaint and provide you with a copy of this procedure. The Head of Customer Operations’ response represents the final stage of the internal complaints procedure.</li>
+					<li>In the event of any dispute, you agree that the records of the server shall act as the final authority in determining the outcome of any claim.</li>
+					<li>You agree that in the unlikely event of a disagreement between the result that appears on your screen and the game server, the result that appears on the game server will prevail, and you acknowledge and agree that our records will be the final authority in determining the terms and circumstances of your participation in the relevant online gaming activity and the results of this participation.</li>
+					<li>When we wish to contact you regarding such a dispute, we will do so by using any of Your Contact Details.</li>
+					<li>If you feel unsatisfied with our decision, you may lodge a complaint directly with the relevant authority at - http://www.mga.org.mt/support/online-gaming-support/</li>
+					</ol>
+					</li>
+					<li>GB PLAYERS
+					<ol>
+					<li>This section (22.2) applies only to GB players.</li>
+					<li>If you wish to make a complaint regarding the Website, a first step should be to, as soon as reasonably possible, contact Customer Services by emailing us at <span id="cloak53418"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak53418').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy53418 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy53418 = addy53418 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak53418').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy53418 + '\'>' +addy53418+'<\/a>';
+					 //-->
+					 </script>.</li>
+					<li>We aim to provide you with a substantive response to your complaint as soon as practically possible and seek to resolve your complaint within five working days from the date we receive the complaint. Depending on the complexity of the complaint, our investigation may take longer than five working days to resolve. We will ensure that we write to you within five working days of the date we receive your complaint with either a final response or an update of the position explaining why we are not in a position to provide a final response, and when we expect to be in a position to do so.</li>
+					<li>An advisor will log your call/message, investigate your enquiry and respond to it. If your concern is not resolved at this stage you can escalate the complaint by referring the matter in writing to the Head of Customer Operations at <span id="cloak88803"><a href="mailto:customercare@betspin.com">customercare@betspin.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak88803').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy88803 = 'c&#117;st&#111;m&#101;rc&#97;r&#101;' + '&#64;';
+					 addy88803 = addy88803 + 'b&#101;tsp&#105;n' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak88803').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy88803 + '\'>' +addy88803+'<\/a>';
+					 //-->
+					 </script>. We aim to keep you informed throughout the process. On receipt of your complaint we will email you and acknowledge that we have received your complaint, will confirm the particulars of your complaint and provide you with a copy of this procedure. The Head of Customer Operations’ response represents the final stage of the internal complaints procedure.</li>
+					<li>If your complaint relates to the outcome of a gambling transaction and is not resolved to your satisfaction by our internal complaints procedure, you may refer your dispute to one of our Alternative Dispute Resolution (ADR) entities, whose details are: Independent Betting Adjudication Service. Address: PO Box 62639, London, EC3P 3AS, United Kingdom Email: <span id="cloak58592"><a href="mailto:adjudication@ibas-uk.co.uk">adjudication@ibas-uk.co.uk</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak58592').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy58592 = '&#97;dj&#117;d&#105;c&#97;t&#105;&#111;n' + '&#64;';
+					 addy58592 = addy58592 + '&#105;b&#97;s-&#117;k' + '&#46;' + 'c&#111;' + '&#46;' + '&#117;k';
+					 document.getElementById('cloak58592').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy58592 + '\'>' +addy58592+'<\/a>';
+					 //-->
+					 </script>. Fax Number: +44 02073475882. Telephone Number: +44 02073475883 or ThePOGG.com. Address: ThePOGG.com, PO Box 2089, Livingston, EH54 0GF Email: <span id="cloak54112"><a href="mailto:webmaster@thepogg.com">webmaster@thepogg.com</a></span><script type="text/javascript">
+					 //<!--
+					 document.getElementById('cloak54112').innerHTML = '';
+					 var prefix = '&#109;a' + 'i&#108;' + '&#116;o';
+					 var path = 'hr' + 'ef' + '=';
+					 var addy54112 = 'w&#101;bm&#97;st&#101;r' + '&#64;';
+					 addy54112 = addy54112 + 'th&#101;p&#111;gg' + '&#46;' + 'c&#111;m';
+					 document.getElementById('cloak54112').innerHTML += '<a ' + path + '\'' + prefix + ':' + addy54112 + '\'>' +addy54112+'<\/a>';
+					 //-->
+					 </script>. Your complaint can be submitted at - http://thepogg.com/submit-complaint/.</li>
+					<li>Alternative Dispute Resolution (ADR) involves the referral of unresolved disputes to an independent third party for adjudication. There is no charge to you for using this service. The details of our ADR entity are also held by the Gambling Commission. The ADR entity reserves the right to reject disputes referred for resolution on the basis that they are frivolous of vexatious but we are not permitted to refuse referral on that basis. The ultimate resolution may be made binding on both parties but does not deprive you of the right to pursue the matter in the courts. Details of all disputes referred to the ADR entity and details of the outcome will be provided by us to the Gambling Commission, as required by the Licence Conditions and Codes of Practice attached to MT Secure Trade’s Operating Licence.</li>
+					</ol>
+					</li>
+					</ol>
+					</li>
+					<li>TRANSFER OF RIGHTS AND OBLIGATIONS
+					<ol>
+					<li>We reserve the right to transfer, assign, sublicense or pledge the Terms, in whole or in part, to any person, provided that any such assignment will be on the same terms or terms that are no less advantageous to you.</li>
+					</ol>
+					</li>
+					<li>EVENTS OUTSIDE OUR CONTROL
+					<ol>
+					<li>We will not be liable or responsible for any failure to perform, or delay in performance of, any of our obligations under the Terms of Use that is caused by events outside our reasonable control, including, without limitation, acts of God, war, civil commotion, interruption in public communications networks or services, industrial dispute or DDOS-attacks and similar Internet attacks having an adverse effect ("Force Majeure"). Our performance is deemed to be suspended for the period that the Force Majeure Event continues, and we will have an extension of time for performance for the duration of that period. We will use our reasonable endeavors to bring the Force Majeure Event to a close or to find a solution by which our obligations may be performed despite the Force Majeure Event.</li>
+					</ol>
+					</li>
+					<li>WAIVER
+					<ol>
+					<li>If we fail to insist upon strict performance of any of your obligations or if we fail to exercise any of the rights or remedies to which we are entitled, this shall not constitute a waiver of such rights or remedies and shall not relieve you from compliance with such obligations.</li>
+					<li>A waiver by us of any default shall not constitute a waiver of any subsequent default. No waiver by us of any of the provisions of the Terms shall be effective unless it is expressly stated to be a waiver and is communicated to you in writing in accordance with above.</li>
+					</ol>
+					</li>
+					<li>SEVERABILITY
+					<ol>
+					<li>If any of the Terms are determined to be invalid, unlawful or unenforceable to any extent, such term, condition or provision will to that extent be severed from the remaining terms, conditions and provisions which will continue to be valid to the fullest extent permitted by law. In such cases, the part deemed invalid or unenforceable shall be amended in a manner consistent with the applicable law to reflect, as closely as possible, our original intent.</li>
+					</ol>
+					</li>
+					<li>LAW AND JURISDICTION
+					<ol>
+					<li>For GB Players the Terms of Use shall be governed by and interpreted in accordance with the laws of England and Wales. For non-GB Players the Terms of Use shall be governed by and interpreted in accordance with the laws of Malta in the Maltese Courts.</li>
+					<li>The Courts of England and Wales shall have non-exclusive jurisdiction over any disputes arising out of the Terms of Use themselves.</li>
+					</ol>
+					</li>
+					<li>RESPONSIBLE GAMING AND GAMBLING
+					<ol>
+					<li>We are committed to endorsing responsible gaming as a policy of customer care and social responsibility. We believe it is our responsibility to you, our customers, to ensure that you enjoy your wagering experience on our site, while remaining fully aware of the social and financial harms associated with problem gambling.</li>
+					<li>Deposit Limits - In order to assist our players in gambling responsibly, we have a Deposit Limit within each customer account. This option can be accessed within Your Account. Limits can be amended at anytime. A decrease in the deposit limit will take effect immediately, but an increase can only occur after a cooling-off period, in order to avoid rash decisions. If you require any further information or assistance regarding our functionality, please contact our Customer Care.</li>
+					<li>Self-exclusion (non-GB players) Should you need to take a break from gambling with this Website and all other skins and Websites operated by the licence holder, we provide a self-exclusion facility which can be activated by the customer within Your Account settings or by contacting Customer Care. Self-exclusion means that your account will remain closed for a minimum period (this minimum period is 7 days and the account will not be reactivated under any circumstances during the exclusion period). This is the major difference to a standard account closure request; time out. Excluding yourself will affect your account with this Website as well as other Websites operated under the same licence.</li>
+					<li>Time Out (non-GB players) Should you need to take a time out from gambling please avail yourself to the Time Out functionality on the Website and choose the period you wish to be timed out. This tool can be found in Your Account settings. Should you for any reason be unable to impose these limits yourself please contact Customer Services. Upon the end of your Self Exclusion or Time Out period, your account will automatically be reactivated.</li>
+					<li>Self-exclusion (GB players) Should you need to take a break from gambling with this Website and all other skins and Websites operated by the licence holder, MT SecureTrade Limited and Betit Operations Limited, we provide a self-exclusion facility which can be activated by the customer within Your Account settings or by contacting support. Self-exclusion means that your account will remain closed for a minimum period (this minimum period is 6 months and the account will not be reactivated under any circumstances during the exclusion period). Upon the end of your Self Exclusion your account will remain closed until you make contact with Customer Services to have your account reactivated. This can be done in the form of an e-mail or a request through our Live Chat system. This is the major difference to a standard account closure request; time out. Once you have self-excluded on the brand you are currently a member of, all Your accounts operated by both MT SecureTrade Limited and Betit Operations Limited will be closed for the self-exclusion period selected. This is in accordance with our obligations under Social Responsibility Codes.</li>
+					<li>Time Out (GB players) Should you need to take a time out from gambling please avail yourself to the Time Out functionality on the Website and choose the period you wish to be timed out. This tool can be found in Your Account. Should you for any reason be unable to impose these limits yourself please contact Customer Services. Upon the end of your Time Out period, your account will automatically be reactivated.</li>
+					<li>We will use our best endeavours to ensure that, if you have requested self-exclusion from our Website, you will not be able to open a new account with us or any other Website operated under the same license. However, in the event that you succeed in creating a new account by supplying false data, or via any similar means, you agree that all liability for any losses subsequently incurred as a result of using our Services will fall on you. Should we become aware that you have supplied false data, or any similar means, to open an account with us, we reserve the right to immediately close that account and retain any winnings.</li>
+					<li>If you are considering self-exclusion, please remember to contact all gambling companies with whom you have accounts and ask to self-exclude with them too. We will use our reasonable endeavours to ensure compliance with your self-exclusion. However you accept that we have no responsibility or liability whatsoever if you continue gambling and/or seek to use the Website and we fail to recognise or determine that due to you providing false information. We also recommend that consideration is given to the installation of software that will allow you to block access to internet gambling Websites. See Filtering Systems at the bottom of this page.</li>
+					<li>Underage Gambling - It is illegal for anyone under the age of 18 to open an account or to gamble on our Website. We carry out age Checks on all customers who use payment mechanisms which are available to under 18s and additionally perform random age Checks on customers using other forms of funding mechanisms. Please note that anyone under the age of 18 found to be using the site will have any winnings forfeited and may also be reported to the authorities.</li>
+					<li>(For GB Players) In line with UK regulation, any person found to have created and/or operated an account whilst underage shall have any and all stakes refunded (less withdrawals, should there be any).</li>
+					<li>Filtering Systems - Filtering solutions allow parents to regulate access to the internet, based on chosen criteria. Parents can use filters to prevent their children from accessing, amongst other things, gambling websites. If you share your computer with friends or family who are under the Legal Age to register or bet with our site, or have requested self-exclusion from gambling sites, please consider parental filtering solutions.</li>
+					<li>Setting of Financial Limits – A player may set financial limits mainly related to losses by contacting our Customer Care team. Once these limits are set the player will not be able to exceed these limits.</li>
+					<li>Setting of Session Time Limits – A player may set maximum Session Time Limits by contacting our Customer Care team. Once these limits are set the player will not be allowed to continue playing above the preset time limit in any one session.</li>
+					<li>Any notice for changes described above will be accompanied by a seven (7) day cool down period in which the player will not be able to revert the conditions previously placed on his account.</li>
+					<li>We are committed to supporting Responsible Gambling initiatives and encourage you to find information about Responsible Gambling at the websites of the following organisations: GambleAware (www.gambleaware.co.uk), GamCare (www.gamcare.org.uk), GordonHouse (www.gamblingtherapy.org), Gam-Anon (www.gamanon.org.uk) and GA (www.gamblersanonymous.org.uk).</li>
+					</ol>
+					</li>
+					<li>LINKS
+					<ol>
+					<li>Where we provide hyperlinks to other websites, we do so for information purposes only. You use any such links at your own risk and we accept no responsibility for the content or use of such websites, or for the information contained on them.</li>
+					</ol>
+					</li>
+					<li>INTERPRETATION
+					<ol>
+					<li>The original text of the Terms is in English and any interpretation of them will be based on the original English text. If the Terms of Use or any documents or notices related to them are translated into any other language, the original English version will prevail.</li>
+					</ol>
+					</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
+	<div class="footer-wrapper">
+		<div class="footer-info-line">
+			<div class="footer-last-games">
+				<span class="last-game-trigger">last games</span>
+				<div class="language-selector">
+				<div class="moduletable">
+					<div class="mod-languages">
+						<div class="lang-inline">
+							<div class="lang-other" style="display: none;">
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">FI</span>
+									<a href="">
+									<img src="img/icons/fi.svg" title="Finnish (FI)" alt="Finnish (FI)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">SV</span>
+									<a href="">
+									<img src="img/icons/sv.svg" title="Swedish (SV)" alt="Swedish (SV)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">NO</span>
+									<a href="">
+									<img src="img/icons/no.svg" title="Norway (NO)" alt="Norway (NO)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">CA</span>
+									<a href="">
+									<img src="img/icons/en_ca.svg" title="English (CA)" alt="English (CA)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">AU</span>
+									<a href="">
+									<img src="img/icons/en_au.svg" title="English (AU)" alt="English (AU)" witdh="20px" height="20px"></a>
+								</div>
+								<div style="display: inline-block;" class="lang lang-notactive" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">UK</span>
+									<a href="">
+									<img src="img/icons/en_gb.svg" title="English (UK)" alt="English (UK)" witdh="20px" height="20px"></a>
+								</div>
+							</div>
+								<div class="lang lang-active" dir="ltr">
+									<span style="display: inline-block;" class="language-sef">EN</span>
+									<a href="">
+									<img src="img/icons/en.svg" title="English (ALL)" alt="English (ALL)" witdh="20px" height="20px"></a>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="last-games-wrapper"></div>
+			</div>
+			<div class="last-winners">
+				<div class="last-winners-dropdown">
+					<div class="winners-inner">
+						<ul class="lasest-winners">
+							<li class="winner-item-prev"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+							<li class="winner-item"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="main-wrapper clearfix">
+				<div class="footer-links clearfix">
+					<div class="links-about">
+						<h4>Get to know Betspin</h4>
+						<ul>
+							<li><a href="promotions.html">Promotions</a></li>
+							<li><a href="bonus-terms.html">Casino bonus terms</a></li>
+							<li><a href="about-us.html">About us</a></li>
+							<li><a href="">Betspinners blog</a></li>
+							<li><a href="">Affiliate program</a></li>
+						</ul>
+					</div>
+					<div class="links-money">
+						<h4>Safe playing environment</h4>
+						<ul>
+							<li><a href="responsible.html">Responsible gaming</a></li>
+							<li><a href="payment-options.html">Payment options</a></li>
+							<li><a href="security.html">Security & privacy</a></li>
+							<li><a href="terms.html">Terms & conditions</a></li>
+						</ul>
+					</div>
+					<div class="links-social">
+						<h4>We are social</h4>
+						<span class="facebook"><a href="">Facebook</a></span>
+						<span class="youtube"><a href="">Youtube</a></span>
+						<span class="vimeo"><a href="">Vimeo</a></span>
+					</div>
+					<div class="bg-logo">
+						<img src="img/bg-logo.png" alt="">
+					</div>
+				</div>
+				<div class="footer-icons">
+					<div class="first-line">
+						<img src="img/footer/game-providers.png" alt="game providers">
+					</div>
+					<div class="second-line">
+						<img src="img/footer/payment-providers.png" alt="payment providers">
+					</div>
+					<div class="third-line">
+						<div class="wrapper">
+							<a href="#"><img src="img/footer/meister.png" alt="meister"></a>
+							<a href="#"><img src="img/footer/mgalogo.png" alt="mgalogo"></a>
+							<a href="#"><img src="img/footer/curacao_egaming.png" alt="curacao egaming"></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copiright">
+					<h4>Copyright © 2016 Candid Gaming Limited</h4>
+					<p>This website is operated by MT SecureTrade Limited, a company incorporated under the laws of Malta with registration number C56545 and registered address at GB Buildings, Penthouse, Watar Street, Ta’ Xbiex XBX 1301, Malta. MT SecureTrade Limited is licensed and regulated by the Malta Gaming Authority under the licences: MGA/CL1/954/2014 (issued on 19 May 2014) and MGA/CL1/955/2014 (issued on 19 May 2014). MT SecureTrade is also licensed and regulated by the UK Gambling Commission under the licence: 039575-R-319439-002 (issued on 13 August 2015).</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</div>
+
+	<link rel="stylesheet" href="libs/slick/slick.css">
+	<link rel="stylesheet" href="libs/slick/slick-theme.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
