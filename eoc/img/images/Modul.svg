@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="112.562mm" height="102.333mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 1800 1637"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil2 {fill:none}
+    .fil0 {fill:#0392D5}
+    .fil4 {fill:#C8CBCC}
+    .fil10 {fill:#CFD4D6}
+    .fil8 {fill:#D5D8D9}
+    .fil5 {fill:#DADDDE}
+    .fil7 {fill:#E1E5E6}
+    .fil3 {fill:#E5E7E8}
+    .fil6 {fill:#EFF1F2}
+    .fil1 {fill:#F4F6F7}
+    .fil9 {fill:#F9FBFC}
+   ]]>
+  </style>
+    <clipPath id="id0">
+     <path d="M982 0c-452,0 -818,366 -818,818 0,452 366,819 818,819 452,0 818,-367 818,-819 0,-452 -366,-818 -818,-818z"/>
+    </clipPath>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_848739888">
+   <path class="fil0" d="M982 0c-452,0 -818,366 -818,818 0,452 366,819 818,819 452,0 818,-367 818,-819 0,-452 -366,-818 -818,-818z"/>
+   <g style="clip-path:url(#id0)">
+    <g>
+     <rect class="fil1" x="1012" y="-180" width="255" height="1998"/>
+    </g>
+   </g>
+   <path class="fil2" d="M982 0c-452,0 -818,366 -818,818 0,452 366,819 818,819 452,0 818,-367 818,-819 0,-452 -366,-818 -818,-818z"/>
+   <rect class="fil3" x="758" y="426" width="487" height="491"/>
+   <rect class="fil4" x="1004" y="456" width="162.197" height="39.4533"/>
+   <path class="fil5" d="M737 180l0 0 0 0 -333 0 0 1213 333 0 0 0 0 0c228,0 412,-271 412,-606 0,-335 -184,-607 -412,-607z"/>
+   <ellipse class="fil6" cx="412" cy="787" rx="412" ry="606"/>
+   <path class="fil7" d="M1188 783c-15,-33 -30,-65 -44,-98 1,18 1,36 -2,52l-321 0 0 100c107,0 214,0 321,0 5,17 3,33 2,50 14,-35 29,-70 44,-104z"/>
+   <polygon class="fil6" points="867,783 821,736 821,837 "/>
+   <polygon class="fil6" points="658,239 593,243 664,310 "/>
+   <path class="fil8" d="M977 239l-73 -7 8 7 -255 0 7 68c104,-3 209,-5 314,-7 10,4 18,16 26,25l-27 -86z"/>
+   <ellipse class="fil1" cx="405" cy="786" rx="384" ry="572"/>
+   <polygon class="fil6" points="668,1323 602,1319 673,1251 "/>
+   <path class="fil8" d="M986 1323l-73 6 8 -6 -255 0 7 -68c105,2 209,4 314,6 10,-3 18,-16 26,-24l-27 86z"/>
+   <ellipse class="fil9" cx="395" cy="778" rx="284" ry="423"/>
+   <rect class="fil10" x="867" y="781" width="319.457" height="2.99542"/>
+  </g>
+ </g>
+</svg>
