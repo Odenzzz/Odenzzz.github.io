@@ -78,44 +78,8 @@
 			</div>
 		</div>
 	</header>
-	<div class="page-content">
-		<div class="payment-description clouds-bg top-svg">
-			<div class="main-wrapper">
-				<h1>Оплатить</h1>
-				<div class="payment-methods-wrapper">
-					<div class="tab-scrolling-wrapper">
-						<div class="tab-menu-wrapper dragging-scrolling">
-							<div class="tab-menu dragging-scrolling-content">
-								<div class="tab-item tab-active">Банковской картой</div>
-								<div class="tab-item">Электронные деньги</div>
-								<div class="tab-item">Со счета мобильного</div>
-								<div class="tab-item">Наличными</div>
-							</div>
-						</div>
-					</div>
-					<div class="payment-content">
-						<form action="">
-							<div class="form-col">
-								<div class="input-wrapper">
-									<label for="bill-number">Лицевой счет</label>
-									<input type="text" id="bill-number" placeholder="Последние 6 цифр">\
-									<div class="error-message">Ввидите счет</div>
-								</div>
-							</div>
-							<div class="form-col">
-								<div class="input-wrapper">
-									<label for="sum-number">Сумма руб.</label>
-									<input type="text" id="sum-number" placeholder="Ведите сумму">
-									<div class="error-message">Ввидите сумму</div>
-								</div>
-							</div>
-							<input type="submit" class="button" value="Оплатить">
-						</form>
-						<div class="payment-card-description">Оплата картой любого банка без комиссии <img src="img/payment/payment-cards.png" alt=""></div>
-					</div>
-				</div>
-				
-			</div>
+	<div class="page-content payment-description">
+		<div class="clouds-bg top-svg">
 			<div class="payment clouds">
 				<?xml version="1.0" encoding="UTF-8"?>
 				<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
@@ -142,6 +106,41 @@
 						</g>
 					</g>
 				</svg>
+			</div>
+		</div>
+		<div class="main-wrapper">
+			<h1>Оплатить</h1>
+			<div class="payment-methods-wrapper">
+				<div class="tab-scrolling-wrapper">
+					<div class="tab-menu-wrapper dragging-scrolling">
+						<div class="tab-menu dragging-scrolling-content">
+							<div class="tab-item tab-active">Банковской картой</div>
+							<div class="tab-item">Электронные деньги</div>
+							<div class="tab-item">Со счета мобильного</div>
+							<div class="tab-item">Наличными</div>
+						</div>
+					</div>
+				</div>
+				<div class="payment-content">
+					<form action="">
+						<div class="form-col">
+							<div class="input-wrapper">
+								<label for="bill-number">Лицевой счет</label>
+								<input type="text" id="bill-number" placeholder="Последние 6 цифр">
+								<div class="error-message">Ввидите счет</div>
+							</div>
+						</div>
+						<div class="form-col">
+							<div class="input-wrapper">
+								<label for="sum-number">Сумма руб.</label>
+								<input type="text" id="sum-number" placeholder="Ведите сумму">
+								<div class="error-message">Ввидите сумму</div>
+							</div>
+						</div>
+						<input type="submit" class="button" value="Оплатить">
+					</form>
+					<div class="payment-card-description">Оплата картой любого банка без комиссии <img src="img/payment/payment-cards.png" alt=""></div>
+				</div>
 			</div>
 		</div>
 	</div>
