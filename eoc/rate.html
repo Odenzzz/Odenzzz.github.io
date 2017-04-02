@@ -20,9 +20,17 @@
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
 
+	<link rel="stylesheet" href="css/loader.css">
 </head>
 
 <body>
+<div class="wrapper loader-wrapper">
+	<svg class="hourglass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 206" preserveAspectRatio="none">
+		<path class="middle" d="M120 0H0v206h120V0zM77.1 133.2C87.5 140.9 92 145 92 152.6V178H28v-25.4c0-7.6 4.5-11.7 14.9-19.4 6-4.5 13-9.6 17.1-17 4.1 7.4 11.1 12.6 17.1 17zM60 89.7c-4.1-7.3-11.1-12.5-17.1-17C32.5 65.1 28 61 28 53.4V28h64v25.4c0 7.6-4.5 11.7-14.9 19.4-6 4.4-13 9.6-17.1 16.9z"/>
+		<path class="outer" d="M93.7 95.3c10.5-7.7 26.3-19.4 26.3-41.9V0H0v53.4c0 22.5 15.8 34.2 26.3 41.9 3 2.2 7.9 5.8 9 7.7-1.1 1.9-6 5.5-9 7.7C15.8 118.4 0 130.1 0 152.6V206h120v-53.4c0-22.5-15.8-34.2-26.3-41.9-3-2.2-7.9-5.8-9-7.7 1.1-2 6-5.5 9-7.7zM70.6 103c0 18 35.4 21.8 35.4 49.6V192H14v-39.4c0-27.9 35.4-31.6 35.4-49.6S14 81.2 14 53.4V14h92v39.4C106 81.2 70.6 85 70.6 103z"/>
+	</svg>
+	<strong>Загрузка</strong>
+</div>
 <div class="hidden-menu">
 	<div class="hidden-menu-toggle"><i class="icon-cancel" aria-hidden="true"></i></div>
 	<div class="hidden-menu-logo">
@@ -40,7 +48,7 @@
 		</ul>
 	</div>
 </div>
-<div class="body-wrapper">
+<div class="body-wrapper" itemscope itemtype="http://schema.org/Organization">
 	<header>
 		<div class="top-line">
 			<div class="main-wrapper">
@@ -59,7 +67,7 @@
 						<span>9:00 - 20:00 без выходных</span>
 					</div>
 					<div class="phone hidden-sm">
-						<span>8 383 375 60 00</span>
+						<span itemprop="telephone">8 383 375 60 00</span>
 					</div>
 				</div>
 			</div>
@@ -113,103 +121,203 @@
 			<div class="rate-wrapper">
 				<div class="tab-scrolling-wrapper">
 					<div class="tab-menu-wrapper dragging-scrolling">
-						<div class="tab-menu dragging-scrolling-content">
-							<div class="tab-item tab-active">Беспроводной интернет</div>
-							<div class="tab-item">Проводной интернет (gpon)</div>
+						<div class="tab-nav tab-menu dragging-scrolling-content" id="rate">
+							<div class="tab-item tab-active" id="wereless-net">Беспроводной интернет</div>
+							<div class="tab-item" id="wired-net">Проводной интернет (gpon)</div>
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col">
-						<div class="speed-circle" value="2" load="0.20">
-							<strong></strong>
-							<span>мбит/с</span>
-						</div>
-						<p></p>
-						<div class="price">
-							<div class="price-content">
-								<div class="price-value">
-									490
+				<div class="tab-content rate">
+					<div class="tab-content-item wereless-net tab-active-item">
+						<div class="row">
+							<div class="col">
+								<div class="speed-circle" value="2" load="0.20">
+									<strong></strong>
+									<span>мбит/с</span>
 								</div>
-								<div class="price-currency">
-									<span>руб</span>
-									<span>мес</span>
+								<p></p>
+								<div class="price">
+									<div class="price-content">
+										<div class="price-value">
+											490
+										</div>
+										<div class="price-currency">
+											<span>руб</span>
+											<span>мес</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col bordered">
+								<div class="speed-circle" value="10" load="0.50">
+									<strong></strong>
+									<span>мбит/с</span>
+								</div>
+								<p>(дневная 5) <br> оптимальный тариф для ежедневного использования</p>
+								<div class="price">
+									<div class="price-content">
+										<div class="price-value">
+											690
+										</div>
+										<div class="price-currency">
+											<span>руб</span>
+											<span>мес</span>
+										</div>
+									</div>
+								</div>
+								<span class="promo" href="#">Рекомендуем</span>
+							</div>
+							<div class="col">
+								<div class="speed-circle" value="100" load="0.85">
+									<strong></strong>
+									<span>мбит/с</span>
+								</div>
+								<p>(дневная 10)</p>
+								<div class="price">
+									<div class="price-content">
+										<div class="price-value">
+											890
+										</div>
+										<div class="price-currency">
+											<span>руб</span>
+											<span>мес</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row form-row">
+							<form>
+								<div class="input-wrapper">
+									<input type="text" placeholder="Улица и номер дома" class="input-street">
+									<div class="error-message">Ввидите улицу и номер дома</div>
+								</div>
+								<div class="input-wrapper">
+									<input type="text" placeholder="Контактный телефон" class="input-phone">
+									<div class="error-message">Ввидите контактный телефон</div>
+								</div>
+								<input type="submit" class="button" value="Подключиться">
+							</form>
+							<p>Проверим ваш адрес и перезвоним в ближайшее ребочее время</p>
+						</div>
+						<div class="row">
+							<div class="module-wrapper">
+								<div class="left-col">
+									<h2>Подключение - 3 950 р.</h2>
+									<span>В стоимость входит</span>
+									<ul>
+										<li>установка радио-модуля на крыше или фасаде дома;</li>
+										<li>проводка кабеля по дому;</li>
+										<li>настройка подключения на компьютере.</li>
+									</ul>
+									<span>Занимает от 1 до 5 рабочих дней.</span>
+									<div class="garantie">
+										Гарантия качества <div class="tip-toggle"><div class="tip">В течение 7 дней после установки вы можете сдать приставку нам в офис и вернуть полную ее стоимость. Без объяснения причин. Даже есть "просто не понравилось".</div></div>
+									</div>
+									<div class="garantie">
+										Рассрочка на 3 месяца <div class="tip-toggle"><div class="tip">В течение 7 дней после установки вы можете сдать приставку нам в офис и вернуть полную ее стоимость. Без объяснения причин. Даже есть "просто не понравилось".</div></div>
+									</div>
+								</div>
+								<div class="right-col">
+									<img src="img/images/modul.svg" alt="">
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col bordered">
-						<div class="speed-circle" value="10" load="0.50">
-							<strong></strong>
-							<span>мбит/с</span>
-						</div>
-						<p>(дневная 5) <br> оптимальный тариф для ежедневного использования</p>
-						<div class="price">
-							<div class="price-content">
-								<div class="price-value">
-									690
+					<div class="tab-content-item wired-net">
+						<div class="row">
+							<div class="col">
+								<div class="speed-circle" value="2" load="0.20">
+									<strong></strong>
+									<span>мбит/с</span>
 								</div>
-								<div class="price-currency">
-									<span>руб</span>
-									<span>мес</span>
+								<p></p>
+								<div class="price">
+									<div class="price-content">
+										<div class="price-value">
+											490
+										</div>
+										<div class="price-currency">
+											<span>руб</span>
+											<span>мес</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col bordered">
+								<div class="speed-circle" value="10" load="0.50">
+									<strong></strong>
+									<span>мбит/с</span>
+								</div>
+								<p>(дневная 5) <br> оптимальный тариф для ежедневного использования</p>
+								<div class="price">
+									<div class="price-content">
+										<div class="price-value">
+											690
+										</div>
+										<div class="price-currency">
+											<span>руб</span>
+											<span>мес</span>
+										</div>
+									</div>
+								</div>
+								<span class="promo" href="#">Рекомендуем</span>
+							</div>
+							<div class="col">
+								<div class="speed-circle" value="100" load="0.85">
+									<strong></strong>
+									<span>мбит/с</span>
+								</div>
+								<p>(дневная 10)</p>
+								<div class="price">
+									<div class="price-content">
+										<div class="price-value">
+											890
+										</div>
+										<div class="price-currency">
+											<span>руб</span>
+											<span>мес</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<a class="promo-button" href="#">Рекомендуем</a>
-					</div>
-					<div class="col">
-						<div class="speed-circle" value="100" load="0.85">
-							<strong></strong>
-							<span>мбит/с</span>
-						</div>
-						<p>(дневная 10)</p>
-						<div class="price">
-							<div class="price-content">
-								<div class="price-value">
-									890
+						<div class="row form-row">
+							<form>
+								<div class="input-wrapper">
+									<input type="text" placeholder="Улица и номер дома" class="input-street">
+									<div class="error-message">Ввидите улицу и номер дома</div>
 								</div>
-								<div class="price-currency">
-									<span>руб</span>
-									<span>мес</span>
+								<div class="input-wrapper">
+									<input type="text" placeholder="Контактный телефон" class="input-phone">
+									<div class="error-message">Ввидите контактный телефон</div>
+								</div>
+								<input type="submit" class="button" value="Подключиться">
+							</form>
+							<p>Проверим ваш адрес и перезвоним в ближайшее ребочее время</p>
+						</div>
+						<div class="row">
+							<div class="module-wrapper">
+								<div class="left-col">
+									<h2>Подключение - 3 950 р.</h2>
+									<span>В стоимость входит</span>
+									<ul>
+										<li>установка радио-модуля на крыше или фасаде дома;</li>
+										<li>проводка кабеля по дому;</li>
+										<li>настройка подключения на компьютере.</li>
+									</ul>
+									<span>Занимает от 1 до 5 рабочих дней.</span>
+									<div class="garantie">
+										Гарантия качества <div class="tip-toggle"><div class="tip">В течение 7 дней после установки вы можете сдать приставку нам в офис и вернуть полную ее стоимость. Без объяснения причин. Даже есть "просто не понравилось".</div></div>
+									</div>
+									<div class="garantie">
+										Рассрочка на 3 месяца <div class="tip-toggle"><div class="tip">В течение 7 дней после установки вы можете сдать приставку нам в офис и вернуть полную ее стоимость. Без объяснения причин. Даже есть "просто не понравилось".</div></div>
+									</div>
+								</div>
+								<div class="right-col">
+									<img src="img/images/modul.svg" alt="">
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row form-row">
-					<form action="">
-						<div class="input-wrapper">
-							<input type="text" placeholder="Улица и номер дома" class="input-street">
-							<div class="error-message">Ввидите улицу и номер дома</div>
-						</div>
-						<div class="input-wrapper">
-							<input type="text" placeholder="Контактный телефон" class="input-phone">
-							<div class="error-message">Ввидите контактный телефон</div>
-						</div>
-						<input type="submit" class="button" value="Подключиться">
-					</form>
-					<p>Проверим ваш адрес и перезвоним в ближайшее ребочее время</p>
-				</div>
-				<div class="row">
-					<div class="module-wrapper">
-						<div class="left-col">
-							<h2>Подключение - 3 950 р.</h2>
-							<span>В стоимость входит</span>
-							<ul>
-								<li>установка радио-модуля на крыше или фасаде дома;</li>
-								<li>проводка кабеля по дому;</li>
-								<li>настройка подключения на компьютере.</li>
-							</ul>
-							<span>Занимает от 1 до 5 рабочих дней.</span>
-							<div class="garantie">
-								Гарантия качества <div class="tip-toggle"><div class="tip">В течение 7 дней после установки вы можете сдать приставку нам в офис и вернуть полную ее стоимость. Без объяснения причин. Даже есть "просто не понравилось".</div></div>
-							</div>
-							<div class="garantie">
-								Рассрочка на 3 месяца <div class="tip-toggle"><div class="tip">В течение 7 дней после установки вы можете сдать приставку нам в офис и вернуть полную ее стоимость. Без объяснения причин. Даже есть "просто не понравилось".</div></div>
-							</div>
-						</div>
-						<div class="right-col">
-							<img src="img/images/modul.svg" alt="">
 						</div>
 					</div>
 				</div>
