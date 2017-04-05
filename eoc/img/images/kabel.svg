@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X7 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="120.112mm" height="102.333mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 3401 2898"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#0392D5}
+    .fil3 {fill:#D5D8D9}
+    .fil2 {fill:#DADDDE}
+    .fil1 {fill:#F4F6F7}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_711676720">
+   <circle class="fil0" cx="1952" cy="1449" r="1449"/>
+   <path class="fil1" d="M2213 627c439,12 837,181 1140,450 19,70 32,142 40,216 -293,-320 -712,-527 -1183,-541 -501,-14 -956,192 -1269,530l-95 -83c338,-365 828,-588 1367,-572zm-1375 1748c94,-207 229,-399 404,-565 602,-568 1489,-640 2153,-230 -5,56 -13,111 -24,164 -539,-150 -1145,-20 -1586,396 -194,183 -334,401 -420,634 -39,-18 -77,-36 -113,-57 93,-246 242,-475 447,-668 390,-369 900,-528 1392,-483 -579,-237 -1273,-127 -1762,335 -178,168 -310,365 -398,576 -32,-33 -63,-67 -93,-102z"/>
+   <g>
+    <path class="fil2" d="M0 1782l623 -588c23,-22 89,-4 145,23l252 -217 122 129 -224 246c25,59 39,126 16,149l-623 587 -311 -329zm1028 -630l9 -9 40 42 -10 9 -39 -42zm-138 130l10 -9 39 41 -9 9 -40 -41zm46 -44l10 -9 39 42 -9 9 -40 -42zm46 -43l9 -9 40 42 -10 9 -39 -42zm-26 -119l9 -9 40 42 -10 9 -39 -42zm-137 130l9 -9 40 41 -10 9 -39 -41zm45 -44l10 -9 39 42 -9 9 -40 -42zm46 -43l10 -9 39 42 -10 9 -39 -42z"/>
+    <rect class="fil1" transform="matrix(0.895036 -0.845041 0.967382 1.02461 -9.22859E-005 1781.7)" width="396" height="322"/>
+    <path class="fil3" d="M272 2001l96 -91 9 10 -96 90 -9 -9zm-173 -183l96 -91 9 10 -96 91 -9 -10zm22 23l96 -91 9 10 -97 90 -8 -9zm21 23l96 -91 9 9 -96 91 -9 -9zm22 23l96 -91 9 9 -96 91 -9 -9zm21 23l97 -91 8 9 -96 91 -9 -9zm22 23l96 -91 9 9 -96 91 -9 -9zm22 22l96 -90 9 9 -97 91 -8 -10zm21 23l96 -91 9 10 -96 91 -9 -10z"/>
+   </g>
+  </g>
+ </g>
+</svg>
