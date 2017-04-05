@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+</head>
+
+<body>
+
+	<header>
+		<div class="top-line-wrapper">
+			<div class="main-wrapper">
+				<div class="top-line">
+					<a href="index.html" class="logo">
+						<img src="img/logo.png" alt="Fellowes">
+					</a>
+					<span class="mobile-menu-toggle icon-bars"></span>
+					<div class="top-account"><i class="icon-user" aria-hidden="true"></i>Личный кабинет</div>
+					<div class="top-info">
+						<ul>
+							<li class="phone hidden-xs">+7 (499) 653-74-63</li>
+							<li class="hidden-md">Пн-Пт 9:00 - 21:00</li>
+							<li class="hidden-md">Вых. 10:00 - 18:00</li>
+							<li class="hidden-sm">shop@fellowes.ru</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="middle-line-wrapper">
+			<div class="main-wrapper">
+				<div class="middle-line">
+					<div class="search"><input type="text" placeholder="Поиск"><button class="button-blue"><span class="hidden-xs">найти</span><i class="visible-xs icon-magnifier-tool"></i></button></div>
+					<div class="cart">
+						<div class="cart-header">
+							<div class="left"><span class="icon-shopping-cart-empty-side-view"></span><div class="cart-count">2</div></div>
+							<div class="right hidden-xs">
+								<div>Моя корзина</div>
+								<div class="cart-sum">
+									12 367 руб.
+								</div>
+							</div>
+						</div>
+						<div class="cart-content">
+							<table>
+								<thead>
+									<td class="hidden-xs">
+										Изображение
+									</td>
+									<td class="product-name">
+										Товар
+									</td>
+									<td class="product-count">
+										Кол-во
+									</td>
+									<td class="product-price">
+										Цена
+									</td>
+								</thead>
+								<tr>
+									<td class="product-image hidden-xs">
+										<img src="img/product/1.png" alt="">
+									</td>
+									<td class="product-name"><a href="#">Шредер с автоподачей Fellowes AutoMax 500C</a></td>
+									<td class="product-count">3</td>
+									<td class="product-price">2000 р</td>
+									<td>
+										<button class="remove">X</button>
+									</td>
+								</tr>
+								<tr>
+									<td class="product-image hidden-xs">
+										<img src="img/product/1.png" alt="">
+									</td>
+									<td class="product-name"><a href="#">Шредер с автоподачей Fellowes AutoMax 500C</a></td>
+									<td class="product-count">3</td>
+									<td class="product-price">2000 р</td>
+									<td>
+										<button class="remove">X</button>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="menu-line-wrapper">
+			<div class="main-wrapper">
+				<div class="menu-line">
+					<ul>
+						<li><a href="#">Техника для бизнеса</a></li>
+						<li><a href="#">Офисные принадлежности</a></li>
+						<li><a href="#">Системы хранения</a></li>
+						<li><a href="#">Чехлы и аксессуары Optrix</a></li>
+						<li><a href="#">Скидки</a></li>
+						<li><a href="#">Акции</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class="page-content">
+		<div class="main-wrapper">
+			<div class="breadcrumbs">
+				<ul>
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Личный кабинет</a></li>
+				</ul>
+			</div>
+			<h1>Личный кабинет</h1>
+			<div class="scroll-wrapper account-menu-scroll-wrappper">
+				<div class="account-menu-wrapper dragging-scrolling">
+					<ul class="account-menu dragging-scrolling-content">
+						<li class="active" id="personal-data">Персональные данные</li>
+						<li id="company-data">Данные компании</li>
+						<li id="order-history">История заказов</li>
+					</ul>
+				</div>
+			</div>
+			<div class="account-content-wrapper">
+				<div class="account-content personal-data account-content-active">
+					<div class="row">
+						<h4>Данные аккаунта</h4>
+						<div class="input-wrapper"><label for="user-email">E-mail</label><input type="text" id="user-email" placeholder="E-mail"></div>
+						<div class="input-wrapper"><label for="user-phone">Мобильный телефон</label><input type="text" id="user-phone" placeholder="Мобильный телефон"><button class="button-blue">подтвердить</button></div>
+						<div class="input-wrapper"><label for="user-password">Пароль</label><input type="text" id="user-password" placeholder="Пароль"><a href="#">Изменить</a></div>
+					</div>
+					<div class="row">
+						<h4>Личный данные</h4>
+						<div class="input-wrapper"><label for="user-firstname">Имя</label><input type="text" id="user-firstname" placeholder="Имя"></div>
+						<div class="input-wrapper"><label for="user-lastname">Фамилия</label><input type="text" id="user-lastname" placeholder="Фамилия"></div>
+						<div class="input-wrapper"><label for="user-middlename">Отчество</label><input type="text" id="user-middlename" placeholder="Отчество"></div>
+						<div class="input-wrapper">
+							<label>Пол</label>
+							<span class="radio-wrapper">
+								<input class="radio-button" type="radio" value="male" name="gender" id="gender-male"><label class="gender-label" for="gender-male">Мужской</label>
+								<input class="radio-button" type="radio" value="female" name="gender" id="gender-female"><label class="gender-label" for="gender-female">Женский</label>
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<h4>Бонусный счет</h4>
+						<div class="bonus-counter">Количество баллов: <span class="bonus-count">56678</span></div>
+					</div>
+					<div class="row">
+						<button class="button-orange">сохранить <span class="hidden-sm">изменения</span></button>
+					</div>
+				</div>
+				<div class="account-content company-data">
+					<div class="row">
+						<h4>Реквизиты компании</h4>
+						<div class="input-wrapper"><label for="company-name">Наименование компании</label><input type="text" id="company-name" placeholder="Наименование компании"></div>
+						<div class="input-wrapper"><label for="company-inn">ИНН / КПП</label><input type="text" id="company-inn" placeholder="ИНН / КПП"></div>
+						<div class="input-wrapper"><label for="company-ogrn">ОГРН</label><input type="text" id="company-ogrn" placeholder="ОГРН"></div>
+						<div class="input-wrapper"><label for="company-legal-adress">Юридический адрес</label><input type="text" id="company-legal-adress" placeholder="Юридический адрес"></div>
+						<div class="input-wrapper"><label for="company-real-adress">Физический адрес</label><input type="text" id="company-real-adress" placeholder="Физический адрес"></div>
+						<h4>Реквизиты рассчетного счета</h4>
+						<div class="input-wrapper"><label for="company-bank-name">Название банка</label><input type="text" id="company-bank-name" placeholder="Название банка"></div>
+						<div class="input-wrapper"><label for="company-bic">БИК</label><input type="text" id="company-bic" placeholder="БИК"></div>
+						<div class="input-wrapper"><label for="company-payment account">Рассчетный счет</label><input type="text" id="company-payment account" placeholder="Рассчетный счет"></div>
+						<button class="button-orange">сохранить <span class="hidden-sm">изменения</span></button>
+					</div>
+				</div>
+				<div class="account-content order-history">
+					<h4>Неоплаченные заказы</h4>
+					<table class="not-paid">
+						<thead>
+							<td>Дата</td>
+							<td>Заказ №</td>
+							<td>Название товара</td>
+							<td>Статус</td>
+							<td>Оплата/Доставка</td>
+							<td>Сумма</td>
+						</thead>
+						<tbody>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Не оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Не оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Не оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Не оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Не оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+						</tbody>
+					</table>
+					<h4>История заказов</h4>
+					<table class="paid">
+						<thead>
+							<td>Дата</td>
+							<td>Заказ №</td>
+							<td>Название товара</td>
+							<td>Статус</td>
+							<td>Оплата/Доставка</td>
+							<td>Сумма</td>
+						</thead>
+						<tbody>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+							<tr>
+								<td>24.09.2015</td>
+								<td>987</td>
+								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+								<td>Оплачен</td>
+								<td>Самовывоз Наличный</td>
+								<td>5 000 руб</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="main-wrapper clearfix">
+			<div class="col">
+				<h4>Компания</h4>
+				<ul>
+					<li><a href="#">О нас</a></li>
+					<li><a href="#">Полезная информация</a></li>
+					<li><a href="#">Вопросы</a></li>
+				</ul>
+			</div>
+			<div class="col">
+				<h4>Магазин</h4>
+				<ul>
+					<li><a href="#">Оплата и доставка</a></li>
+					<li><a href="#">Контакты</a></li>
+					<li><a href="#">Договор-оферта</a></li>
+				</ul>
+			</div>
+			<div class="social">
+				<a href="#"><span class="icon-iconmonstr-instagram-1"></span></a>
+				<a href="#"><span class="icon-vk"></span></a>
+				<a href="#"><span class="icon-facebook-logo"></span></a>
+			</div>
+		</div>
+		<div class="bottom-line">
+			Все права защищены © Ipromotion Team 2008 - 2017
+		</div>
+	</footer>
+
+	<link rel="stylesheet" href="libs/iconmoon/style.css">
+	<link rel="stylesheet" href="libs/jquery/slick/slick.css">
+	<link rel="stylesheet" href="css/main.min.css">
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
