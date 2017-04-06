@@ -129,15 +129,15 @@
 			<h1>Личный кабинет</h1>
 			<div class="scroll-wrapper account-menu-scroll-wrappper">
 				<div class="account-menu-wrapper dragging-scrolling">
-					<ul class="account-menu dragging-scrolling-content">
+					<ul class="account-menu dragging-scrolling-content tab-menu">
 						<li class="active" id="personal-data">Персональные данные</li>
 						<li id="company-data">Данные компании</li>
 						<li id="order-history">История заказов</li>
 					</ul>
 				</div>
 			</div>
-			<div class="account-content-wrapper">
-				<div class="account-content personal-data account-content-active">
+			<div class="tab-content-wrapper">
+				<div class="tab-content personal-data tab-content-active">
 					<div class="row">
 						<h4>Данные аккаунта</h4>
 						<div class="input-wrapper"><label for="user-email">E-mail</label><input type="text" id="user-email" placeholder="E-mail"></div>
@@ -165,7 +165,7 @@
 						<button class="button-orange">сохранить <span class="hidden-sm">изменения</span></button>
 					</div>
 				</div>
-				<div class="account-content company-data">
+				<div class="tab-content company-data">
 					<div class="row">
 						<h4>Реквизиты компании</h4>
 						<div class="input-wrapper"><label for="company-name">Наименование компании</label><input type="text" id="company-name" placeholder="Наименование компании"></div>
@@ -180,113 +180,117 @@
 						<button class="button-orange">сохранить <span class="hidden-sm">изменения</span></button>
 					</div>
 				</div>
-				<div class="account-content order-history">
+				<div class="tab-content order-history">
 					<h4>Неоплаченные заказы</h4>
-					<table class="not-paid">
-						<thead>
-							<td>Дата</td>
-							<td>Заказ №</td>
-							<td>Название товара</td>
-							<td>Статус</td>
-							<td>Оплата/Доставка</td>
-							<td>Сумма</td>
-						</thead>
-						<tbody>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Не оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Не оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Не оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Не оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Не оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="table-wrapper">
+						<table class="not-paid">
+							<thead>
+								<td>Дата</td>
+								<td>Заказ №</td>
+								<td>Название товара</td>
+								<td>Статус</td>
+								<td>Оплата/Доставка</td>
+								<td>Сумма</td>
+							</thead>
+							<tbody>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Не оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Не оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Не оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Не оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Не оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 					<h4>История заказов</h4>
-					<table class="paid">
-						<thead>
-							<td>Дата</td>
-							<td>Заказ №</td>
-							<td>Название товара</td>
-							<td>Статус</td>
-							<td>Оплата/Доставка</td>
-							<td>Сумма</td>
-						</thead>
-						<tbody>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-							<tr>
-								<td>24.09.2015</td>
-								<td>987</td>
-								<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
-								<td>Оплачен</td>
-								<td>Самовывоз Наличный</td>
-								<td>5 000 руб</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="table-wrapper">
+						<table class="paid">
+							<thead>
+								<td>Дата</td>
+								<td>Заказ №</td>
+								<td>Название товара</td>
+								<td>Статус</td>
+								<td>Оплата/Доставка</td>
+								<td>Сумма</td>
+							</thead>
+							<tbody>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+								<tr>
+									<td>24.09.2015</td>
+									<td>987</td>
+									<td>Шредер с автоподачей Fellowes AutoMax 500C</td>
+									<td>Оплачен</td>
+									<td>Самовывоз Наличный</td>
+									<td>5 000 руб</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
