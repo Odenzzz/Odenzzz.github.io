@@ -12,6 +12,32 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<meta property="og:image" content="path/to/image.jpg">
+	<!--[if IE 8]>
+	<style type="text/css">
+		.middle-line {
+			width: 550px;
+		}
+		label:before, label:after{
+			display: none !important;
+			content: "" !important;
+		}
+		input[type="radio"], input[type="checkbox"]{
+			display: inline-block !important;
+		}
+		.product-image-wrappper .main-image{
+			width: 70% !important;
+		}
+		.product-image-zoom{
+			display: none !important;
+		}
+		.product-item {
+			width: 240px !important;
+		}
+		.slick-arrow:before{
+			color: black !important;
+		}
+	</style>
+	<![endif]-->
 
 
 	<!-- Chrome, Firefox OS and Opera -->
@@ -45,7 +71,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="middle-line-wrapper">
+		<div class="middle-line-wrapper clearfix">
 			<div class="main-wrapper">
 				<div class="middle-line">
 					<div class="search"><input type="text" placeholder="Поиск"><button class="button-blue"><span class="hidden-xs">найти</span><i class="visible-xs icon-magnifier-tool"></i></button></div>
@@ -300,7 +326,7 @@
 		</div>
 	</div>
 
-	<footer>
+	<div class="footer">
 		<div class="main-wrapper clearfix">
 			<div class="col">
 				<h4>Компания</h4>
@@ -327,7 +353,7 @@
 		<div class="bottom-line">
 			Все права защищены © Ipromotion Team 2008 - 2017
 		</div>
-	</footer>
+	</div>
 
 	<link rel="stylesheet" href="libs/iconmoon/style.css">
 	<link rel="stylesheet" href="libs/jquery/slick/slick.css">
