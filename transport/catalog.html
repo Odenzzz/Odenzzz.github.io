@@ -1,31 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="en">
 <head>
-
-	<meta charset="utf-8">
-
-	<title>Технологист - группа компаний</title>
-	<meta name="description" content="">
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<meta property="og:image" content="path/to/image.jpg">
-
-	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#000">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#000">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
-
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&amp;subset=cyrillic" rel="stylesheet">
-
+	<meta charset="UTF-8">
+	<title>Каталог</title>
 </head>
-
 <body>
-	
 	<div class="fixed-menu">
 			<div class="menu">
 				<div class="logo">
@@ -36,7 +15,7 @@
 					</div>
 					
 				</div>
-
+				<div class="basic-menu-wrapper">
 					<div class="basic-menu">
 						<div class="mail">
 							<ul>
@@ -45,16 +24,12 @@
 							</ul>
 						</div>
 						<div class="search"></div>
-						<div class="buttons-wrapper">
-							<div class="buttons">
-								<a class="button-side">Присоединиться</a>
-								<a class="button-side">Войти</a>
-							</div> 
-						</div>
+						<div class="buttons">
+							<a class="button-side">Присоединиться</a>
+							<a class="button-side">Войти</a>
+						</div> 
 					</div>
-					
-
-				
+				</div>
 			</div>
 
 
@@ -88,219 +63,9 @@
 				</div>
 			</div>
 	</div>
-	<div class="main-wrapper">
 
-		<section id="section-1">
 
-			<div class="main-filter-wrapper baron baron__root baron__clipper filter-toggled">
-				
-				<div class="main-filter baron__scroller">
-
-					<div class="baron__track">
-						<div class="baron__free">
-							<div class="baron__bar"></div>
-						</div>
-					</div>
-
-					<div class="executor">
-						<span class="span-filter-style">Исполнитель</span>
-						<div class="input-executor-wrapper">
-							<input type="radio" name="executor" value="all" id="executor-all" checked="checked"><label for="executor-all" class="executor-first-child">Все</label>
-							<input type="radio" name="executor" value="organization" id="executor-organization"><label for="executor-organization">Организации</label>
-							<input type="radio" name="executor" value="individuals" id="executor-individuals"><label for="executor-individuals">Частные лица</label>
-						</div>
-					</div>
-					
-					<div class="route">
-						<span class="span-filter-style">Маршрут</span>
-						<div class="input-row">
-							<input type="text" name="route" placeholder="Откуда">
-							<span class="icon-next"></span>
-							<input type="text" name="route" placeholder="Куда">
-						</div>
-						<div class="input-row">
-							<input type="text" name="route" placeholder="Откуда">
-							<span class="icon-next"></span>
-							<input type="text" name="route" placeholder="Куда">
-						</div>
-					</div>
-				
-					<div class="cargo">
-						<span class="span-filter-style">Характер груза</span>
-						<input type="text" name="cargo" placeholder="Например продукты, стройматериалы и др.">
-					</div>
-					
-					<div class="body-type">
-						<span class="span-filter-style">Тип кузова</span>
-						
-						<div class="body-type-dropdown ">
-								<span class="body-type-dropdown-toggle">Тентовый (с растентовкой, задняя...)</span>
-								<div class="bg-blackout"></div>
-								<div class="body-type-dropdown-filter baron baron__root baron__clipper"> 
-									<div class="baron__scroller">
-										<div class="dropdown-filter-content ">
-											
-											<div class="tilt-type">
-												<span>Тентованный</span>
-												<div class="dropdown-wrapper">
-													<span class="dropdown-toggle">Задняя</span>
-													<div class="dropdown-div">
-														<ul>
-															<li>Задняя</li>
-															<li>Боковая</li>
-															<li>Верхняя</li>
-														</ul>
-													</div>
-												</div>
-		
-											</div>
-		
-											<div class="tilt-sort">
-												<span>Открытый боковой</span>
-												<div class="dropdown-wrapper">
-													<span class="dropdown-toggle">Растентовка</span>
-													<div class="dropdown-div">
-														<ul>
-															<li>Растентовка</li>
-															<li>Растентовка1</li>
-															<li>Растентовка2</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-		
-											<div class="area-type">
-												<span>Площадка без бортов</span>
-												<div class="area-type-wrapper">
-													<div class="dropdown-wrapper">
-														<span class="dropdown-toggle">Задняя</span>
-														<div class="dropdown-div">
-															<ul>
-																<li>Задняя</li>
-																<li>Боковая</li>
-																<li>Верхняя</li>
-															</ul>
-														</div>
-													</div>
-													<div class="dropdown-wrapper">
-														<span class="dropdown-toggle">Задняя</span>
-														<div class="dropdown-div">
-															<ul>
-																<li>Задняя</li>
-																<li>Боковая</li>
-																<li>Верхняя</li>
-															</ul>
-														</div>
-													</div>
-												</div>
-											</div>
-		
-											<div class="process-isometric">
-												<span>Изометрический</span>
-												<div class="dropdown-wrapper">
-													<span class="dropdown-toggle">Растентовка</span>
-													<div class="dropdown-div">
-														<ul>
-															<li>Растентовка</li>
-															<li>Растентовка1</li>
-															<li>Растентовка2</li>
-														</ul>
-													</div>
-												</div>
-											</div>
-											
-										</div>
-										<div class="baron__track">
-											<div class="baron__free">
-											<div class="baron__bar"></div>
-											</div>
-										</div>
-									</div>
-								</div>
-						</div>
-					</div>
-		
-					<div class="measurement">
-		
-							<div class="weight">
-								<span class="span-filter-style">Вес кг/т</span>
-								<div class="input-measurment-wrapper">
-									<input type="text" name="weight" placeholder="от">
-									<input type="text" name="weight" placeholder="до">
-								</div>
-							</div>
-		
-							<div class="amount">
-								<span class="span-filter-style">Объем (м<sup>3</sup>)</span>
-								<div class="input-measurment-wrapper">
-									<input type="text" name="amount" placeholder="от">
-									<input type="text" name="amount" placeholder="до">
-								</div>
-							</div>
-					</div>
-		
-					<div class="dimensions">
-							<span class="span-filter-style">Габариты ТС (м)</span>
-							<input type="text" name="length" placeholder="Длина">
-							<input type="text" name="width" placeholder="Ширина">
-							<input type="text" name="height" placeholder="Высота">
-					</div>
-		
-					<div class="button-pos">
-						<div class="button-basic">
-							<span>сохранить</span>
-						</div>
-					</div>
-
-					<div class="main-filter-result-wrapper baron baron__root baron__clipper">
-						<div class="main-filter-rusult-scroll baron__scroller">
-							<div class="baron__track">
-								<div class="baron__free">
-									<div class="baron__bar"></div>
-								</div>
-							</div>
-							<div class="main-filter-result ">
-			
-								<div class="main-filter-result-link">
-									<a href="" class="car-brands">Грузовой автомобиль марки ...</a>
-								</div>
-			
-								<div class="main-filter-result-property">
-									<ul class="property">
-										<li class="property-body-size">Кузов размером: <span>43/21</span></li>
-										<li class="property-scope">Объем: <span>14 тонн</span></li>
-										<li class="property-travel-time">Время в пути: <span>до 20 ч.</span></li>
-										<li class="property-person"><a href="">Буров Виктор</a> <span class="span-light" >(Частное лицо)</span></li>
-			
-										<li class="property-body-size">Кузов размером: <span>43/21</span></li>
-										<li class="property-scope">Объем: 14 тонн</li>
-										<li class="property-travel-time">Время в пути: до 20 ч.</li>
-										<li class="property-person"><a href="">Буров Виктор</a> <span class="span-light">(Частное лицо)</span></li>
-									</ul>
-								</div>
-							</div>
-							
-						</div>
-
-					</div>
-					<div class="car-brand-after">
-						<a href="" class="car-brands">Грузовой автомобиль марки ...</a>
-					</div>
-
-					
-				</div>
-			</div>
-			<div class="filter-toggle"></div>
-		
-		
-			<div class="main-map-wrapper">
-				<div class="main-map">
-					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9af233e748c562332fa602063a022b64f5bd378ea1efdfe72ae6fe6831add301&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;scroll=false"></script>
-				</div>
-			</div>
-		</section>
-	
-		<section id="section-2">
+	<div class="catalog-section">
 			<div class="main-filter-wrapper filter-toggled baron baron__root baron__clipper ">
 				<div class="baron__scroller">
 					<div class="baron__track">
@@ -327,7 +92,6 @@
 														<span>Тентованный</span>
 														<div class="dropdown-wrapper">
 															<span class="dropdown-toggle">Задняя</span>
-
 															<div class="dropdown-div">
 																<ul>
 																	<li>Задняя</li>
@@ -862,154 +626,65 @@
 					</div>
 				</div>
 			</div>
-		</section>
 
-		<section id="section-3">
-			<div class="how-service-work-wrapper baron baron__root baron__clipper ">
-				<div class="how-service-work baron__scroller">
-					<div class="baron__track">
-						<div class="baron__free">
-							<div class="baron__bar"></div>
-						</div>
-					</div>
-					<h1 class="span-black">Как работает сервис</h1>
-					<div class="service-list-wrapper">
-						<div class="service-col">
-							<div class="mac-book"><img src="img/mac-book.png" alt=""></div>
-						</div>
-						<div class="service-col">
-							<div class="service-guide">
-								<ul>
-									<li class="reg" >регистрируйтесь на сайте</li>
-									<li class="fill">заполняйте параметры груза для перевозчиков</li>
-									<li class="find">ищите машину по параметрам</li>
-									<li class="select">выбирайте машину из полученных результатов</li>
-									<li class="contact">связывайтесь с перевозчиком</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="button-pos">
-						<div class="button-basic">
-							<span>скачать презентацию</span>
-						</div>
-					</div>
+		
+
+		</div>
+
+		<footer>
+			<div class="logo logo-footer">
+				<div class="logo-svg" style="background-image: url(img/logo.png);"></div>
+				<div class="logo-text">
+					<h1>технологист</h1>
+					<span>Группа компаний</span>
 				</div>
 			</div>
-		</section>
 
-		<section id="section-4">
-			<div class="feedback-wrapper baron baron__root baron__clipper">
-				<div class="baron__track">
-					<div class="baron__free">
-						<div class="baron__bar"></div>
-					</div>
-				</div>
-				<div class="feedback baron__scroller">
-					<div class="feedback-col">
-						<div class="feedback-div">
-							<h2>Cвяжитесь с нами</h2>
-							<span>Если у вас остались вопросы, заполните форму и наш оператор свяжется с вами</span>
-							<div class="feedback-div-input">
-								<span>Введите ваше имя</span>
-								<input type="text" name="feedback-name" placeholder="">
-							</div>
-							<div class="feedback-div-input">
-								<span>Введите ваш телефон</span>
-								<input type="text" name="feedback-name" placeholder="+7 (___) ___-__-__">
-							</div>
-							<div class="button-pos">
-								<button class="button-basic">
-									<span>заказать звонок</span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<div class="feedback-col feedback-contact-none">
-						<div class="feedback-contact">
-							<h1 class="span-black">Контакты</h1>
-							<ul>
-								<li class="feedback-phone">+7 (495) 792-85-55</li>
-								<li class="feedback-mail">trans.ar@mail.ru</li>
-								<li class="feedback-address">109431, г.москва, ул.привольная, д.70</li>
-							</ul>
-						</div>
-					</div>
-
-				</div>
-					
-			</div>
-			<footer>
-			<div class="footer-inner-wrapper baron baron__root baron__clipper filter-toggled">
-				<div class="baron__scroller">
-				<div class="logo logo-footer">
-					<div class="logo-svg" style="background-image: url(img/logo.png);"></div>
-					<div class="logo-text">
-						<h1>технологист</h1>
-						<span>Группа компаний</span>
-					</div>
+				<div class="footer-list">
+					<span class="span-footer">сервис</span>
+					<ul>
+						<li><a href="">Добавить груз</a></li>
+						<li><a href="">Найти груз</a></li>
+						<li><a href="">Добавить транспорт</a></li>
+						<li><a href="">Найти транспорт</a></li>
+						<li><a href="">Автопарк</a></li>
+					</ul>
 				</div>
 
-				<div class="footer-list-wrapper">
-					<div class="footer-list">
-						<span class="span-footer">сервис</span>
-						<ul>
-							<li><a href="">Добавить груз</a></li>
-							<li><a href="">Найти груз</a></li>
-							<li><a href="">Добавить транспорт</a></li>
-							<li><a href="">Найти транспорт</a></li>
-							<li><a href="">Автопарк</a></li>
-							<li><a href="">Заявка-договор</a></li>
-						</ul>
-					</div>
-
-					<div class="footer-list">
-						<span class="span-footer">о компании</span>
-						<ul>
-							<li><a href="">Контактная информация</a></li>
-							<li><a href="">Наши преимущества</a></li>
-							<li><a href="">Каталог</a></li>
-							<li><a href="">Новости</a></li>
-						</ul>
-					</div>
-
-					<div class="footer-list">
-						<span class="span-footer">личный кабинет</span>
-						<ul>
-							<li><a href="">Регистрация</a></li>
-							<li><a href="">Вход</a></li>
-							<li><a href="">Личный кабинет</a></li>
-						</ul>
-					</div>
-
-					<div class="footer-list">
-						<span class="span-footer">контакты</span>
-						<ul>
-							<li class="footer-phone"><a href="">+7 (495) 792-85-55</a></li>
-							<li class="footer-mail"><a href="">trans.ar@mail.ru</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-				<div class="baron__track">
-					<div class="baron__free">
-						<div class="baron__bar"></div>
-					</div>
+				<div class="footer-list">
+					<span class="span-footer">о компании</span>
+					<ul>
+						<li><a href="">Контактная информация</a></li>
+						<li><a href="">Наши преимущества</a></li>
+						<li><a href="">Каталог</a></li>
+					</ul>
 				</div>
 
-			</div>
-			
-			</footer>
-		</section>
+				<div class="footer-list">
+					<span class="span-footer">личный кабинет</span>
+					<ul>
+						<li><a href="">Регистрация</a></li>
+						<li><a href="">Вход</a></li>
+						<li><a href="">Личный кабинет</a></li>
+					</ul>
+				</div>
 
-	</div>
+				<div class="footer-list">
+					<span class="span-footer">контакты</span>
+					<ul>
+						<li class="footer-phone"><a href="">+7 (495) 792-85-55</a></li>
+						<li class="footer-mail"><a href="">trans.ar@mail.ru</a></li>
+					</ul>
+				</div>
 
-	</div>
+		</footer>
+	
 
 
 	<link rel="stylesheet" href="css/main.min.css">
 
 	<script src="js/scripts.min.js"></script>
-
 </body>
+
+	
 </html>
