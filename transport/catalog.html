@@ -3,8 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Каталог</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&amp;subset=cyrillic" rel="stylesheet">
+
 </head>
-<body>
+<body class="catalog-page">
 	<div class="fixed-menu">
 			<div class="menu">
 				<div class="logo">
@@ -15,7 +31,7 @@
 					</div>
 					
 				</div>
-				<div class="basic-menu-wrapper">
+
 					<div class="basic-menu">
 						<div class="mail">
 							<ul>
@@ -24,12 +40,16 @@
 							</ul>
 						</div>
 						<div class="search"></div>
-						<div class="buttons">
-							<a class="button-side">Присоединиться</a>
-							<a class="button-side">Войти</a>
-						</div> 
+						<div class="buttons-wrapper">
+							<div class="buttons">
+								<a class="button-side">Присоединиться</a>
+								<a class="button-side">Войти</a>
+							</div> 
+						</div>
 					</div>
-				</div>
+					
+
+				
 			</div>
 
 
@@ -57,12 +77,10 @@
 				
 				<div class="selected-page">
 					<a class="selected-page-text" href="">Автопарк</a>
-					<div class="selected-page-arrow-up page-scroll"></div>
-					<div class="selected-page-arrow-down page-scroll"></div>
-					<div class="selected-page-tip"><div class="selected-page-tip-trigger"></div></div>
 				</div>
 			</div>
 	</div>
+
 
 
 	<div class="catalog-section">
@@ -70,9 +88,10 @@
 				<div class="baron__scroller">
 					<div class="baron__track">
 						<div class="baron__free">
-							<div class="baron__bar"></div>
-						</div>
+						<div class="baron__bar"></div>
 					</div>
+				</div>
+
 					<div class="car-park-filter-wrapper">
 						<span class="car-park-title">Автопарк</span>
 						<div class="car-park-filter">
@@ -224,6 +243,12 @@
 						<div class="baron__free">
 							<div class="baron__bar"></div>
 						</div>
+					</div>
+					<div class="car-result-tree">
+						<ul>
+							<li>Главная</li>
+							<li class="selected">Каталог</li>
+						</ul>
 					</div>
 					<div class="car-result">
 						
@@ -626,57 +651,65 @@
 					</div>
 				</div>
 			</div>
-
-		
-
-		</div>
+	</div>
 
 		<footer>
-			<div class="logo logo-footer">
-				<div class="logo-svg" style="background-image: url(img/logo.png);"></div>
-				<div class="logo-text">
-					<h1>технологист</h1>
-					<span>Группа компаний</span>
+			<div class="footer-inner-wrapper baron baron__root baron__clipper filter-toggled">
+				<div class="baron__scroller">
+				<div class="logo logo-footer">
+					<div class="logo-svg" style="background-image: url(img/logo.png);"></div>
+					<div class="logo-text">
+						<h1>технологист</h1>
+						<span>Группа компаний</span>
+					</div>
+				</div>
+
+				<div class="footer-list-wrapper">
+					<div class="footer-list">
+						<span class="span-footer">сервис</span>
+						<ul>
+							<li><a href="">Добавить груз</a></li>
+							<li><a href="">Найти груз</a></li>
+							<li><a href="">Добавить транспорт</a></li>
+							<li><a href="">Найти транспорт</a></li>
+							<li><a href="">Автопарк</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-list">
+						<span class="span-footer">о компании</span>
+						<ul>
+							<li><a href="">Контактная информация</a></li>
+							<li><a href="">Наши преимущества</a></li>
+							<li><a href="">Каталог</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-list">
+						<span class="span-footer">личный кабинет</span>
+						<ul>
+							<li><a href="">Регистрация</a></li>
+							<li><a href="">Вход</a></li>
+							<li><a href="">Личный кабинет</a></li>
+						</ul>
+					</div>
+
+					<div class="footer-list">
+						<span class="span-footer">контакты</span>
+						<ul>
+							<li class="footer-phone"><a href="">+7 (495) 792-85-55</a></li>
+							<li class="footer-mail"><a href="">trans.ar@mail.ru</a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
-
-				<div class="footer-list">
-					<span class="span-footer">сервис</span>
-					<ul>
-						<li><a href="">Добавить груз</a></li>
-						<li><a href="">Найти груз</a></li>
-						<li><a href="">Добавить транспорт</a></li>
-						<li><a href="">Найти транспорт</a></li>
-						<li><a href="">Автопарк</a></li>
-					</ul>
+				<div class="baron__track">
+					<div class="baron__free">
+						<div class="baron__bar"></div>
+					</div>
 				</div>
 
-				<div class="footer-list">
-					<span class="span-footer">о компании</span>
-					<ul>
-						<li><a href="">Контактная информация</a></li>
-						<li><a href="">Наши преимущества</a></li>
-						<li><a href="">Каталог</a></li>
-					</ul>
-				</div>
-
-				<div class="footer-list">
-					<span class="span-footer">личный кабинет</span>
-					<ul>
-						<li><a href="">Регистрация</a></li>
-						<li><a href="">Вход</a></li>
-						<li><a href="">Личный кабинет</a></li>
-					</ul>
-				</div>
-
-				<div class="footer-list">
-					<span class="span-footer">контакты</span>
-					<ul>
-						<li class="footer-phone"><a href="">+7 (495) 792-85-55</a></li>
-						<li class="footer-mail"><a href="">trans.ar@mail.ru</a></li>
-					</ul>
-				</div>
-
+			</div>
 		</footer>
 	
 
