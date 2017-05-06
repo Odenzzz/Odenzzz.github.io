@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Профиль</title>
+	<title>Регистрация</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&amp;subset=cyrillic" rel="stylesheet">
 </head>
-<body class="profile-page">
+<body class="register-page">
 	<div class="fixed-menu">
 			<div class="menu">
 				<div class="logo">
@@ -40,10 +40,10 @@
 						</div>
 						<div class="search"></div>
 						<div class="buttons-wrapper">
-							<div class="log-profile">
-								<span>Алексей</span>
-								<div class="log-photo" style="background-image: url(img/profile-photo.png);"></div>
-							</div>
+							<div class="buttons">
+								<a class="button-side">Присоединиться</a>
+								<a class="button-side">Войти</a>
+							</div> 
 						</div>
 					</div>
 					
@@ -81,98 +81,78 @@
 	</div>
 
 
-	<div class="profile-block-wrapper">
-		<div class="profile-block">
 
-
-			<div class="profile-title-wrapper">
-				<div class="profile-title">
-					<div class="profile-photo" style="background-image: url(img/profile-photo.png);">
-						<div class="profile-photo-edit"><a href=""></a></div>
-					</div>
-
-					<div class="name-title-wrapper">
-						<div class="name-title">
-							<span class="person-type">Физическое лицо</span>
-							<span class="person-name">алексей еременко<a href=""></a></span>
-							<div class="profile-rating profile-rating-3_5"></div>
-						</div>
-					</div>
-
-					<div class="points-wrapper">
-						<div class="points">
-							<span>19</span>
-						</div>
-						<span>Баллов</span>
-					</div>
+	<div class="register-wrapper">
+		<div class="register-step-1">
+			<h2>Зарегестрироваться как</h2>
+			<div class="button-pos" onclick="goToStep(2)">
+				<div class="button-basic">
+					<span>юридическое лицо</span>
 				</div>
 			</div>
+			<div class="button-pos" onclick="goToStep(2)">
+				<div class="button-basic">
+					<span>физическое лицо</span>
+				</div>
+			</div>
+			<div class="button-pos" onclick="goToStep(2)">
+				<div class="button-basic">
+					<span>я водитель</span>
+				</div>
+			</div>
+		</div>
 
-			<div class="passport-data-wrapper">
-				<div class="pasport-wrapper">
-					<span class="span-basic">паспортные данные</span>
-					<div class="series-number-wrapper">
-						<div class="series">
-							<span class="span-side">Cерия</span>
-							<input class="input-profile" type="text">
-						</div>
-						<div class="number">
-							<span class="span-side">Номер</span>
-							<input class="input-profile" type="text">
-						</div>
-					</div>
-					<div class="delivery-wrapper">
-						<div class="delivery">
-								<span class="span-side">Дата выдачи</span>
-								<input class="input-profile" type="text">
-							<div class="issued">
-								<span class="span-side">Кем выдан</span>
-								<input class="input-profile" type="text">
-							</div>
-							
-						</div>
-					</div>
+		<div class="register-step-2">
+			<h2>Информация о вас</h2>
+			<label for="register-ooo" class="span-side">OOO:</label>
+			<input type="text" id="register-ooo" class="input-profile">
+			<label for="register-ao" class="span-side">AO</label>
+			<input type="text" id="register-ao" class="input-profile">
+			<label for="register-zao" class="span-side">ЗАО</label>
+			<input type="text" id="register-zao" class="input-profile">
+			<label for="register-oao" class="span-side">ОАО</label>
+			<input type="text" id="register-oao" class="input-profile">
+			<label for="register-ip" class="span-side">ИП</label>
+			<input type="text" id="register-ip" class="input-profile">
+			<div class="button-pos" onclick="goToStep(3)">
+				<div class="button-basic">
+					<span>продолжить</span>
+				</div>
+			</div>
+		</div>
 
-					<div class="contact-date-wrapper">
-						<span class="span-basic">контактные данные</span>
-						<div class="contact-date">
-							<span class="span-side">Телефон</span>
-							<input class="input-profile" type="text">
-							<div class="email">
-								<span class="span-side">Email</span>
-								<input class="input-profile" type="text">
-							</div>
-							<span class="span-side">Пароль</span>
-							<input class="input-profile" type="password">
-							<a href="">Изменить пароль</a>
-						</div>
-					</div>
-
-					<div class="recommendation-wrapper">
-						<span class="span-basic">Рекомендации</span>
-						<div class="recommendations">
-							<ul>
-								<li style="background-image: url(img/circle-photo.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo2.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo2.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo.png);"><a href=""></a></li>
-							</ul>
-
+		<div class="register-step-3">
+			<h2>Контактная информация</h2>
+			<div class="input-wrapper">
+				<label for="register-mail" class="span-side">E-mail</label>
+				<input type="text" id="register-mail" class="input-profile">
+				<label for="register-login" class="span-side">Логин</label>
+				<input type="text" id="register-login" class="input-profile">
+				<label for="register-pass" class="span-side">Пароль</label>
+				<input type="password" id="register-pass" class="input-profile">
+				<label for="register-phone" class="span-side">Телефон</label>
+				<input type="text" id="register-phone" class="input-profile">
+				<div class="sms-check">
+					<label for="register-sms" class="span-side">Введите код смс:</label>
+					<input type="text" id="register-sms" class="input-profile">
+					
+				</div>
+				<div class="sms-button">
+					<div class="button-pos" onclick="goToStep(3)">
+						<div class="button-basic">
+							<span>SMS-подтверждение</span>
 						</div>
 					</div>
 				</div>
+				<div class="button-pos">
+					<div class="button-basic">
+						<span>продолжить</span>
+					</div>
+				</div>
+				
 			</div>
-
-
-
-
 		</div>
 	</div>
-
-
-
-
 
 
 
@@ -235,7 +215,6 @@
 
 		</div>
 	</footer>
-
 
 
 	<link rel="stylesheet" href="css/main.min.css">

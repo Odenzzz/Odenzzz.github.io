@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Профиль</title>
+	<title>Карточка водителя</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:700&amp;subset=cyrillic" rel="stylesheet">
 </head>
-<body class="profile-page">
+<body class="card-page">
 	<div class="fixed-menu">
 			<div class="menu">
 				<div class="logo">
@@ -40,10 +40,10 @@
 						</div>
 						<div class="search"></div>
 						<div class="buttons-wrapper">
-							<div class="log-profile">
-								<span>Алексей</span>
-								<div class="log-photo" style="background-image: url(img/profile-photo.png);"></div>
-							</div>
+							<div class="buttons">
+								<a class="button-side">Присоединиться</a>
+								<a class="button-side">Войти</a>
+							</div> 
 						</div>
 					</div>
 					
@@ -81,99 +81,129 @@
 	</div>
 
 
-	<div class="profile-block-wrapper">
-		<div class="profile-block">
-
-
-			<div class="profile-title-wrapper">
-				<div class="profile-title">
-					<div class="profile-photo" style="background-image: url(img/profile-photo.png);">
-						<div class="profile-photo-edit"><a href=""></a></div>
-					</div>
-
-					<div class="name-title-wrapper">
-						<div class="name-title">
-							<span class="person-type">Физическое лицо</span>
-							<span class="person-name">алексей еременко<a href=""></a></span>
-							<div class="profile-rating profile-rating-3_5"></div>
+	<div class="card-main-wrapper">
+		<div class="result-tree">
+			<ul>
+				<li><a href="">Главная</a></li>
+				<li><a href="">Каталог</a></li>
+				<li class="selected">Алексей Еременко (Volkswagen Multivan)</li>
+			</ul>
+		</div>
+		<div class="card-main-face-car">
+			<div class="car-wrapper">
+				<div class="car">
+					<div class="car-img" style="background-image: url(img/car-img.png);"></div>
+					<span class="car-mark">Volkswagen Multivan </span><span class="car-status">Свободен</span>
+					<div class="button-pos">
+						<div class="button-basic">
+							<span>связаться</span>
 						</div>
-					</div>
-
-					<div class="points-wrapper">
-						<div class="points">
-							<span>19</span>
-						</div>
-						<span>Баллов</span>
 					</div>
 				</div>
 			</div>
-
-			<div class="passport-data-wrapper">
-				<div class="pasport-wrapper">
-					<span class="span-basic">паспортные данные</span>
-					<div class="series-number-wrapper">
-						<div class="series">
-							<span class="span-side">Cерия</span>
-							<input class="input-profile" type="text">
-						</div>
-						<div class="number">
-							<span class="span-side">Номер</span>
-							<input class="input-profile" type="text">
-						</div>
-					</div>
-					<div class="delivery-wrapper">
-						<div class="delivery">
-								<span class="span-side">Дата выдачи</span>
-								<input class="input-profile" type="text">
-							<div class="issued">
-								<span class="span-side">Кем выдан</span>
-								<input class="input-profile" type="text">
-							</div>
-							
-						</div>
-					</div>
-
-					<div class="contact-date-wrapper">
-						<span class="span-basic">контактные данные</span>
-						<div class="contact-date">
-							<span class="span-side">Телефон</span>
-							<input class="input-profile" type="text">
-							<div class="email">
-								<span class="span-side">Email</span>
-								<input class="input-profile" type="text">
-							</div>
-							<span class="span-side">Пароль</span>
-							<input class="input-profile" type="password">
-							<a href="">Изменить пароль</a>
-						</div>
-					</div>
-
-					<div class="recommendation-wrapper">
-						<span class="span-basic">Рекомендации</span>
-						<div class="recommendations">
+			<div class="card-main">
+				<div class="card-main-calendar-wrapper">
+					<div class="calendar">
+						
+						<span class="month"><a class="arrow-prev" href=""><span class="icon-back"></span></a>Январь<a class="arrow-next" href=""><span class="icon-next"></span></a></span>
+						
+						<div class="week">
 							<ul>
-								<li style="background-image: url(img/circle-photo.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo2.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo2.png);"><a href=""></a></li>
-								<li style="background-image: url(img/circle-photo.png);"><a href=""></a></li>
+								<li>пн</li>
+								<li>вт</li>
+								<li>ср</li>
+								<li>чт</li>
+								<li>пт</li>
+								<li>сб</li>
+								<li>вс</li>
 							</ul>
+						</div>
 
+						<div class="days">
+							<div class="past-day busy">1</div>
+							<div class="past-day busy">2</div>
+							<div class="past-day">3</div>
+							<div class="past-day busy">4</div>
+							<div class="past-day">5</div>
+							<div class="current-day">6</div>
+							<div class="busy">7</div>
+							<div>8</div>
+							<div>9</div>
+							<div>10</div>
+							<div class="busy">11</div>
+							<div class="busy">12</div>
+							<div>13</div>
+							<div>14</div>
+							<div class="busy">15</div>
+							<div>16</div>
+							<div>17</div>
+							<div>18</div>
+							<div class="busy">19</div>
+							<div>20</div>
+							<div>21</div>
+							<div>22</div>
+							<div>23</div>
+							<div class="busy">24</div>
+							<div>25</div>
+							<div>26</div>
+							<div class="busy">27</div>
+							<div>28</div>
+							<div>29</div>
+							<div>30</div>
+							<div class="busy">31</div>
+						</div>
+
+					</div>
+					<span class="help">Синими точками помечены занятые дни</span>
+				</div>
+				<div class="card-main-info">
+					<div class="profile-title-wrapper">
+						<div class="profile-title">
+							<div class="name-title-wrapper">
+								<div class="name-title">
+									<span class="person-type">Физическое лицо</span>
+									<span class="person-name">алексей еременко</span>
+									<div class="profile-rating"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-info-wrapper">
+						<div class="profile-view-ul">
+							<ul>
+								<li>Тип:<span> Грузовой транспорт</span></li>
+								<li>Кузов:<span> Тент</span></li>
+								<li>Тоннаж:<span> 1.80 т.</span></li>
+								<li>Объем:<span> 11.00 м<sup>3</sup></span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="card-info-wrapper">
+						<div class="profile-view-ul">
+							<ul>
+								<li>Телефон:<span> +7 (954) 782-92-22</span></li>
+								<li>Email:<span> alex@mail.ru</span></li>
+								<li>Время работы:<span> 8:00-23:00</span></li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="card-info-wrapper last">
+						<div class="profile-view-ul">
+							<ul>
+								<li>Выполнено перевозок:<span> 124</span></li>
+								<li>Маршрут:<span> По всей России</span></li>
+							</ul>
 						</div>
 					</div>
 				</div>
+				
 			</div>
-
-
-
-
+			
 		</div>
 	</div>
-
-
-
-
-
 
 
 
@@ -235,7 +265,6 @@
 
 		</div>
 	</footer>
-
 
 
 	<link rel="stylesheet" href="css/main.min.css">
