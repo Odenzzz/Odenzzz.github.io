@@ -33,24 +33,23 @@
 		<div class="top-header-line">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-9 col-sm-9 hidden-xs">
+					<div class="col-md-8 col-sm-8 hidden-xs">
 						<div class="top-header-menu">
 							<nav>
 								<ul>
 									<li><a href="#">О нас</a></li>
 									<li><a href="#">Оплата и доставка</a></li>
 									<li><a href="#">Контакты</a></li>
-									<li><a href="#">Строительство и проектирование</a></li>
+									<li class="hidden-md hidden-xs hidden-sm"><a href="#">Строительство и проектирование</a></li>
 								</ul>
 							</nav>
 						</div>
 					</div>
-					<div class="col-md-3 col-sm-3 col-lg-2 pull-right">
+					<div class="col-md-4 col-sm-4 col-lg-4 pull-right">
 						<div class="top-header-register">
 							<div class="top-header-account">
-								<a href="#">Регистрация </a>
-								/
-								<a href="#"> Вход</a>
+								<a href="#">Роман Емельянов </a>
+								<a href="#">Выйти</a>
 								<i class="icon-profile"></i>
 							</div>
 						</div>
@@ -791,191 +790,468 @@
 					<div class="breadcrumbs">
 						<ul>
 							<li><a href="#">Главная</a></li>
-							<li><a href="#">Избранное</a></li>
+							<li><a href="#">Заказы</a></li>
 						</ul>
 					</div>
-					<h1>Избранное</h1>
-					
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
-					<div class="sort-line">
-						<div class="sort-by">
-							Сортировать: 
-							<div class="sort-option">по рейтингу</div>
-							<div class="sort-option sorted sorted-up">по цене</div>
-							<div class="sort-option sorted">по дате добавления</div>
+				<div class="col-md-12">
+					<div class="leave-cabinet clearfix hidden-sm hidden-xs">
+						<div class="leave-button"><i class="icon-cancel-music"></i> Выйти</div>
+						<span>Здравствуйте, Роман Емельянов, добро пожаловать в Личный кабинет.</span>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<div class="personal-cabinet-buttons">
+						<div class="button button-blue w_200 button-blue-active" id="purchases">ваши заказы 3</div>
+						<div class="button button-blue w_200" id="personal-information">персональные данные</div>
+						<div class="personal-cabinet-search">
+							<input type="text" placeholder="Поиск по номеру заказа"><button><i class="icon-search"></i></button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="product-line product-list products-favorite">
-						<div class="row">
-							<div class="col-sm-12">
-								<div class="product-item">
-									<div class="product-image"><img src="img/product-1.png" alt=""></div>
-									<div class="product-description">
-										<div class="product-additional">
-											<div class="best-price">Лучшая цена</div>
-										</div>
-										<div class="product-rating stars-4_5"></div>
-										<div class="product-manufacturer"><i class="flag-icon flag-german"></i><span>Messner (Германия)</span></div>
-										<div class="product-name">
-											<a href="#">Насос для пруда Messner MultiSystem M 40000</a>
-										</div>
+			<div class="personal-cabinet-info purchases">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="sort-line">
+							<div class="sort-by">
+								Сортировать: 
+								<div class="sort-option">все</div>
+								<div class="sort-option sorted sorted-down">оплачен</div>
+								<div class="sort-option">готов к оплате</div>
+								<div class="sort-option">на уточнении</div>
+								<div class="sort-option">формирование счета</div>
+								<div class="sort-option">счет сформирован</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="purchase-block purchase-payed clearfix">
+							<div class="purchase-block-header clearfix">
+								<div class="purchase-number">
+									<div class="purchase-date">11 апреля 2017</div>
+									<div class="purchase-code">заказ №1543</div>
+								</div>
+								<div class="purchase-info">
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">получатель: </div>
+										Роман Викторовить Емельянов, <a href="#">emelya@mail.ru</a>, +791234567890
 									</div>
-									<div class="product-buttons">
-										<div class="to-favorite"><i class="icon-star"></i></div>
-										<div class="to-compare active"><i class="icon-balance"></i></div>
-										<div class="to-card"><i class="icon-cart-of-ecommerce"></i> В корзине</div>
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">получатель: </div>
+										г. Екатеринбург, ул. Залесная, д.20, кор. 3, оф.5
 									</div>
-									<div class="product-price">
-										<div class="current-price">95 000 р.</div>
-										<div class="old-price">110 000 р.</div>
-									</div>
-									<div class="product-delete">
-										<i class="icon-cancel-music"></i>
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">статус заказа: </div>
+										<a href="#">Оплачен</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<div class="product-item">
-									<div class="product-image"><img src="img/product-1.png" alt=""></div>
-									<div class="product-description">
-										<div class="product-additional">
-											<div class="best-price">Лучшая цена</div>
-										</div>
-										<div class="product-rating stars-4_5"></div>
-										<div class="product-manufacturer"><i class="flag-icon flag-german"></i><span>Messner (Германия)</span></div>
-										<div class="product-name">
-											<a href="#">Насос для пруда Messner MultiSystem M 40000</a>
-										</div>
+							<div class="purchase-block-content">
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+							</div>
+							<div class="purchase-total">
+								<span>Итого:</span> <span class="total-count">465 шт.</span><span class="total-price">30 329 000 р.</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="purchase-block clearfix">
+							<div class="purchase-block-header clearfix">
+								<div class="purchase-number">
+									<div class="purchase-date">11 апреля 2017</div>
+									<div class="purchase-code">заказ №1543</div>
+								</div>
+								<div class="purchase-info">
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">получатель: </div>
+										Роман Викторовить Емельянов, <a href="#">emelya@mail.ru</a>, +791234567890
 									</div>
-									<div class="product-buttons">
-										<div class="to-favorite"><i class="icon-star"></i></div>
-										<div class="to-compare active"><i class="icon-balance"></i></div>
-										<div class="to-card"><i class="icon-cart-of-ecommerce"></i> В корзине</div>
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">получатель: </div>
+										г. Екатеринбург, ул. Залесная, д.20, кор. 3, оф.5
 									</div>
-									<div class="product-price">
-										<div class="current-price">95 000 р.</div>
-										<div class="old-price">110 000 р.</div>
-									</div>
-									<div class="product-delete">
-										<i class="icon-cancel-music"></i>
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">статус заказа: </div>
+										<a href="#" class="payment-ready">Готов к оплате</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<div class="product-item">
-									<div class="product-image"><img src="img/product-1.png" alt=""></div>
-									<div class="product-description">
-										<div class="product-additional">
-											<div class="best-price">Лучшая цена</div>
-										</div>
-										<div class="product-rating stars-4_5"></div>
-										<div class="product-manufacturer"><i class="flag-icon flag-german"></i><span>Messner (Германия)</span></div>
-										<div class="product-name">
-											<a href="#">Насос для пруда Messner MultiSystem M 40000</a>
-										</div>
+							<div class="purchase-block-content">
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+							</div>
+							<div class="purchase-total">
+								<span>Итого:</span> <span class="total-count">465 шт.</span><span class="total-price">30 329 000 р.</span>
+							</div>
+							<a href="#" class="button button-white w_200">оплатить заказ</a>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="purchase-block clearfix">
+							<div class="purchase-block-header clearfix">
+								<div class="purchase-number">
+									<div class="purchase-date">11 апреля 2017</div>
+									<div class="purchase-code">заказ №1543</div>
+								</div>
+								<div class="purchase-info">
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">получатель: </div>
+										Роман Викторовить Емельянов, <a href="#">emelya@mail.ru</a>, +791234567890
 									</div>
-									<div class="product-buttons">
-										<div class="to-favorite"><i class="icon-star"></i></div>
-										<div class="to-compare active"><i class="icon-balance"></i></div>
-										<div class="to-card"><i class="icon-cart-of-ecommerce"></i> В корзине</div>
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">получатель: </div>
+										г. Екатеринбург, ул. Залесная, д.20, кор. 3, оф.5
 									</div>
-									<div class="product-price">
-										<div class="current-price">95 000 р.</div>
-										<div class="old-price">110 000 р.</div>
-									</div>
-									<div class="product-delete">
-										<i class="icon-cancel-music"></i>
+									<div class="purchase-info-line">
+										<div class="purchase-info-line-title">статус заказа: </div>
+										<a href="#">Счет сформирован и выслан на электронную почту</a>
 									</div>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<div class="product-item">
-									<div class="product-image"><img src="img/product-1.png" alt=""></div>
-									<div class="product-description">
-										<div class="product-additional">
-											<div class="best-price">Лучшая цена</div>
-										</div>
-										<div class="product-rating stars-4_5"></div>
-										<div class="product-manufacturer"><i class="flag-icon flag-german"></i><span>Messner (Германия)</span></div>
-										<div class="product-name">
-											<a href="#">Насос для пруда Messner MultiSystem M 40000</a>
-										</div>
-									</div>
-									<div class="product-buttons">
-										<div class="to-favorite"><i class="icon-star"></i></div>
-										<div class="to-compare active"><i class="icon-balance"></i></div>
-										<div class="to-card"><i class="icon-cart-of-ecommerce"></i> В корзине</div>
-									</div>
-									<div class="product-price">
-										<div class="current-price">95 000 р.</div>
-										<div class="old-price">110 000 р.</div>
-									</div>
-									<div class="product-delete">
-										<i class="icon-cancel-music"></i>
-									</div>
+							<div class="purchase-block-content">
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
+								</div>
+								<div class="purchase-content-line">
+									<div class="purchase-product-name"><a href="#">Насос для пруда Messner Multisystem MP 40000</a></div>
+									<div class="purchase-product-price">10 129 000 р.</div>
+									<div class="purchase-product-count">145 шт.</div>
 								</div>
 							</div>
-							<div class="col-sm-12">
-								<div class="product-item">
-									<div class="product-image"><img src="img/product-1.png" alt=""></div>
-									<div class="product-description">
-										<div class="product-additional">
-											<div class="best-price">Лучшая цена</div>
+							<div class="purchase-total">
+								<span>Итого:</span> <span class="total-count">465 шт.</span><span class="total-price">30 329 000 р.</span>
+							</div>
+							<a href="#" class="button button-white w_200">скачать счет</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="personal-cabinet-info personal-information">
+				<div class="row">
+					<div class="card-contacts">
+						<div class="col-xs-12">
+							<h1>Вы</h1>
+							<div class="client-type clearfix">
+								<input type="radio" name="client-type" value="individual" id="individual" checked="checked"><label class="checkbox-label" for="individual">Физическое лицо</label>
+								<input type="radio" name="client-type" value="entity" id="entity"><label class="checkbox-label" for="entity">Юридическое лицо</label>
+							</div>
+						</div>
+						<div class="client-content client-content-individual">
+							<form action="">
+								<div class="col-md-12"><h1>Контактные данные</h1></div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-individual-name">ФИО</label>
+											<input type="text" id="client-individual-name" placeholder="Фамилия">
 										</div>
-										<div class="product-rating stars-4_5"></div>
-										<div class="product-manufacturer"><i class="flag-icon flag-german"></i><span>Messner (Германия)</span></div>
-										<div class="product-name">
-											<a href="#">Насос для пруда Messner MultiSystem M 40000</a>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
 										</div>
-									</div>
-									<div class="product-buttons">
-										<div class="to-favorite"><i class="icon-star"></i></div>
-										<div class="to-compare active"><i class="icon-balance"></i></div>
-										<div class="to-card"><i class="icon-cart-of-ecommerce"></i> В корзине</div>
-									</div>
-									<div class="product-price">
-										<div class="current-price">95 000 р.</div>
-										<div class="old-price">110 000 р.</div>
-									</div>
-									<div class="product-delete">
-										<i class="icon-cancel-music"></i>
 									</div>
 								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="product-item">
-									<div class="product-image"><img src="img/product-1.png" alt=""></div>
-									<div class="product-description">
-										<div class="product-additional">
-											<div class="best-price">Лучшая цена</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-individual-phone">Телефон</label>
+											<input type="text" id="client-individual-phone" placeholder="Фамилия">
 										</div>
-										<div class="product-rating stars-4_5"></div>
-										<div class="product-manufacturer"><i class="flag-icon flag-german"></i><span>Messner (Германия)</span></div>
-										<div class="product-name">
-											<a href="#">Насос для пруда Messner MultiSystem M 40000</a>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
 										</div>
-									</div>
-									<div class="product-buttons">
-										<div class="to-favorite"><i class="icon-star"></i></div>
-										<div class="to-compare active"><i class="icon-balance"></i></div>
-										<div class="to-card"><i class="icon-cart-of-ecommerce"></i> В корзине</div>
-									</div>
-									<div class="product-price">
-										<div class="current-price">95 000 р.</div>
-										<div class="old-price">110 000 р.</div>
-									</div>
-									<div class="product-delete">
-										<i class="icon-cancel-music"></i>
 									</div>
 								</div>
-							</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-individual-email">E-Mail</label>
+											<input type="text" id="client-individual-email" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-individual-adress">Адрес доставки</label>
+											<input type="text" id="client-individual-adress" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h1>Доставка</h1>
+									<div class="delivery-info">
+										<input type="radio" name="delivery-type" value="entity" id="delivery-1" checked="checked"><label class="checkbox-label" for="delivery-1">Доставка курьером по Москве</label>
+										<input type="radio" name="delivery-type" value="entity" id="delivery-2"><label class="checkbox-label" for="delivery-2">Доставка курьером по Московской области бесплатно</label>
+										<input type="radio" name="delivery-type" value="entity" id="delivery-3"><label class="checkbox-label" for="delivery-3">Доставка транспортной компанией</label>
+										<input type="radio" name="delivery-type" value="entity" id="delivery-4"><label class="checkbox-label" for="delivery-4">Самовывоз</label>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h1>Способ оплаты</h1>
+									<div class="payment-info">
+										<input type="radio" name="payment-type" value="entity" id="payment-1" checked="checked"><label class="checkbox-label" for="payment-1">Наличные</label>
+										<input type="radio" name="payment-type" value="entity" id="payment-2"><label class="checkbox-label" for="payment-2">Банковские карты</label>
+										<input type="radio" name="payment-type" value="entity" id="payment-3"><label class="checkbox-label" for="payment-3">Электронные деньги</label>
+										<input type="radio" name="payment-type" value="entity" id="payment-4"><label class="checkbox-label" for="payment-4">Квитанция в банк</label>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h1>Комментарий к заказу</h1>
+									<textarea name="comment" id=""></textarea>
+								</div>
+								<div class="col-md-12">
+									<h1>Сменить пароль</h1>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-individual-new-pass">Новый пароль</label>
+											<input type="text" id="client-individual-new-pass" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-individual-new-pass-again">Повторить пароль</label>
+											<input type="text" id="client-individual-new-pass-again" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<input type="submit" value="сохранить данные" class="button button-blue">
+								</div>
+							</form>
+						</div>
+						<div class="client-content client-content-entity">
+							<form action="">
+								<div class="col-xs-12"><h1>Информация об организации</h1></div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-organization">Наименование организации</label>
+											<input type="text" id="client-entity-organization" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-inn">ИНН</label>
+											<input type="text" id="client-entity-inn" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-cpp">КПП</label>
+											<input type="text" id="client-entity-cpp" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-file">Карта предприятия</label>
+											<div class="file-load" id="file-1-load">
+												<label for="client-entity-file" class="button button-blue">прикрепить файл</label> <span class="file-value">Файл не загружен</span>
+												<input type="file" id="client-entity-file">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12"><h1>Контактные данные</h1></div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-name">ФИО</label>
+											<input type="text" id="client-entity-name" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-phone">Телефон</label>
+											<input type="text" id="client-entity-phone" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-email">E-Mail</label>
+											<input type="text" id="client-entity-email" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-adress">Адрес доставки</label>
+											<input type="text" id="client-entity-adress" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h1>Доставка</h1>
+									<div class="delivery-info">
+										<input type="radio" name="delivery-type" value="entity" id="delivery-entity-1" checked="checked"><label class="checkbox-label" for="delivery-entity-1">Доставка курьером по Москве</label>
+										<input type="radio" name="delivery-type" value="entity" id="delivery-entity-2"><label class="checkbox-label" for="delivery-entity-2">Доставка курьером по Московской области бесплатно</label>
+										<input type="radio" name="delivery-type" value="entity" id="delivery-entity-3"><label class="checkbox-label" for="delivery-entity-3">Доставка транспортной компанией</label>
+										<input type="radio" name="delivery-type" value="entity" id="delivery-entity-4"><label class="checkbox-label" for="delivery-entity-4">Самовывоз</label>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h1>Способ оплаты</h1>
+									<div class="payment-info">
+										<input type="radio" name="payment-type" value="entity" id="payment-entity-1" checked="checked"><label class="checkbox-label" for="payment-entity-1">Наличные</label>
+										<input type="radio" name="payment-type" value="entity" id="payment-entity-2"><label class="checkbox-label" for="payment-entity-2">Банковские карты</label>
+										<input type="radio" name="payment-type" value="entity" id="payment-entity-3"><label class="checkbox-label" for="payment-entity-3">Электронные деньги</label>
+										<input type="radio" name="payment-type" value="entity" id="payment-entity-4"><label class="checkbox-label" for="payment-entity-4">Квитанция в банк</label>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<h1>Комментарий к заказу</h1>
+									<textarea name="comment" id=""></textarea>
+								</div>
+								<div class="col-md-12">
+									<h1>Сменить пароль</h1>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-new-pass">Новый пароль</label>
+											<input type="text" id="client-entity-new-pass" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="client-individual-content clearfix">
+									<div class="client-info-input input-required clearfix">
+										<div class="col-md-6">
+											<label for="client-entity-new-pass-again">Повторить пароль</label>
+											<input type="text" id="client-entity-new-pass-again" placeholder="Фамилия">
+										</div>
+										<div class="col-md-6">
+											<div class="input-tip">
+												Эти данные необходимы для того, чтобы мы знали как к вам обращаться при доставке и оформлении
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-12">
+									<input type="submit" value="сохранить данные" class="button button-blue">
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>
