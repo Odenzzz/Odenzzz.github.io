@@ -60,6 +60,7 @@ $(document).ready(function() {
 		var wHeight = $(window).height();
 		var newHeight = wHeight - hHeight;
 		$('.page-container').css('height', ''+newHeight+'px');
+		$('.baron__scroller').css('max-height', ''+newHeight+'px');
 	}
 	function liveMatchResize(){
 		if ($('div').is('.live-match-current')) {
@@ -315,6 +316,7 @@ $(document).ready(function() {
 			backward: '.baron__up'
 		})
 	}
+
 	baronInit();
 	if ($('div').is('.col-right-additional-stat-circle-block')) {
 		$('.col-right-additional-stat-circle-block').each(function(index, el) {
