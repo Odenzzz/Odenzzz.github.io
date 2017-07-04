@@ -142,7 +142,7 @@ $(document).ready(function() {
 			$('.col-left-search input').css('display', 'none');
 			$('.col-left-search button').css('display', 'none');
 			$('.col-left-toggle').css({
-				left: '5px',
+				left: '3px',
 				'margin-bottom': '5px'
 			});
 			$('.col-left-content').addClass('toggled');
