@@ -54,6 +54,14 @@ $(document).ready(function() {
 
 		liveMatchResize();
 		loadProgressBar();
+		if ($('div').is('.home-page-menu-wrapper')) {
+
+			if ($(window).height() < 500){
+				$('.home-page-menu-wrapper').height($(window).height() - 73);
+			} else {
+				$('.home-page-menu').height($(window).height() - 73);
+			}
+		}
 	}
 	function containersHeight(){
 		var hHeight = $('header').height();
